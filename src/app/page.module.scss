@@ -1,1 +1,14 @@
+.container {
+    text-align: center;
 
+    .logo-area {
+        margin-top: 24px;
+        cursor: pointer;
+    }
+
+    .carousel-area {
+        // 仮の高さを設定
+        height: 570px;
+        background: $accent-light-color;
+    }
+}
