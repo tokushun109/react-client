@@ -8,6 +8,7 @@
     background-color: $primary-bg-color;
     color: $primary;
     text-decoration: none;
+    cursor: pointer;
 
     &::before {
         position: absolute;
