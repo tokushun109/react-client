@@ -1,0 +1,63 @@
+@import url('https://fonts.googleapis.com/css2?family=Lobster&family=Sawarabi+Mincho&display=swap" rel="stylesheet');
+
+/**
+ * media size
+ */
+$xl-width: 1904px;
+$lg-width: 1264px;
+$md-width: 960px;
+$sm-width: 600px;
+$font-xxlarge: 24px;
+
+/**
+ * font size
+ */
+$font-xlarge: 20px;
+$font-large: 18px;
+$font-normal: 16px;
+$font-medium: 14px;
+$font-small: 10px;
+$font-tiny: 8px;
+
+/**
+ * font-face
+ */
+$font-face: 'Sawarabi Mincho', sans-serif;
+$title-font-face: 'Lobster', sans-serif;
+
+/**
+ * font-weight
+ */
+
+$title-font-weight: 700;
+
+/**
+ * colors
+ */
+$primary: #7b675b;
+$secondary: #BCAAA4;
+$accent: #FFB74D;
+$accent-light-color: #e7e3d5;
+$error: #fce4ec;
+$warning: #fff9c4;
+$info: #a7ffeb;
+$success: #b3e5fc;
+$title-primary-color: #4b3e36;
+$title-secondary-color: #AD7C5E;
+$text-color: #757575;
+$white-text-color: #FFFFFF;
+$primary-bg-color: #FFFFFF;
+$secondary-bg-color: #EFEBE9;
+$light-bg-color: #F1F8E9;
+$light-dark-color: #bababa;
+$danger-color: #b84150;
+$danger-bg-color: #f8d7da;
+$danger-border-color: #f5c6cb;
+$page-background-color: #f5f5f5;
+
+/**
+ * box-shadow
+ */
+$box-shadow: 0px 3px 5px -1px rgba(0, 0, 0, 0.2),
+    0px 6px 10px 0px rgba(0, 0, 0, 0.14),
+    0px 1px 18px 0px rgba(0, 0, 0, 0.12);

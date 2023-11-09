@@ -1,8 +1,10 @@
+import 'ress'
 import type { Metadata } from 'next'
-import { Inter } from 'next/font/google'
-import '@/styles/globals.css'
-
-const inter = Inter({ subsets: ['latin'] })
+import styles from './layout.module.scss'
+import '@/styles/globals.scss'
+import Icon from '@/components/atoms/Icon'
+import MenuIcon from '@mui/icons-material/Menu'
+import Footer from '@/components/templates/Footer'
 
 export const metadata: Metadata = {
     title: 'Create Next App',
@@ -11,8 +13,20 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
     return (
-        <html lang="en">
-            <body className={inter.className}>{children}</body>
+        <html lang="ja">
+            <body className={styles['container']}>
+                {/* モバイル用 */}
+                {/* <header></header> */}
+                <div className={styles['menu-icon']}>
+                    <Icon size={72}>
+                        <MenuIcon fontSize="large" />
+                    </Icon>
+                </div>
+                <main>{children}</main>
+                <footer>
+                    <Footer />
+                </footer>
+            </body>
         </html>
     )
 }

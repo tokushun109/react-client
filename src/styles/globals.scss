@@ -1,1 +1,10 @@
+body {
+    background-color: $page-background-color;
+    color: $text-color;
+    font-size: $font-normal;
+    font-family: $font-face;
+}
 
+a {
+    text-decoration: none;
+}
