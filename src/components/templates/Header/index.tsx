@@ -4,8 +4,6 @@ import MenuIcon from '@mui/icons-material/Menu'
 import Image from 'next/image'
 import classnames from 'classnames'
 
-type Props = {}
-
 const Header = () => {
     return (
         <div className={styles['container']}>

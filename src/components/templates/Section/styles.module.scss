@@ -1,0 +1,33 @@
+.container {
+    padding: 48px 0 80px;
+
+    .title {
+        margin-bottom: 10px;
+        color: $primary;
+        text-align: center;
+        font-size: 60px;
+        font-family: $title-font-face;
+        font-weight: $title-font-weight;
+
+        &.contrast {
+            color: $white-text-color;
+        }
+    }
+
+    .sentence {
+        padding: 48px 0;
+        line-height: 42px;
+    }
+
+    &.contrast {
+        background: $primary;
+
+        .title {
+            color: $white-text-color;
+        }
+
+        .sentence {
+            color: $white-text-color;
+        }
+    }
+}
