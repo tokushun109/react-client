@@ -1,3 +1,4 @@
+import Button from '@/components/atoms/Button'
 import styles from './page.module.scss'
 import Image from 'next/image'
 
@@ -19,6 +20,7 @@ const index = () => {
                 </h1>
             </div>
             <div className={styles['carousel-area']}></div>
+            <Button>詳しくはこちら</Button>
         </div>
     )
 }
