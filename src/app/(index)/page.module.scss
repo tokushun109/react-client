@@ -4,6 +4,10 @@
     .logo-area {
         margin-top: 24px;
         cursor: pointer;
+
+        @include media(sm) {
+            display: none;
+        }
     }
 
     .carousel-area {

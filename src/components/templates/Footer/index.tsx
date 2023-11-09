@@ -4,9 +4,9 @@ type Props = {}
 
 const Footer = () => {
     return (
-        <div className={styles['container']}>
+        <footer className={styles['container']}>
             <span>©︎ 2023 とこりり</span>
-        </div>
+        </footer>
     )
 }
 
