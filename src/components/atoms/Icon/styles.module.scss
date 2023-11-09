@@ -2,8 +2,7 @@
     display: inline-block;
     background: $primary;
     border-radius: 50%;
-    height: 64px;
-    width: 64px;
+    box-shadow: $box-shadow;
 
     .content {
         color: $white-text-color;

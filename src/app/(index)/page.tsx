@@ -13,6 +13,7 @@ const index = () => {
                     style={{
                         objectFit: 'cover',
                     }}
+                    priority
                 />
             </header>
             <main className={styles['carousel-area']}></main>

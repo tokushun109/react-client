@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import styles from './layout.module.scss'
 import '@/styles/globals.scss'
 import Icon from '@/components/atoms/Icon'
+import MenuIcon from '@mui/icons-material/Menu'
 
 export const metadata: Metadata = {
     title: 'Create Next App',
@@ -14,9 +15,10 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             <body className={styles['container']}>
                 {/* モバイル用 */}
                 {/* <header></header> */}
-                <div className={styles['menu-button']}>
-                    {/* TODO のちほどmenuアイコンに変更 */}
-                    <Icon>三</Icon>
+                <div className={styles['menu-icon']}>
+                    <Icon size={72}>
+                        <MenuIcon fontSize="large" />
+                    </Icon>
                 </div>
                 <main>{children}</main>
             </body>
