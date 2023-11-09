@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Lobster&family=Sawarabi+Mincho&display=swap" rel="stylesheet');
+
 /**
  * media size
  */
@@ -16,6 +18,18 @@ $font-normal: 16px;
 $font-medium: 14px;
 $font-small: 10px;
 $font-tiny: 8px;
+
+/**
+ * font-face
+ */
+$font-face: 'Sawarabi Mincho', sans-serif;
+$title-font-face: 'Lobster', sans-serif;
+
+/**
+ * font-weight
+ */
+
+$title-font-weight: 700;
 
 /**
  * colors
@@ -40,7 +54,6 @@ $danger-color: #b84150;
 $danger-bg-color: #f8d7da;
 $danger-border-color: #f5c6cb;
 $page-background-color: #f5f5f5;
-
 
 /**
  * box-shadow
