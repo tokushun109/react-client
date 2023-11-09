@@ -3,6 +3,7 @@ import Icon from '@/components/atoms/Icon'
 import MenuIcon from '@mui/icons-material/Menu'
 import Image from 'next/image'
 import classNames from 'classnames'
+import { ColorEnum } from '@/types/color'
 
 const Header = () => {
     return (
@@ -24,7 +25,7 @@ const Header = () => {
             </header>
             {/* デフォルト用 */}
             <div className={styles['menu-icon']}>
-                <Icon size={72}>
+                <Icon size={72} color={ColorEnum.Primary}>
                     <MenuIcon fontSize="large" />
                 </Icon>
             </div>
