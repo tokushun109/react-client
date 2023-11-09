@@ -1,7 +1,19 @@
 .container {
     position: relative;
 
+    .sm {
+        display: none;
+
+        @include media(sm) {
+            display: block;
+        }
+    }
+
     .menu-icon {
+        @include media(sm) {
+            display: none;
+        }
+
         display: inline-block;
         position: fixed;
         top: 32px;
