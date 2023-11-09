@@ -1,7 +1,7 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
     sassOptions: {
-        prependData: '@import "@/styles/variables.scss";@import "@/styles/mixins.scss";'
+        prependData: '@import "@/styles/variables.scss";@import "@/styles/mixins.scss";',
     },
 }
 

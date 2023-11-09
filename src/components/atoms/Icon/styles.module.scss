@@ -5,6 +5,10 @@
     border-radius: 50%;
     box-shadow: $box-shadow;
 
+    &.no-shadow {
+        box-shadow: none;
+    }
+
     .content {
         color: $white-text-color;
         font-size: 24px;

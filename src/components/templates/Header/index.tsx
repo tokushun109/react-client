@@ -2,13 +2,13 @@ import styles from './styles.module.scss'
 import Icon from '@/components/atoms/Icon'
 import MenuIcon from '@mui/icons-material/Menu'
 import Image from 'next/image'
-import classnames from 'classnames'
+import classNames from 'classnames'
 
 const Header = () => {
     return (
         <div className={styles['container']}>
             {/* モバイル用 */}
-            <header className={classnames(styles['header'], styles['sm'])}>
+            <header className={classNames(styles['header'], styles['sm'])}>
                 <h1>
                     <Image
                         src="/logo/tocoriri_logo_white.png"

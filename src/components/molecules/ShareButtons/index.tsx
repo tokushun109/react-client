@@ -15,12 +15,12 @@ const ShareButtons = () => {
             </div>
             <div className={styles['icon-area']}>
                 <div>
-                    <Icon size={40}>
+                    <Icon size={40} shadow={false}>
                         <TwitterIcon />
                     </Icon>
                 </div>
                 <div>
-                    <Icon size={40}>
+                    <Icon size={40} shadow={false}>
                         <FacebookIcon />
                     </Icon>
                 </div>
