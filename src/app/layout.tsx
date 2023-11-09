@@ -3,6 +3,7 @@ import styles from './layout.module.scss'
 import '@/styles/globals.scss'
 import Icon from '@/components/atoms/Icon'
 import MenuIcon from '@mui/icons-material/Menu'
+import Footer from '@/components/templates/Footer'
 
 export const metadata: Metadata = {
     title: 'Create Next App',
@@ -21,6 +22,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                     </Icon>
                 </div>
                 <main>{children}</main>
+                <footer>
+                    <Footer />
+                </footer>
             </body>
         </html>
     )

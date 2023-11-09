@@ -5,7 +5,7 @@ type Props = {
     children: React.ReactNode
 }
 
-const Button = ({ size, children }: Props) => {
+const Icon = ({ size, children }: Props) => {
     return (
         <div
             className={styles['container']}
@@ -19,4 +19,4 @@ const Button = ({ size, children }: Props) => {
     )
 }
 
-export default Button
+export default Icon
