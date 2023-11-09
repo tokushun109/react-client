@@ -1,5 +1,7 @@
 import type { Metadata } from 'next'
+import styles from './layout.module.scss'
 import '@/styles/globals.scss'
+import Icon from '@/components/atoms/Icon'
 
 export const metadata: Metadata = {
     title: 'Create Next App',
@@ -9,7 +11,15 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
     return (
         <html lang="ja">
-            <body>{children}</body>
+            <body className={styles['container']}>
+                {/* モバイル用 */}
+                {/* <header></header> */}
+                <div className={styles['menu-button']}>
+                    {/* TODO のちほどmenuアイコンに変更 */}
+                    <Icon>三</Icon>
+                </div>
+                <main>{children}</main>
+            </body>
         </html>
     )
 }
