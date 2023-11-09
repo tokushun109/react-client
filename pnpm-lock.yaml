@@ -46,6 +46,9 @@ devDependencies:
   prettier:
     specifier: ^3.0.3
     version: 3.0.3
+  ress:
+    specifier: ^5.0.2
+    version: 5.0.2
   sass:
     specifier: ^1.69.5
     version: 1.69.5
@@ -2420,6 +2423,10 @@ packages:
       is-core-module: 2.13.1
       path-parse: 1.0.7
       supports-preserve-symlinks-flag: 1.0.0
+    dev: true
+
+  /ress@5.0.2:
+    resolution: {integrity: sha512-oHBtOWo/Uc8SzQMbQNIKTcgi8wKmAs7IlNlRywmXudbOtF+c27FlOIq7tnwLDVcTywe6JXYo1pDXHO6kABwNYA==}
     dev: true
 
   /reusify@1.0.4:

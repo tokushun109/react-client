@@ -1,3 +1,4 @@
+import 'ress'
 import type { Metadata } from 'next'
 import styles from './layout.module.scss'
 import '@/styles/globals.scss'
