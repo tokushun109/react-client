@@ -2,9 +2,8 @@ import 'ress'
 import type { Metadata } from 'next'
 import styles from './layout.module.scss'
 import '@/styles/globals.scss'
-import Icon from '@/components/atoms/Icon'
-import MenuIcon from '@mui/icons-material/Menu'
 import Footer from '@/components/templates/Footer'
+import Header from '@/components/templates/Header'
 
 export const metadata: Metadata = {
     title: 'Create Next App',
@@ -15,18 +14,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     return (
         <html lang="ja">
             <body className={styles['container']}>
-                {/* モバイル用 */}
-                <header className={styles['sm']}>テスト</header>
-                {/* デフォルト用 */}
-                <div className={styles['menu-icon']}>
-                    <Icon size={72}>
-                        <MenuIcon fontSize="large" />
-                    </Icon>
-                </div>
+                <Header />
                 <main>{children}</main>
-                <footer>
-                    <Footer />
-                </footer>
+                <Footer />
             </body>
         </html>
     )
