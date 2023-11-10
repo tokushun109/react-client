@@ -1,6 +1,8 @@
 import styles from './page.module.scss'
 import Image from 'next/image'
 import Section from '@/components/templates/Section'
+import Card from '@/components/atoms/Card'
+import { ColorEnum } from '@/types/color'
 
 const index = () => {
     return (
@@ -19,7 +21,9 @@ const index = () => {
                     />
                 </h1>
             </div>
-            <div className={styles['carousel-area']}></div>
+            <div className={styles['carousel-area']}>
+                <Card color={ColorEnum.White}>テスト</Card>
+            </div>
             <Section title="About" buttonLabel="詳しくはこちら">
                 <p>仕事や出産、育児、家事...</p>
                 <p>頑張る女性の味方になりたい、</p>
