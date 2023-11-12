@@ -16,7 +16,6 @@
         }
 
         .label {
-            font-family: $title-font-face;
             font-size: 48px;
 
             @include media(md) {

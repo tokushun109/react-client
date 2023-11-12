@@ -1,6 +1,8 @@
 import Card from '@/components/atoms/Card'
 import styles from './styles.module.scss'
 import { ComponentType } from 'react'
+import classNames from 'classnames'
+import { labelFontFace } from '@/fonts'
 
 type Props = {
     Icon: ComponentType
@@ -15,7 +17,7 @@ const IconCard = ({ Icon, label }: Props) => {
                     <div className={styles['icon']}>
                         <Icon />
                     </div>
-                    <div className={styles['label']}>{label}</div>
+                    <div className={classNames(styles['label'], labelFontFace.className)}>{label}</div>
                 </div>
             </Card>
         </div>
