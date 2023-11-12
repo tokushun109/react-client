@@ -5,12 +5,15 @@ import { ColorEnum } from '@/types/color'
 import Image from 'next/image'
 import IconCard from '@/components/molecules/IconCard'
 import { Email, Diamond, Face } from '@mui/icons-material'
-import FacebookIcon from '@mui/icons-material/Facebook'
 
-const MenuScreen = () => {
+type Props = {
+    onCloseClick: () => void
+}
+
+const MenuScreen = ({ onCloseClick }: Props) => {
     return (
         <div className={styles['container']}>
-            <div className={styles['close-icon']}>
+            <div className={styles['close-icon']} onClick={onCloseClick}>
                 <Icon size={72} color={ColorEnum.Primary} contrast>
                     <Close fontSize="large" />
                 </Icon>

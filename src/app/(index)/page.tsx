@@ -21,9 +21,7 @@ const index = () => {
                     />
                 </h1>
             </div>
-            <div className={styles['carousel-area']}>
-                <IconCard Icon={FacebookIcon} label="About" />
-            </div>
+            <div className={styles['carousel-area']}></div>
             <Section title="About" buttonLabel="詳しくはこちら">
                 <p>仕事や出産、育児、家事...</p>
                 <p>頑張る女性の味方になりたい、</p>
