@@ -11,6 +11,10 @@
         &.contrast {
             color: $white-text-color;
         }
+
+        @include media(sm) {
+            font-size: 40px;
+        }
     }
 
     .sentence {
