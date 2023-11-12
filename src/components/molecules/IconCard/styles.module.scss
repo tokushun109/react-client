@@ -10,7 +10,7 @@
                 font-size: 260px; // iconのサイズ
 
                 @include media(md) {
-                    font-size: 5em
+                    font-size: 5em;
                 }
             }
         }
@@ -23,5 +23,4 @@
             }
         }
     }
-
 }

@@ -1,4 +1,4 @@
-import { Sawarabi_Mincho, Lobster } from "next/font/google";
+import { Sawarabi_Mincho, Lobster } from 'next/font/google'
 
 export const mainFontFace = Sawarabi_Mincho({
     weight: ['400'],
