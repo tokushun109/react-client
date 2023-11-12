@@ -5,15 +5,13 @@ import classNames from 'classnames'
 
 const Footer = () => {
     return (
-        <>
-            <footer className={styles['container']}>
-                <ShareButtons />
-                <span>©︎ 2023 とこりり</span>
-                <div className={classNames(styles['mobile-menu'], styles['sm'])}>
-                    <MobileMenu />
-                </div>
-            </footer>
-        </>
+        <footer className={styles['container']}>
+            <ShareButtons />
+            <span>©︎ 2023 とこりり</span>
+            <div className={classNames(styles['mobile-menu'], styles['sm'])}>
+                <MobileMenu />
+            </div>
+        </footer>
     )
 }
 
