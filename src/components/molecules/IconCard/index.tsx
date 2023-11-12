@@ -13,7 +13,7 @@ const IconCard = ({ Icon, label }: Props) => {
             <Card>
                 <div className={styles['content']}>
                     <div className={styles['icon']}>
-                        <Icon style={{ fontSize: '180px' }} />
+                        <Icon style={{ fontSize: '160px' }} />
                     </div>
                     <div className={styles['label']}>{label}</div>
                 </div>
