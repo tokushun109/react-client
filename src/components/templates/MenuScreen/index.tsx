@@ -4,7 +4,7 @@ import { ColorEnum } from '@/types/color'
 import Image from 'next/image'
 import IconCard from '@/components/molecules/IconCard'
 import { Close } from '@mui/icons-material'
-import { MenuList } from '@/types/menu'
+import { MenuEnum, MenuList } from '@/types/menu'
 
 type Props = {
     onCloseClick: () => void
@@ -34,9 +34,9 @@ const MenuScreen = ({ onCloseClick }: Props) => {
             </div>
             <div className={styles['icon-card-area']}>
                 <div className={styles['icon-card-area-wrapper']}>
-                    {MenuList.map((menu) => (
-                        <div className={styles['icon-card']} key={menu.label}>
-                            <IconCard Icon={menu.icon} label={menu.label} />
+                    {Object.values(MenuEnum).map((menu) => (
+                        <div className={styles['icon-card']} key={MenuList[menu].label}>
+                            <IconCard Icon={MenuList[menu].icon} label={MenuList[menu].label} />
                         </div>
                     ))}
                 </div>
