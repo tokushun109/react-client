@@ -26,7 +26,7 @@
 
     .icon-card-area {
         align-items: center;
-        max-width: 1902px;
+        max-width: $xl;
         text-align: center;
         margin: 0 auto;
         padding: 24px;
@@ -37,7 +37,7 @@
             width: 100%;
 
             .icon-card {
-                width: calc(100% / 3);
+                width: calc(100% / 3 - 16px);
             }
         }
     }
