@@ -5,7 +5,7 @@ import '@/styles/globals.scss'
 import Footer from '@/components/templates/Footer'
 import Header from '@/components/templates/Header'
 import classNames from 'classnames'
-import { mainFontFace } from '@/fonts'
+import { mainFontFace } from '@/utils/font'
 
 export const metadata: Metadata = {
     title: 'Create Next App',

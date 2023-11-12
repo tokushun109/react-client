@@ -1,8 +1,11 @@
 import styles from './page.module.scss'
 import Image from 'next/image'
 import Section from '@/components/templates/Section'
+import { useHome } from '@/hooks/home'
 
-const index = () => {
+const Home = () => {
+    const { test } = useHome()
+
     return (
         <div className={styles['container']}>
             <div className={styles['logo-area']}>
@@ -37,4 +40,4 @@ const index = () => {
     )
 }
 
-export default index
+export default Home

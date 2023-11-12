@@ -2,7 +2,7 @@ import Card from '@/components/atoms/Card'
 import styles from './styles.module.scss'
 import { ComponentType } from 'react'
 import classNames from 'classnames'
-import { labelFontFace } from '@/fonts'
+import { labelFontFace } from '@/utils/font'
 
 type Props = {
     Icon: ComponentType
