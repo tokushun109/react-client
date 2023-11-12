@@ -25,4 +25,10 @@
         top: 32px;
         right: 32px;
     }
+
+    .menu-screen {
+        @include media(sm) {
+            display: none;
+        }
+    }
 }

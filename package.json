@@ -7,7 +7,8 @@
         "dev:3001": "next dev -p 3001 ",
         "build": "next build",
         "start": "next start",
-        "lint": "next lint"
+        "lint": "next lint",
+        "fmt": "prettier --write ."
     },
     "dependencies": {
         "@emotion/react": "^11.11.1",
@@ -15,7 +16,7 @@
         "@mui/icons-material": "^5.14.16",
         "@mui/material": "^5.14.17",
         "classnames": "^2.3.2",
-        "next": "14.0.1",
+        "next": "14.0.2",
         "react": "^18",
         "react-dom": "^18"
     },
@@ -24,7 +25,7 @@
         "@types/react": "^18",
         "@types/react-dom": "^18",
         "eslint": "^8",
-        "eslint-config-next": "14.0.1",
+        "eslint-config-next": "14.0.2",
         "prettier": "^3.0.3",
         "ress": "^5.0.2",
         "sass": "^1.69.5",

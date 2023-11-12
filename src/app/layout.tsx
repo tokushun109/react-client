@@ -4,6 +4,8 @@ import styles from './layout.module.scss'
 import '@/styles/globals.scss'
 import Footer from '@/components/templates/Footer'
 import Header from '@/components/templates/Header'
+import classNames from 'classnames'
+import { mainFontFace } from '@/fonts'
 
 export const metadata: Metadata = {
     title: 'Create Next App',
@@ -13,7 +15,7 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
     return (
         <html lang="ja">
-            <body className={styles['container']}>
+            <body className={classNames(styles['container'], mainFontFace.className)}>
                 <Header />
                 <main>{children}</main>
                 <Footer />
