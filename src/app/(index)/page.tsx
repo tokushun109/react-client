@@ -1,8 +1,8 @@
 import styles from './page.module.scss'
 import Image from 'next/image'
 import Section from '@/components/templates/Section'
-import Card from '@/components/atoms/Card'
-import { ColorEnum } from '@/types/color'
+import IconCard from '@/components/molecules/IconCard'
+import FacebookIcon from '@mui/icons-material/Facebook'
 
 const index = () => {
     return (
@@ -22,7 +22,7 @@ const index = () => {
                 </h1>
             </div>
             <div className={styles['carousel-area']}>
-                <Card color={ColorEnum.White}>テスト</Card>
+                <IconCard Icon={FacebookIcon} label="About" />
             </div>
             <Section title="About" buttonLabel="詳しくはこちら">
                 <p>仕事や出産、育児、家事...</p>
