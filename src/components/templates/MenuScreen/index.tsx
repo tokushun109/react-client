@@ -3,7 +3,8 @@ import styles from './styles.module.scss'
 import { ColorEnum } from '@/types/color'
 import Image from 'next/image'
 import IconCard from '@/components/molecules/IconCard'
-import { Close, Email, Diamond, Face } from '@mui/icons-material'
+import { Close } from '@mui/icons-material'
+import { MenuEnum, MenuList } from '@/types/menu'
 
 type Props = {
     onCloseClick: () => void
@@ -33,15 +34,11 @@ const MenuScreen = ({ onCloseClick }: Props) => {
             </div>
             <div className={styles['icon-card-area']}>
                 <div className={styles['icon-card-area-wrapper']}>
-                    <div className={styles['icon-card']}>
-                        <IconCard Icon={Face} label="About" />
-                    </div>
-                    <div className={styles['icon-card']}>
-                        <IconCard Icon={Diamond} label="Product" />
-                    </div>
-                    <div className={styles['icon-card']}>
-                        <IconCard Icon={Email} label="Contact" />
-                    </div>
+                    {Object.values(MenuEnum).map((menu) => (
+                        <div className={styles['icon-card']} key={MenuList[menu].label}>
+                            <IconCard Icon={MenuList[menu].icon} label={MenuList[menu].label} />
+                        </div>
+                    ))}
                 </div>
             </div>
         </div>
