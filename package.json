@@ -10,6 +10,11 @@
         "lint": "next lint",
         "fmt": "prettier --write ."
     },
+    "husky": {
+        "hooks": {
+            "pre-commit": "pnpm fmt"
+        }
+    },
     "dependencies": {
         "@emotion/react": "^11.11.1",
         "@emotion/styled": "^11.11.0",
@@ -26,6 +31,7 @@
         "@types/react-dom": "^18",
         "eslint": "^8",
         "eslint-config-next": "14.0.2",
+        "husky": "^8.0.3",
         "prettier": "^3.0.3",
         "ress": "^5.0.2",
         "sass": "^1.69.5",
