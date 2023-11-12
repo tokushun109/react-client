@@ -2,11 +2,11 @@
 
 import styles from './styles.module.scss'
 import Icon from '@/components/atoms/Icon'
-import MenuIcon from '@mui/icons-material/Menu'
 import Image from 'next/image'
 import classNames from 'classnames'
-import { ColorEnum } from '@/types/color'
 import MenuScreen from '../MenuScreen'
+import { Menu } from '@mui/icons-material'
+import { ColorEnum } from '@/types/color'
 import { useState } from 'react'
 
 const Header = () => {
@@ -37,7 +37,7 @@ const Header = () => {
                 }}
             >
                 <Icon size={72} color={ColorEnum.Primary}>
-                    <MenuIcon fontSize="large" />
+                    <Menu fontSize="large" />
                 </Icon>
             </div>
             {isVisibleMenu && (

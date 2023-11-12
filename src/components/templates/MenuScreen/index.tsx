@@ -1,10 +1,9 @@
-import Close from '@mui/icons-material/Close'
 import Icon from '@/components/atoms/Icon'
 import styles from './styles.module.scss'
 import { ColorEnum } from '@/types/color'
 import Image from 'next/image'
 import IconCard from '@/components/molecules/IconCard'
-import { Email, Diamond, Face } from '@mui/icons-material'
+import { Close, Email, Diamond, Face } from '@mui/icons-material'
 
 type Props = {
     onCloseClick: () => void

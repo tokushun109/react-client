@@ -1,8 +1,6 @@
 import styles from './page.module.scss'
 import Image from 'next/image'
 import Section from '@/components/templates/Section'
-import IconCard from '@/components/molecules/IconCard'
-import FacebookIcon from '@mui/icons-material/Facebook'
 
 const index = () => {
     return (
