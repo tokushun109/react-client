@@ -1,4 +1,4 @@
-import { Email, Diamond, Face } from '@mui/icons-material'
+import { Email, Diamond, Face3 } from '@mui/icons-material'
 import { ComponentType } from 'react'
 
 type MenuType = {
@@ -9,7 +9,7 @@ type MenuType = {
 
 export const MenuList: MenuType[] = [
     {
-        icon: Face,
+        icon: Face3,
         label: 'About',
         link: '/about',
     },
