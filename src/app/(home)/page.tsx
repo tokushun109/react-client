@@ -1,11 +1,8 @@
 import styles from './page.module.scss'
 import Image from 'next/image'
 import Section from '@/components/templates/Section'
-import { useHome } from '@/hooks/home'
 
-const Home = () => {
-    const { test } = useHome()
-
+const Home = async () => {
     return (
         <div className={styles['container']}>
             <div className={styles['logo-area']}>
