@@ -1,6 +1,8 @@
 import classNames from 'classnames'
+
+import { ColorCodeEnum, ColorEnum, ColorType } from '@/types'
+
 import styles from './styles.module.scss'
-import { ColorCodeEnum, ColorEnum, ColorType } from '@/types/color'
 
 type Props = {
     color?: ColorType

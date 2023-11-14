@@ -1,10 +1,11 @@
-import Icon from '@/components/atoms/Icon'
-import styles from './styles.module.scss'
-import { ColorEnum } from '@/types/color'
-import Image from 'next/image'
-import IconCard from '@/components/molecules/IconCard'
 import { Close } from '@mui/icons-material'
-import { MenuEnum, MenuList } from '@/types/menu'
+import Image from 'next/image'
+
+import Icon from '@/components/atoms/Icon'
+import IconCard from '@/components/molecules/IconCard'
+import { MenuEnum, MenuList, ColorEnum } from '@/types'
+
+import styles from './styles.module.scss'
 
 type Props = {
     onCloseClick: () => void

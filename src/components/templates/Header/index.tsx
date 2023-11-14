@@ -1,13 +1,15 @@
 'use client'
 
-import styles from './styles.module.scss'
-import Icon from '@/components/atoms/Icon'
-import Image from 'next/image'
-import classNames from 'classnames'
-import MenuScreen from '../MenuScreen'
 import { Menu } from '@mui/icons-material'
-import { ColorEnum } from '@/types/color'
+import classNames from 'classnames'
+import Image from 'next/image'
 import { useState } from 'react'
+
+import Icon from '@/components/atoms/Icon'
+import { ColorEnum } from '@/types'
+
+import styles from './styles.module.scss'
+import MenuScreen from '../MenuScreen'
 
 const Header = () => {
     const [isVisibleMenu, setIsVisibleMenu] = useState<boolean>(false)

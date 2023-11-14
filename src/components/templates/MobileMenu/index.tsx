@@ -1,7 +1,9 @@
-import { MenuEnum, MenuList } from '@/types/menu'
-import styles from './styles.module.scss'
 import classNames from 'classnames'
-import { labelFontFace } from '@/fonts'
+
+import { MenuEnum, MenuList } from '@/types'
+import { labelFontFace } from '@/utils/font'
+
+import styles from './styles.module.scss'
 
 const MobileMenu = () => {
     return (

@@ -1,7 +1,9 @@
+import classNames from 'classnames'
+
 import ShareButtons from '@/components/molecules/ShareButtons'
+
 import styles from './styles.module.scss'
 import MobileMenu from '../MobileMenu'
-import classNames from 'classnames'
 
 const Footer = () => {
     return (

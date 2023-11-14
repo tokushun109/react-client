@@ -1,8 +1,13 @@
-import styles from './page.module.scss'
 import Image from 'next/image'
+
 import Section from '@/components/templates/Section'
 
-const index = () => {
+import styles from './page.module.scss'
+
+const Home = async () => {
+    // apiの取得例
+    // const { carouselImages } = await useHome()
+
     return (
         <div className={styles['container']}>
             <div className={styles['logo-area']}>
@@ -37,4 +42,4 @@ const index = () => {
     )
 }
 
-export default index
+export default Home

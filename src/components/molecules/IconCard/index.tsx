@@ -1,8 +1,10 @@
-import Card from '@/components/atoms/Card'
-import styles from './styles.module.scss'
-import { ComponentType } from 'react'
 import classNames from 'classnames'
-import { labelFontFace } from '@/fonts'
+import { ComponentType } from 'react'
+
+import Card from '@/components/atoms/Card'
+import { labelFontFace } from '@/utils/font'
+
+import styles from './styles.module.scss'
 
 type Props = {
     Icon: ComponentType
