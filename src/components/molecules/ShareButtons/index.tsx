@@ -2,7 +2,7 @@ import Icon from '@/components/atoms/Icon'
 import styles from './styles.module.scss'
 import ReplyIcon from '@mui/icons-material/Reply'
 import { Twitter, Facebook } from '@mui/icons-material'
-import { ColorEnum } from '@/types/enum/color'
+import { ColorEnum } from '@/types'
 
 const ShareButtons = () => {
     return (

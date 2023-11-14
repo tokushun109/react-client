@@ -6,7 +6,7 @@ import Image from 'next/image'
 import classNames from 'classnames'
 import MenuScreen from '../MenuScreen'
 import { Menu } from '@mui/icons-material'
-import { ColorEnum } from '@/types/enum/color'
+import { ColorEnum } from '@/types'
 import { useState } from 'react'
 
 const Header = () => {
