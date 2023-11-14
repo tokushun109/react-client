@@ -1,12 +1,15 @@
 import 'ress'
-import type { Metadata } from 'next'
-import styles from './layout.module.scss'
+
 import '@/styles/globals.scss'
+import classNames from 'classnames'
+import { Metadata } from 'next'
+
+import { getCreator } from '@/apis/creator'
 import Footer from '@/components/templates/Footer'
 import Header from '@/components/templates/Header'
-import classNames from 'classnames'
 import { mainFontFace } from '@/utils/font'
-import { getCreator } from '@/apis/creator'
+
+import styles from './layout.module.scss'
 
 export async function generateMetadata(): Promise<Metadata> {
     const title = 'アクセサリーショップ とこりり'

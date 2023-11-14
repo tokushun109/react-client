@@ -1,6 +1,7 @@
-import { capitalize } from '@/utils/string'
 import { Email, Diamond, Face3 } from '@mui/icons-material'
 import { ComponentType } from 'react'
+
+import { capitalize } from '@/utils/string'
 
 export const MenuEnum = {
     About: 'about',

@@ -1,7 +1,9 @@
-import Button from '@/components/atoms/Button'
-import styles from './styles.module.scss'
 import classNames from 'classnames'
+
+import Button from '@/components/atoms/Button'
 import { labelFontFace } from '@/utils/font'
+
+import styles from './styles.module.scss'
 
 type Props = {
     title: string

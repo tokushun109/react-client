@@ -1,6 +1,8 @@
-import styles from './page.module.scss'
 import Image from 'next/image'
+
 import Section from '@/components/templates/Section'
+
+import styles from './page.module.scss'
 
 const Home = async () => {
     return (
