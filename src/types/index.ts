@@ -1,3 +1,5 @@
-export * from '@/types/enum/color'
+export * from '@/types/enum'
 export * from '@/types/creator'
-export * from '@/types/enum/menu'
+export * from '@/types/product'
+export * from '@/types/classification'
+export * from '@/types/site'

@@ -4,7 +4,7 @@
     "private": true,
     "scripts": {
         "dev": "next dev",
-        "dev:3001": "next dev -p 3001 ",
+        "dev:3001": "cross-env PORT=3001 next dev -p 3001 ",
         "build": "next build",
         "start": "next start",
         "lint": "next lint",
@@ -25,6 +25,7 @@
         "@types/node": "^20.9.0",
         "@types/react": "^18.2.37",
         "@types/react-dom": "^18.2.15",
+        "cross-env": "^7.0.3",
         "eslint": "^8.53.0",
         "eslint-config-next": "14.0.2",
         "eslint-plugin-import": "^2.29.0",

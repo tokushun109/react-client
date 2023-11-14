@@ -5,6 +5,9 @@ import Section from '@/components/templates/Section'
 import styles from './page.module.scss'
 
 const Home = async () => {
+    // apiの取得例
+    // const { carouselImages } = await useHome()
+
     return (
         <div className={styles['container']}>
             <div className={styles['logo-area']}>

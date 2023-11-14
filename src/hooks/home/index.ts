@@ -1,7 +1,7 @@
-import { getCreator } from '@/apis/creator'
+import { getCarouselImages } from '@/apis/product'
 
 export const useHome = async () => {
-    const creator = await getCreator()
+    const carouselImages = await getCarouselImages()
 
-    return { creator }
+    return { carouselImages }
 }

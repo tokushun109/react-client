@@ -17,6 +17,7 @@ export async function generateMetadata(): Promise<Metadata> {
     const description = creator && creator.introduction ? creator.introduction : ''
     const image = creator && creator.apiPath ? creator.apiPath : ''
     return {
+        metadataBase: new URL(process.env.DOMAIN_URL || ''),
         title,
         description,
         openGraph: {
