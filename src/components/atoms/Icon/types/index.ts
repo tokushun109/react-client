@@ -1,4 +1,4 @@
-import { ColorType } from '@/types/color'
+import { ColorType } from '@/types/enum/color'
 
 export type ColorObject = {
     backGround: ColorType

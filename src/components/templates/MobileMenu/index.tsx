@@ -1,4 +1,4 @@
-import { MenuEnum, MenuList } from '@/types/menu'
+import { MenuEnum, MenuList } from '@/types/enum/menu'
 import styles from './styles.module.scss'
 import classNames from 'classnames'
 import { labelFontFace } from '@/utils/font'
