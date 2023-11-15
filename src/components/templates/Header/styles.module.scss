@@ -20,10 +20,11 @@
             display: none;
         }
 
-        display: inline-block;
         position: fixed;
+        display: inline-block;
         top: 32px;
         right: 32px;
+        z-index: 9998;
     }
 
     .menu-screen {
