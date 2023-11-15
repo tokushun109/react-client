@@ -1,7 +1,7 @@
-import { IProductImage } from '@/types'
+import { ICarouselItem } from '@/types'
 import { ApiError } from '@/utils/error'
 
-export const getCarouselImages = async (): Promise<IProductImage> => {
+export const getCarouselImages = async (): Promise<ICarouselItem[]> => {
     const res = await fetch(`${process.env.API_URL}/carousel_image/`, {
         headers: {
             'Content-Type': 'application/json',

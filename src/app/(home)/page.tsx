@@ -1,12 +1,14 @@
 import Image from 'next/image'
 
+import ProductImage from '@/components/molecules/ProductImage'
 import Section from '@/components/templates/Section'
+import { useHome } from '@/hooks/home'
 
 import styles from './page.module.scss'
 
 const Home = async () => {
     // apiの取得例
-    // const { carouselImages } = await useHome()
+    const { carouselImages } = await useHome()
 
     return (
         <div className={styles['container']}>
@@ -24,7 +26,9 @@ const Home = async () => {
                     />
                 </h1>
             </div>
-            <div className={styles['carousel-area']}></div>
+            <div className={styles['carousel-area']}>
+                <ProductImage item={carouselImages[0]} />
+            </div>
             <Section title="About" buttonLabel="詳しくはこちら">
                 <p>仕事や出産、育児、家事...</p>
                 <p>頑張る女性の味方になりたい、</p>
