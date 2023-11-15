@@ -1,0 +1,24 @@
+$gap: 24px;
+$image-size: 512px;
+
+.container {
+    position: relative;
+    height: calc($image-size + ($gap * 2));
+    background: $accent-light-color;
+    padding: $gap;
+    overflow-x: hidden;
+
+    .wrapper {
+        position: absolute;
+        background: $accent-light-color;
+        display: flex;
+        gap: $gap;
+
+        .product-image {
+            flex-grow: 1;
+            height: $image-size;
+            width: $image-size;
+            box-shadow: $box-shadow;
+        }
+    }
+}

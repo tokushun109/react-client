@@ -10,6 +10,7 @@
     text-align: center;
 
     .logo-area {
+        height: 200px;
         display: inline-block;
         user-select: none;
         margin-top: 24px;
@@ -18,12 +19,6 @@
         @include media(sm) {
             display: none;
         }
-    }
-
-    .carousel-area {
-        // 仮の高さを設定
-        height: 570px;
-        background: $accent-light-color;
     }
 
     .border {

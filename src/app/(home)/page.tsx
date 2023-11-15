@@ -1,6 +1,6 @@
 import Image from 'next/image'
 
-import ProductImage from '@/components/molecules/ProductImage'
+import Carousel from '@/components/templates/Carousel'
 import Section from '@/components/templates/Section'
 import { useHome } from '@/hooks/home'
 
@@ -26,9 +26,7 @@ const Home = async () => {
                     />
                 </h1>
             </div>
-            <div className={styles['carousel-area']}>
-                <ProductImage item={carouselImages[0]} />
-            </div>
+            <Carousel items={carouselImages} />
             <Section title="About" buttonLabel="詳しくはこちら">
                 <p>仕事や出産、育児、家事...</p>
                 <p>頑張る女性の味方になりたい、</p>
