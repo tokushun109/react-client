@@ -29,10 +29,15 @@ $image-length: 10; // 画像の数
         animation: loop-slide 60s infinite linear 1s both;
 
         .product-image {
+            cursor: pointer;
             flex-grow: 1;
             height: $image-size;
             width: $image-size;
-            box-shadow: $box-shadow;
+            transition: $transition;
+
+            &:hover {
+                transform: translateY(-12px);
+            }
         }
     }
 }
