@@ -30,7 +30,7 @@ const Home = async () => {
                 <Carousel items={carouselImages} />
             </div>
             <div className={classNames(styles['slide-show-area'], 'sm')}>
-                <SlideShow />
+                <SlideShow items={carouselImages} />
             </div>
             <Section title="About" buttonLabel="詳しくはこちら">
                 <p>仕事や出産、育児、家事...</p>

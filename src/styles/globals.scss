@@ -21,6 +21,6 @@ li {
 
 .default {
     @include media(sm) {
-        display: none;
+        display: none !important;
     }
 }
