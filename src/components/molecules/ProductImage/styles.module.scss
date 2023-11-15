@@ -2,6 +2,11 @@
     position: relative;
     width: 100%;
     height: 100%;
+    border-radius: 12px;
+
+    &.shadow {
+        box-shadow: $box-shadow;
+    }
 
     .chip {
         position: absolute;

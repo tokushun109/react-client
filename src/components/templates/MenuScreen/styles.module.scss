@@ -40,6 +40,11 @@
 
             .icon-card {
                 width: calc(100% / 3 - 16px);
+                transition: $transition;
+
+                &:hover {
+                    transform: translateY(-16px);
+                }
             }
         }
     }
