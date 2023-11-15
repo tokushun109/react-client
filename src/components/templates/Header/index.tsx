@@ -16,8 +16,7 @@ const Header = () => {
 
     return (
         <div className={styles['container']}>
-            {/* モバイル用 */}
-            <header className={classNames(styles['header'], styles['sm'])}>
+            <header className={classNames(styles['header'], 'sm')}>
                 <h1>
                     <Image
                         src="/logo/tocoriri_logo_white.png"
@@ -31,9 +30,8 @@ const Header = () => {
                     />
                 </h1>
             </header>
-            {/* デフォルト用 */}
             <div
-                className={styles['menu-icon']}
+                className={classNames(styles['menu-icon'], 'default')}
                 onClick={() => {
                     setIsVisibleMenu(true)
                 }}
@@ -43,7 +41,7 @@ const Header = () => {
                 </Icon>
             </div>
             {isVisibleMenu && (
-                <div className={styles['menu-screen']}>
+                <div className={'default'}>
                     <MenuScreen
                         onCloseClick={() => {
                             setIsVisibleMenu(false)

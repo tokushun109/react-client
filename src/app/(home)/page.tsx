@@ -1,6 +1,8 @@
+import classNames from 'classnames'
 import Image from 'next/image'
 
 import { getCarouselImages } from '@/apis/product'
+import SlideShow from '@/components/molecules/SlideShow'
 import Carousel from '@/components/templates/Carousel'
 import Section from '@/components/templates/Section'
 
@@ -24,13 +26,18 @@ const Home = async () => {
                     />
                 </h1>
             </div>
-            <Carousel items={carouselImages} />
+            <div className={classNames(styles['carousel-area'], 'default')}>
+                <Carousel items={carouselImages} />
+            </div>
+            <div className={classNames(styles['slide-show-area'], 'sm')}>
+                <SlideShow />
+            </div>
             <Section title="About" buttonLabel="詳しくはこちら">
                 <p>仕事や出産、育児、家事...</p>
                 <p>頑張る女性の味方になりたい、</p>
                 <p>
                     そんな想いで
-                    <br className={styles['sm']} />
+                    <br className={'sm'} />
                     マクラメ編みのアクセサリーを作っています。
                 </p>
             </Section>
