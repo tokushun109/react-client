@@ -1,9 +1,8 @@
 'use client'
 
-import { useState } from 'react'
-
 import { ICarouselItem } from '@/types'
 
+import { useSlideShow } from './hooks'
 import styles from './styles.module.scss'
 import ProductImage from '../ProductImage'
 
@@ -12,10 +11,9 @@ type Props = {
 }
 
 const SlideShow = ({ items }: Props) => {
-    const [displayIndex, setDisplayIndex] = useState<number>(0)
-
+    const { displayIndex, previousDisplayIndex } = useSlideShow(items)
     return (
-        <div className={styles['container']}>
+        <div className={styles['container']} onClick={previousDisplayIndex}>
             <div className={styles['content']}>
                 <ProductImage item={items[displayIndex]} shadow={false} />
             </div>
