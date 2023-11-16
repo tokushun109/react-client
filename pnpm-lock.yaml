@@ -32,6 +32,9 @@ dependencies:
     react-dom:
         specifier: ^18.2.0
         version: 18.2.0(react@18.2.0)
+    swr:
+        specifier: ^2.2.4
+        version: 2.2.4(react@18.2.0)
 
 devDependencies:
     '@types/node':
@@ -268,7 +271,7 @@ packages:
             debug: 4.3.4
             espree: 9.6.1
             globals: 13.23.0
-            ignore: 5.2.4
+            ignore: 5.3.0
             import-fresh: 3.3.0
             js-yaml: 4.1.0
             minimatch: 3.1.2
@@ -1500,7 +1503,7 @@ packages:
             glob-parent: 6.0.2
             globals: 13.23.0
             graphemer: 1.4.0
-            ignore: 5.2.4
+            ignore: 5.3.0
             imurmurhash: 0.1.4
             is-glob: 4.0.3
             is-path-inside: 3.0.3
@@ -1734,7 +1737,7 @@ packages:
             array-union: 2.1.0
             dir-glob: 3.0.1
             fast-glob: 3.3.2
-            ignore: 5.2.4
+            ignore: 5.3.0
             merge2: 1.4.1
             slash: 3.0.0
         dev: true
@@ -1811,8 +1814,8 @@ packages:
         hasBin: true
         dev: true
 
-    /ignore@5.2.4:
-        resolution: { integrity: sha512-MAb38BcSbH0eHNBxn7ql2NH/kX33OkB3lZ1BNdh7ENeRChHTYsTvWrMubiIAMNS2llXEEgZ1MUOBtXChP3kaFQ== }
+    /ignore@5.3.0:
+        resolution: { integrity: sha512-g7dmpshy+gD7mh88OC9NwSGTKoc3kyLAZQRU1mt53Aw/vnvfXnbC+F/7F7QoYVKbV+KNvJx8wArewKy1vXMtlg== }
         engines: { node: '>= 4' }
         dev: true
 
@@ -2704,6 +2707,16 @@ packages:
         resolution: { integrity: sha512-ot0WnXS9fgdkgIcePe6RHNk1WA8+muPa6cSjeR3V8K27q9BB1rTE3R1p7Hv0z1ZyAc8s6Vvv8DIyWf681MAt0w== }
         engines: { node: '>= 0.4' }
 
+    /swr@2.2.4(react@18.2.0):
+        resolution: { integrity: sha512-njiZ/4RiIhoOlAaLYDqwz5qH/KZXVilRLvomrx83HjzCWTfa+InyfAjv05PSFxnmLzZkNO9ZfvgoqzAaEI4sGQ== }
+        peerDependencies:
+            react: ^16.11.0 || ^17.0.0 || ^18.0.0
+        dependencies:
+            client-only: 0.0.1
+            react: 18.2.0
+            use-sync-external-store: 1.2.0(react@18.2.0)
+        dev: false
+
     /tapable@2.2.1:
         resolution: { integrity: sha512-GNzQvQTOIP6RyTfE2Qxb8ZVlNmw0n88vp1szwWRimP02mnTsx3Wtn5qRdqY9w2XduFNUgvOwhNnQsjwCp+kqaQ== }
         engines: { node: '>=6' }
@@ -2820,6 +2833,14 @@ packages:
         dependencies:
             punycode: 2.3.1
         dev: true
+
+    /use-sync-external-store@1.2.0(react@18.2.0):
+        resolution: { integrity: sha512-eEgnFxGQ1Ife9bzYs6VLi8/4X6CObHMw9Qr9tPY43iKwsPw8xE8+EFsf/2cFZ5S3esXgpWgtSCtLNS41F+sKPA== }
+        peerDependencies:
+            react: ^16.8.0 || ^17.0.0 || ^18.0.0
+        dependencies:
+            react: 18.2.0
+        dev: false
 
     /watchpack@2.4.0:
         resolution: { integrity: sha512-Lcvm7MGST/4fup+ifyKi2hjyIAwcdI4HRgtvTpIUxBRhB+RFtUh8XtDOxUfctVCnhVi+QQj49i91OyvzkJl6cg== }
