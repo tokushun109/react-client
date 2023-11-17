@@ -1,5 +1,7 @@
 'use client'
 
+import classNames from 'classnames'
+
 import { ICarouselItem } from '@/types'
 
 import { useSlideShow } from './hooks'
@@ -11,9 +13,19 @@ type Props = {
 }
 
 const SlideShow = ({ items }: Props) => {
-    const { displayIndex, previousDisplayIndex } = useSlideShow(items)
+    const { displayIndex, swipePosition, setSwipePosition, nextDisplayIndex, swipeHandler } = useSlideShow(items)
     return (
-        <div className={styles['container']} onClick={previousDisplayIndex}>
+        <div
+            className={classNames(styles['container'])}
+            onClick={nextDisplayIndex}
+            onTouchStart={(e) => {
+                setSwipePosition({ ...swipePosition, start: e.touches[0].pageX })
+            }}
+            onTouchMove={(e) => {
+                setSwipePosition({ ...swipePosition, end: e.touches[0].pageX })
+            }}
+            onTouchEnd={swipeHandler}
+        >
             <div className={styles['content']}>
                 <ProductImage item={items[displayIndex]} shadow={false} />
             </div>
