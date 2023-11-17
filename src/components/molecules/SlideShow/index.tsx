@@ -6,28 +6,44 @@ import { ICarouselItem } from '@/types'
 
 import { useSlideShow } from './hooks'
 import styles from './styles.module.scss'
+import { ImageIndexEnum } from './types'
 import ProductImage from '../ProductImage'
 
 type Props = {
     items: ICarouselItem[]
+    size: string
+    innerPadding?: number
 }
 
-const SlideShow = ({ items }: Props) => {
-    const { displayIndex, swipePosition, setSwipePosition, nextDisplayIndex, swipeHandler } = useSlideShow(items)
+const SlideShow = ({ items, size, innerPadding = 16 }: Props) => {
+    const { imageIndex, swipePosition, swipeDirection, setSwipePosition, swipeHandler } = useSlideShow(items)
     return (
         <div
-            className={classNames(styles['container'])}
-            onClick={nextDisplayIndex}
+            className={styles['container']}
+            onClick={() => {
+                swipeHandler(true)
+            }}
             onTouchStart={(e) => {
                 setSwipePosition({ ...swipePosition, start: e.touches[0].pageX })
             }}
             onTouchMove={(e) => {
                 setSwipePosition({ ...swipePosition, end: e.touches[0].pageX })
             }}
-            onTouchEnd={swipeHandler}
+            onTouchEnd={() => {
+                swipeHandler(false)
+            }}
+            style={{ width: `calc(${size})`, height: `calc(${size})` }}
         >
-            <div className={styles['content']}>
-                <ProductImage item={items[displayIndex]} shadow={false} />
+            <div className={styles['wrapper']}>
+                {Object.values(ImageIndexEnum).map((v) => (
+                    <div
+                        key={v}
+                        className={classNames(styles['content'], styles[v], swipeDirection && styles[`${swipeDirection}-swipe`])}
+                        style={{ width: `calc(${size} - ${innerPadding}px)`, height: `calc(${size} - ${innerPadding}px)` }}
+                    >
+                        <ProductImage item={items[imageIndex[v]]} shadow={false} />
+                    </div>
+                ))}
             </div>
         </div>
     )
