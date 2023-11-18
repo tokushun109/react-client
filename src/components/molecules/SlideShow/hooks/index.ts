@@ -38,11 +38,11 @@ export const useSlideShow = (items: ICarouselItem[]) => {
     // 画像をスワイプした時の動作
     const swipeHandler = (isClick: boolean) => {
         if (isClick) {
+            nextDisplayIndex()
             setSwipeDirection('left')
             setTimeout(() => {
                 // 右にスワイプして表示画像をずらす
                 setSwipeDirection(undefined)
-                nextDisplayIndex()
             }, 300)
         }
 
@@ -52,18 +52,18 @@ export const useSlideShow = (items: ICarouselItem[]) => {
             return
         }
         if (swipePosition.end - swipePosition.start > 0) {
+            previousDisplayIndex()
             setSwipeDirection('right')
             setTimeout(() => {
                 // 左にスワイプして表示画像をずらす
                 setSwipeDirection(undefined)
-                previousDisplayIndex()
             }, 300)
         } else if (swipePosition.end - swipePosition.start < 0) {
+            nextDisplayIndex()
             setSwipeDirection('left')
             setTimeout(() => {
                 // 右にスワイプして表示画像をずらす
                 setSwipeDirection(undefined)
-                nextDisplayIndex()
             }, 300)
         }
         setSwipePosition({ start: undefined, end: undefined })

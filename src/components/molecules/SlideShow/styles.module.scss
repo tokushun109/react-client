@@ -19,22 +19,20 @@
             &.previous {
                 transform: translateX(-100vw);
 
-                &.right-swipe {
-                    transform: translateX(0);
-                }
-
                 &.left-swipe {
-                    transform: translateX(-200vw);
+                    animation: left-previous-swipe 0.3s ease-in-out;
                 }
             }
 
             &.display {
+                transform: translateX(0);
+
                 &.right-swipe {
-                    transform: translateX(100vw);
+                    animation: right-display-swipe 0.3s ease-in-out;
                 }
 
                 &.left-swipe {
-                    transform: translateX(-100vw);
+                    animation: left-display-swipe 0.3s ease-in-out;
                 }
             }
 
@@ -42,13 +40,49 @@
                 transform: translateX(100vw);
 
                 &.right-swipe {
-                    left: 200vw;
-                }
-
-                &.left-swipe {
-                    transform: translateX(0);
+                    animation: right-next-swipe 0.3s ease-in-out;
                 }
             }
         }
+    }
+}
+
+@keyframes left-previous-swipe {
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(calc(-1 * (100% + 16px)));
+    }
+}
+
+@keyframes left-display-swipe {
+    from {
+        transform: translateX(calc(100% + 16px));
+    }
+
+    to {
+        transform: translateX(0);
+    }
+}
+
+@keyframes right-display-swipe {
+    from {
+        transform: translateX(calc(-1 * (100% + 16px)));
+    }
+
+    to {
+        transform: translateX(0);
+    }
+}
+
+@keyframes right-next-swipe {
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(calc(100% + 16px));
     }
 }
