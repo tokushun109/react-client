@@ -13,10 +13,11 @@ type Props = {
     items: ICarouselItem[]
     size: string
     innerPadding?: number
+    autoPlay?: boolean
 }
 
-const SlideShow = ({ items, size, innerPadding = 16 }: Props) => {
-    const { imageIndex, swipePosition, swipeDirection, setSwipePosition, clickHandler, swipeHandler } = useSlideShow(items)
+const SlideShow = ({ items, size, innerPadding = 16, autoPlay = true }: Props) => {
+    const { imageIndex, swipePosition, swipeDirection, setSwipePosition, clickHandler, swipeHandler } = useSlideShow(items, autoPlay)
     return (
         <div
             className={styles['container']}

@@ -1,12 +1,12 @@
 import { setTimeout } from 'timers'
 
-import { useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 
 import { ICarouselItem } from '@/types'
 
 import { ImageIndex, SwipeDirection, SwipePosition } from '../types'
 
-export const useSlideShow = (items: ICarouselItem[]) => {
+export const useSlideShow = (items: ICarouselItem[], autoPlay: boolean) => {
     // 商品画像の数
     const maxLength = items.length
 
@@ -38,6 +38,29 @@ export const useSlideShow = (items: ICarouselItem[]) => {
             setSwipeDirection(undefined)
         }, 300)
     }
+
+    const useInterval = (callback: () => void) => {
+        const callbackRef = useRef<() => void>(callback)
+        useEffect(() => {
+            callbackRef.current = callback
+        }, [callback])
+
+        useEffect(() => {
+            if (!autoPlay) return
+            const tick = () => {
+                callbackRef.current()
+            }
+            const id = window.setInterval(tick, 5000)
+            return () => {
+                window.clearInterval(id)
+            }
+            // eslint-disable-next-line react-hooks/exhaustive-deps
+        }, [imageIndex])
+    }
+
+    useInterval(() => {
+        slideImage('left')
+    })
 
     // 画像をクリックした時のハンドラ
     const clickHandler = () => {
