@@ -16,22 +16,18 @@ type Props = {
 }
 
 const SlideShow = ({ items, size, innerPadding = 16 }: Props) => {
-    const { imageIndex, swipePosition, swipeDirection, setSwipePosition, swipeHandler } = useSlideShow(items)
+    const { imageIndex, swipePosition, swipeDirection, setSwipePosition, clickHandler, swipeHandler } = useSlideShow(items)
     return (
         <div
             className={styles['container']}
-            onClick={() => {
-                swipeHandler(true)
-            }}
+            onClick={clickHandler}
             onTouchStart={(e) => {
                 setSwipePosition({ ...swipePosition, start: e.touches[0].pageX })
             }}
             onTouchMove={(e) => {
                 setSwipePosition({ ...swipePosition, end: e.touches[0].pageX })
             }}
-            onTouchEnd={() => {
-                swipeHandler(false)
-            }}
+            onTouchEnd={swipeHandler}
             style={{ width: `calc(${size})`, height: `calc(${size})` }}
         >
             <div className={styles['wrapper']}>

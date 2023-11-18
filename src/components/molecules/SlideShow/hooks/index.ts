@@ -14,57 +14,47 @@ export const useSlideShow = (items: ICarouselItem[]) => {
     const [swipePosition, setSwipePosition] = useState<SwipePosition>({ start: undefined, end: undefined })
     const [swipeDirection, setSwipeDirection] = useState<SwipeDirection | undefined>(undefined)
 
-    // 次の画像を表示する
-    const nextDisplayIndex = () => {
-        setImageIndex({
-            previous: imageIndex.previous !== maxLength - 1 ? imageIndex.previous + 1 : 0,
-            display: imageIndex.display !== maxLength - 1 ? imageIndex.display + 1 : 0,
-            next: imageIndex.next !== maxLength - 1 ? imageIndex.next + 1 : 0,
-        })
-    }
-
-    // 前の画像を表示する
-    const previousDisplayIndex = () => {
-        setImageIndex({
-            previous: imageIndex.previous !== 0 ? imageIndex.previous - 1 : maxLength - 1,
-            display: imageIndex.display !== 0 ? imageIndex.display - 1 : maxLength - 1,
-            next: imageIndex.next !== 0 ? imageIndex.next - 1 : maxLength - 1,
-        })
-    }
-
-    // TODO スライドはできるようになったので、動き方を調整する(domが消える時にアニメーションがあるためにおかしく見える)
-    // おそらくreact-transition-groupを使えばうまくできそう
-
-    // 画像をスワイプした時の動作
-    const swipeHandler = (isClick: boolean) => {
-        if (isClick) {
-            nextDisplayIndex()
-            setSwipeDirection('left')
-            setTimeout(() => {
-                // 右にスワイプして表示画像をずらす
-                setSwipeDirection(undefined)
-            }, 300)
+    // 画像をスライドする
+    const slideImage = (swipeDirection: SwipeDirection) => {
+        switch (swipeDirection) {
+            case 'right':
+                setImageIndex({
+                    previous: imageIndex.previous !== 0 ? imageIndex.previous - 1 : maxLength - 1,
+                    display: imageIndex.display !== 0 ? imageIndex.display - 1 : maxLength - 1,
+                    next: imageIndex.next !== 0 ? imageIndex.next - 1 : maxLength - 1,
+                })
+                break
+            case 'left':
+                setImageIndex({
+                    previous: imageIndex.previous !== maxLength - 1 ? imageIndex.previous + 1 : 0,
+                    display: imageIndex.display !== maxLength - 1 ? imageIndex.display + 1 : 0,
+                    next: imageIndex.next !== maxLength - 1 ? imageIndex.next + 1 : 0,
+                })
+                break
         }
+        setSwipeDirection(swipeDirection)
+        setTimeout(() => {
+            // アニメーション終了後にスワイプ方向のリセットする
+            setSwipeDirection(undefined)
+        }, 300)
+    }
 
+    // 画像をクリックした時のハンドラ
+    const clickHandler = () => {
+        slideImage('left')
+    }
+
+    // 画像をスワイプした時のハンドラ
+    const swipeHandler = () => {
         // start、endに値がない(イベントが発火していない)ときは処理をスルー
         if (!swipePosition.start || !swipePosition.end) {
             setSwipePosition({ start: undefined, end: undefined })
             return
         }
         if (swipePosition.end - swipePosition.start > 0) {
-            previousDisplayIndex()
-            setSwipeDirection('right')
-            setTimeout(() => {
-                // 左にスワイプして表示画像をずらす
-                setSwipeDirection(undefined)
-            }, 300)
+            slideImage('right')
         } else if (swipePosition.end - swipePosition.start < 0) {
-            nextDisplayIndex()
-            setSwipeDirection('left')
-            setTimeout(() => {
-                // 右にスワイプして表示画像をずらす
-                setSwipeDirection(undefined)
-            }, 300)
+            slideImage('left')
         }
         setSwipePosition({ start: undefined, end: undefined })
     }
@@ -74,8 +64,7 @@ export const useSlideShow = (items: ICarouselItem[]) => {
         swipePosition,
         swipeDirection,
         setSwipePosition,
-        nextDisplayIndex,
-        previousDisplayIndex,
+        clickHandler,
         swipeHandler,
     }
 }
