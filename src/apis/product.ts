@@ -11,5 +11,17 @@ export const getCarouselImages = async (): Promise<ICarouselItem[]> => {
 
     if (!res.ok) throw new ApiError(res)
 
-    return await res.json()
+    const result: ICarouselItem[] = await res.json()
+
+    await Promise.all(
+        result.map(async (v) => {
+            const imageRes = await fetch(v.apiPath)
+            // 画像が存在しないときはグレイイメージで返す
+            if (!imageRes.ok) {
+                v.apiPath = '/image/gray-image.png'
+            }
+        }),
+    )
+
+    return result
 }

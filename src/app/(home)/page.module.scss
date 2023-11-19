@@ -1,11 +1,3 @@
-.sm {
-    display: none;
-
-    @include media(sm) {
-        display: block;
-    }
-}
-
 .container {
     text-align: center;
 
@@ -16,13 +8,45 @@
         margin-top: 24px;
         cursor: pointer;
 
-        @include media(sm) {
+        &.default {
+            @include media(sm) {
+                display: none;
+            }
+        }
+    }
+
+    .carousel-area {
+        &.default {
+            @include media(sm) {
+                display: none;
+            }
+        }
+    }
+
+    .slide-show-area {
+        &.sm {
             display: none;
+
+            @include media(sm) {
+                display: flex;
+                margin-top: 16px;
+                justify-content: center;
+            }
         }
     }
 
     .border {
         height: 1px;
         width: 100%;
+    }
+}
+
+br {
+    .sm {
+        display: none;
+
+        @include media(sm) {
+            display: block;
+        }
     }
 }

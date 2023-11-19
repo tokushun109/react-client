@@ -16,7 +16,6 @@ const Header = () => {
 
     return (
         <div className={styles['container']}>
-            {/* モバイル用 */}
             <header className={classNames(styles['header'], styles['sm'])}>
                 <h1>
                     <Image
@@ -31,9 +30,8 @@ const Header = () => {
                     />
                 </h1>
             </header>
-            {/* デフォルト用 */}
             <div
-                className={styles['menu-icon']}
+                className={classNames(styles['menu-icon'], styles['default'])}
                 onClick={() => {
                     setIsVisibleMenu(true)
                 }}
@@ -43,7 +41,7 @@ const Header = () => {
                 </Icon>
             </div>
             {isVisibleMenu && (
-                <div className={styles['menu-screen']}>
+                <div className={classNames(styles['menu-screen'], styles['default'])}>
                     <MenuScreen
                         onCloseClick={() => {
                             setIsVisibleMenu(false)

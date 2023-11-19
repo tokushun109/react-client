@@ -1,6 +1,8 @@
+import classNames from 'classnames'
 import Image from 'next/image'
 
 import { getCarouselImages } from '@/apis/product'
+import SlideShow from '@/components/molecules/SlideShow'
 import Carousel from '@/components/templates/Carousel'
 import Section from '@/components/templates/Section'
 
@@ -10,7 +12,7 @@ const Home = async () => {
     const carouselImages = await getCarouselImages()
     return (
         <div className={styles['container']}>
-            <div className={styles['logo-area']}>
+            <div className={classNames(styles['logo-area'], styles['default'])}>
                 <h1>
                     <Image
                         src="/logo/tocoriri_logo.png"
@@ -24,7 +26,12 @@ const Home = async () => {
                     />
                 </h1>
             </div>
-            <Carousel items={carouselImages} />
+            <div className={classNames(styles['carousel-area'], styles['default'])}>
+                <Carousel items={carouselImages} />
+            </div>
+            <div className={classNames(styles['slide-show-area'], styles['sm'])}>
+                <SlideShow items={carouselImages} size="90vw" />
+            </div>
             <Section title="About" buttonLabel="詳しくはこちら">
                 <p>仕事や出産、育児、家事...</p>
                 <p>頑張る女性の味方になりたい、</p>
