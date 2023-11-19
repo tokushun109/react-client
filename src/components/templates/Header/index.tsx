@@ -16,7 +16,7 @@ const Header = () => {
 
     return (
         <div className={styles['container']}>
-            <header className={classNames(styles['header'], 'sm')}>
+            <header className={classNames(styles['header'], styles['sm'])}>
                 <h1>
                     <Image
                         src="/logo/tocoriri_logo_white.png"
@@ -31,7 +31,7 @@ const Header = () => {
                 </h1>
             </header>
             <div
-                className={classNames(styles['menu-icon'], 'default')}
+                className={classNames(styles['menu-icon'], styles['default'])}
                 onClick={() => {
                     setIsVisibleMenu(true)
                 }}
@@ -41,7 +41,7 @@ const Header = () => {
                 </Icon>
             </div>
             {isVisibleMenu && (
-                <div className={'default'}>
+                <div className={classNames(styles['menu-screen'], styles['default'])}>
                     <MenuScreen
                         onCloseClick={() => {
                             setIsVisibleMenu(false)

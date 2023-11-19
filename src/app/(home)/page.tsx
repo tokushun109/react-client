@@ -12,7 +12,7 @@ const Home = async () => {
     const carouselImages = await getCarouselImages()
     return (
         <div className={styles['container']}>
-            <div className={styles['logo-area']}>
+            <div className={classNames(styles['logo-area'], styles['default'])}>
                 <h1>
                     <Image
                         src="/logo/tocoriri_logo.png"
@@ -26,10 +26,10 @@ const Home = async () => {
                     />
                 </h1>
             </div>
-            <div className={classNames(styles['carousel-area'], 'default')}>
+            <div className={classNames(styles['carousel-area'], styles['default'])}>
                 <Carousel items={carouselImages} />
             </div>
-            <div className={classNames(styles['slide-show-area'], 'sm')}>
+            <div className={classNames(styles['slide-show-area'], styles['sm'])}>
                 <SlideShow items={carouselImages} size="90vw" />
             </div>
             <Section title="About" buttonLabel="詳しくはこちら">
@@ -37,7 +37,7 @@ const Home = async () => {
                 <p>頑張る女性の味方になりたい、</p>
                 <p>
                     そんな想いで
-                    <br className={'sm'} />
+                    <br className={styles['sm']} />
                     マクラメ編みのアクセサリーを作っています。
                 </p>
             </Section>

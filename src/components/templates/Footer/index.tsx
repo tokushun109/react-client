@@ -10,7 +10,7 @@ const Footer = () => {
         <footer className={styles['container']}>
             <ShareButtons />
             <span>©︎ 2023 とこりり</span>
-            <div className={classNames(styles['mobile-menu'], 'sm')}>
+            <div className={classNames(styles['mobile-menu'], styles['sm'])}>
                 <MobileMenu />
             </div>
         </footer>
