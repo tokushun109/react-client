@@ -42,7 +42,7 @@
 }
 
 br {
-    .sm {
+    &.sm {
         display: none;
 
         @include media(sm) {
