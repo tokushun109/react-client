@@ -2,6 +2,7 @@ import classNames from 'classnames'
 import Image from 'next/image'
 
 import { getCarouselImages } from '@/apis/product'
+import Indicator from '@/components/atoms/Indicator'
 import SlideShow from '@/components/molecules/SlideShow'
 import Carousel from '@/components/templates/Carousel'
 import Section from '@/components/templates/Section'
@@ -45,6 +46,11 @@ const Home = async () => {
                 <p>お問い合わせ・ご意見・ご相談はこちらから</p>
             </Section>
             <div className={styles['border']} />
+            <span className={styles['indicator']}>
+                <Indicator>
+                    Scroll<span className={styles['arrow']}>→</span>
+                </Indicator>
+            </span>
         </div>
     )
 }

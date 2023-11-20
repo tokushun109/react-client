@@ -1,7 +1,7 @@
 import classNames from 'classnames'
 
 import Button from '@/components/atoms/Button'
-import SlideTransition from '@/components/atoms/SlideTransition'
+import Transition from '@/components/atoms/Transition'
 import { labelFontFace } from '@/utils/font'
 
 import styles from './styles.module.scss'
@@ -16,17 +16,17 @@ type Props = {
 const Section = ({ title, buttonLabel, contrast = false, children }: Props) => {
     return (
         <div className={classNames(styles['container'], contrast && styles['contrast'])}>
-            <SlideTransition>
+            <Transition>
                 <div className={classNames(styles['title'], labelFontFace.className)}>{title}</div>
-            </SlideTransition>
-            <SlideTransition>
+            </Transition>
+            <Transition>
                 <div className={styles['sentence']}>{children}</div>
-            </SlideTransition>
-            <SlideTransition>
+            </Transition>
+            <Transition>
                 <div className={styles['button']}>
                     <Button>{buttonLabel}</Button>
                 </div>
-            </SlideTransition>
+            </Transition>
         </div>
     )
 }

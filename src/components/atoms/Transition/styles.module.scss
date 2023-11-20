@@ -1,0 +1,17 @@
+.container {
+    transition: all 0.8s;
+
+    &.invisible {
+        &.slide {
+            opacity: 0;
+            transform: translateY(-32px);
+        }
+    }
+
+    &.visible {
+        &.slide {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+}
