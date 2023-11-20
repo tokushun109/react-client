@@ -46,6 +46,10 @@
         top: 92vh;
         right: 8px;
         color: $primary;
+
+        @include media(sm) {
+            top: 60vh;
+        }
     }
 
     br {
