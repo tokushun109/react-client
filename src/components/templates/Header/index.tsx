@@ -2,12 +2,14 @@
 
 import { Menu } from '@mui/icons-material'
 import classNames from 'classnames'
+import { AnimatePresence, motion } from 'framer-motion'
 import Image from 'next/image'
 import { useState } from 'react'
 
 import Icon from '@/components/atoms/Icon'
 import { ColorEnum } from '@/types'
 
+import { SlideAnimation } from './animations'
 import styles from './styles.module.scss'
 import MenuScreen from '../MenuScreen'
 
@@ -30,25 +32,29 @@ const Header = () => {
                     />
                 </h1>
             </header>
-            <div
-                className={classNames(styles['menu-icon'], styles['default'])}
-                onClick={() => {
-                    setIsVisibleMenu(true)
-                }}
-            >
-                <Icon size={72} color={ColorEnum.Primary}>
-                    <Menu fontSize="large" />
-                </Icon>
-            </div>
-            {isVisibleMenu && (
-                <div className={classNames(styles['menu-screen'], styles['default'])}>
-                    <MenuScreen
-                        onCloseClick={() => {
-                            setIsVisibleMenu(false)
-                        }}
-                    />
+            {!isVisibleMenu && (
+                <div
+                    className={classNames(styles['menu-icon'], styles['default'])}
+                    onClick={() => {
+                        setIsVisibleMenu(true)
+                    }}
+                >
+                    <Icon size={72} color={ColorEnum.Primary}>
+                        <Menu fontSize="large" />
+                    </Icon>
                 </div>
             )}
+            <AnimatePresence>
+                {isVisibleMenu && (
+                    <motion.div className={classNames(styles['menu-screen'], styles['default'])} {...SlideAnimation}>
+                        <MenuScreen
+                            onCloseClick={() => {
+                                setIsVisibleMenu(false)
+                            }}
+                        />
+                    </motion.div>
+                )}
+            </AnimatePresence>
         </div>
     )
 }
