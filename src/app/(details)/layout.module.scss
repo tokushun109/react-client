@@ -11,6 +11,12 @@
             font-size: 70px;
             font-weight: 700;
             color: $primary;
+
+            &.default {
+                @include media(sm) {
+                    display: none;
+                }
+            }
         }
     }
 }

@@ -17,7 +17,7 @@ export default function DetailsLayout({ children }: { children: React.ReactNode 
         <body className={styles['container']}>
             <Header />
             <main className={styles['main']}>
-                <div className={classNames(styles['title'], labelFontFace.className)}>{NavigationTitleEnum[pathname]}</div>
+                <div className={classNames(styles['title'], styles['default'], labelFontFace.className)}>{NavigationTitleEnum[pathname]}</div>
                 {children}
             </main>
             <Footer />
