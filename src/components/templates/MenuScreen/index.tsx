@@ -2,11 +2,12 @@
 
 import { Close } from '@mui/icons-material'
 import Image from 'next/image'
-import { useRouter } from 'next/navigation'
+import { usePathname, useRouter } from 'next/navigation'
 
 import Icon from '@/components/atoms/Icon'
 import IconCard from '@/components/molecules/IconCard'
 import { MenuEnum, MenuList, ColorEnum } from '@/types'
+import { NavigationType } from '@/types/enum/navigation'
 
 import styles from './styles.module.scss'
 
@@ -16,6 +17,7 @@ type Props = {
 
 const MenuScreen = ({ onCloseClick }: Props) => {
     const router = useRouter()
+    const pathname = usePathname() as NavigationType
 
     return (
         <div className={styles['container']}>
@@ -53,7 +55,7 @@ const MenuScreen = ({ onCloseClick }: Props) => {
                                 router.push(MenuList[menu].link)
                             }}
                         >
-                            <IconCard Icon={MenuList[menu].icon} label={MenuList[menu].label} />
+                            <IconCard Icon={MenuList[menu].icon} label={MenuList[menu].label} isSelected={pathname === MenuList[menu].link} />
                         </div>
                     ))}
                 </div>

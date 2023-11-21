@@ -2,6 +2,10 @@
     position: relative;
     color: $primary;
 
+    &.selected {
+        color: $accent;
+    }
+
     .content {
         padding: 32px;
 
