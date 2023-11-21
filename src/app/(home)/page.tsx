@@ -1,6 +1,8 @@
 import classNames from 'classnames'
+import { Metadata } from 'next'
 import Image from 'next/image'
 
+import { getCreator } from '@/apis/creator'
 import { getCarouselImages } from '@/apis/product'
 import Indicator from '@/components/atoms/Indicator'
 import SlideShow from '@/components/molecules/SlideShow'
@@ -8,6 +10,29 @@ import Carousel from '@/components/templates/Carousel'
 import Section from '@/components/templates/Section'
 
 import styles from './page.module.scss'
+
+export async function generateMetadata(): Promise<Metadata> {
+    const title = 'アクセサリーショップ とこりり'
+    const creator = await getCreator()
+    const description = creator && creator.introduction ? creator.introduction : ''
+    const image = creator && creator.apiPath ? creator.apiPath : ''
+    return {
+        metadataBase: new URL(process.env.DOMAIN_URL || ''),
+        title,
+        description,
+        openGraph: {
+            title,
+            description,
+            type: 'website',
+            images: [image],
+        },
+        twitter: {
+            title,
+            description,
+            images: [image],
+        },
+    }
+}
 
 const Home = async () => {
     const carouselImages = await getCarouselImages()
