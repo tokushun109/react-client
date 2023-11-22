@@ -1,2 +1,20 @@
-.cotnainer {
+.container {
+    .content {
+        display: flex;
+
+        @include media(md) {
+            display: block;
+        }
+
+        .content-part {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 50%;
+
+            @include media(md) {
+                width: 100%;
+            }
+        }
+    }
 }
