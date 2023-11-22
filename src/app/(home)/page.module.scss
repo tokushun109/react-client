@@ -7,7 +7,6 @@
         display: inline-block;
         user-select: none;
         margin-top: 24px;
-        cursor: pointer;
 
         &.default {
             @include media(sm) {

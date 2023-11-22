@@ -9,11 +9,12 @@ import styles from './styles.module.scss'
 type Props = {
     Icon: ComponentType
     label: string
+    isSelected?: boolean
 }
 
-const IconCard = ({ Icon, label }: Props) => {
+const IconCard = ({ Icon, label, isSelected = false }: Props) => {
     return (
-        <div className={styles['container']}>
+        <div className={classNames(styles['container'], isSelected && styles['selected'])}>
             <Card>
                 <div className={styles['content']}>
                     <div className={styles['icon']}>

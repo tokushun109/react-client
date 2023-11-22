@@ -1,0 +1,22 @@
+.container {
+    .main {
+        margin: 0 auto;
+        max-width: $lg;
+
+        .title {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 160px;
+            font-size: 70px;
+            font-weight: 700;
+            color: $primary;
+
+            &.default {
+                @include media(sm) {
+                    display: none;
+                }
+            }
+        }
+    }
+}

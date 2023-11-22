@@ -13,6 +13,10 @@
             opacity: 0.8;
         }
 
+        &.active {
+            color: $accent;
+        }
+
         .icon {
             height: 28px;
         }

@@ -10,6 +10,10 @@
         &.sm {
             @include media(sm) {
                 display: block;
+
+                .logo-area {
+                    cursor: pointer;
+                }
             }
         }
     }

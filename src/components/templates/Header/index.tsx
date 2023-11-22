@@ -4,6 +4,7 @@ import { Menu } from '@mui/icons-material'
 import classNames from 'classnames'
 import { AnimatePresence, motion } from 'framer-motion'
 import Image from 'next/image'
+import { useRouter } from 'next/navigation'
 import { useState } from 'react'
 
 import Icon from '@/components/atoms/Icon'
@@ -15,11 +16,17 @@ import MenuScreen from '../MenuScreen'
 
 const Header = () => {
     const [isVisibleMenu, setIsVisibleMenu] = useState<boolean>(false)
+    const router = useRouter()
 
     return (
         <div className={styles['container']}>
             <header className={classNames(styles['header'], styles['sm'])}>
-                <h1>
+                <h1
+                    className={styles['logo-area']}
+                    onClick={() => {
+                        router.push('/')
+                    }}
+                >
                     <Image
                         src="/logo/tocoriri_logo_white.png"
                         alt="とこりり"
