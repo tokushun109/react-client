@@ -1,6 +1,7 @@
 import classNames from 'classnames'
 import Image from 'next/image'
 
+import Icon from '@/components/atoms/Icon'
 import Section from '@/components/templates/Section'
 import { ColorEnum } from '@/types'
 import { labelFontFace } from '@/utils/font'
@@ -142,6 +143,29 @@ const About = () => {
                                             </tr>
                                         </tbody>
                                     </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </Section>
+            <Section title="Relation" button={false} color={ColorEnum.Secondary}>
+                <div className={styles['content']}>
+                    <div className={styles['column']}>
+                        <div className={styles['column__wrapper']}>
+                            <div className={classNames(labelFontFace.className, styles['site'])}>SNS</div>
+                            <div className={styles['button']}>
+                                <Icon size={90} color={ColorEnum.Accent}></Icon>
+                            </div>
+                        </div>
+                    </div>
+                    <div className={styles['column']}>
+                        <div className={styles['column__wrapper']}>
+                            <div className={classNames(labelFontFace.className, styles['site'])}>Shop Site</div>
+                            <div className={styles['button-area']}>
+                                <div className={styles['button-area__wrapper']}>
+                                    <Icon size={90} color={ColorEnum.Accent}></Icon>
+                                    <Icon size={90} color={ColorEnum.Accent}></Icon>
                                 </div>
                             </div>
                         </div>
