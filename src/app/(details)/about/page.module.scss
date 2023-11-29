@@ -6,11 +6,28 @@
             display: block;
         }
 
-        .content-part {
+        .column {
             display: flex;
             justify-content: center;
             align-items: center;
             width: 50%;
+
+            .image-wrapper {
+                position: relative;
+                border-radius: 12px;
+                width: 564px;
+                height: 564px;
+
+                @include media(lg) {
+                    width: 45vw;
+                    height: 45vw;
+                }
+
+                @include media(md) {
+                    width: 80vw;
+                    height: 80vw;
+                }
+            }
 
             @include media(md) {
                 width: 100%;
