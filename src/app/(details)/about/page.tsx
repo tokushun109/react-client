@@ -3,6 +3,7 @@ import Image from 'next/image'
 
 import Section from '@/components/templates/Section'
 import { ColorEnum } from '@/types'
+import { labelFontFace } from '@/utils/font'
 
 import styles from './page.module.scss'
 
@@ -43,7 +44,7 @@ const About = () => {
                                 <Image
                                     src="/image/about/concept1.jpg"
                                     fill
-                                    alt="story"
+                                    alt="concept1"
                                     sizes="100%"
                                     style={{ objectFit: 'cover', borderRadius: 24 }}
                                 />
@@ -70,7 +71,7 @@ const About = () => {
                                 <Image
                                     src="/image/about/concept2.jpg"
                                     fill
-                                    alt="story"
+                                    alt="concept2"
                                     sizes="100%"
                                     style={{ objectFit: 'cover', borderRadius: 24 }}
                                 />
@@ -87,6 +88,60 @@ const About = () => {
                                     <p>「オシャレなだけじゃない！」</p>
                                     <p style={{ marginBottom: 20 }}>「あったら、ちょっと嬉しい♪」</p>
                                     <p>アクセサリーを制作しています。</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </Section>
+            <Section title="Story" button={false} color={ColorEnum.Secondary}>
+                <div className={styles['content']}>
+                    <div className={styles['column']}>
+                        <div className={styles['image']}>
+                            <Image src="/image/about/creator.jpg" fill alt="creator" sizes="100%" style={{ objectFit: 'cover', borderRadius: 24 }} />
+                        </div>
+                    </div>
+                    <div className={styles['column']}>
+                        <div className={styles['column__wrapper']}>
+                            <div className={classNames(labelFontFace.className, styles['creator-name'])}>tku</div>
+                            <div className={styles['message']}>
+                                <div className={styles['message__wrapper']}>
+                                    <table>
+                                        <tbody>
+                                            <tr>
+                                                <td className={styles['year']}>2016年</td>
+                                                <td className={styles['history']}>
+                                                    <p style={{ marginBottom: 12 }}>大手服飾品製造メーカー入社</p>
+                                                    <p>色彩学と品質管理について学ぶ</p>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td className={styles['year']}>2018年</td>
+                                                <td className={styles['history']}>
+                                                    <p>フリマサイトにて、</p>
+                                                    <p>アクセサリー作家 tku(とく)として</p>
+                                                    <p style={{ marginBottom: 12 }}>ハンドメイド作品の販売開始</p>
+                                                    <p>独学でマクラメ編みの技術を磨く</p>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td className={styles['year']}>2020年</td>
+                                                <td className={styles['history']}>
+                                                    <p>オンラインショップにて、</p>
+                                                    <p>マクラメ編み作品の販売開始</p>
+                                                    <p>とこりり開業準備をする</p>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td className={styles['year']}>2022年</td>
+                                                <td className={styles['history']}>
+                                                    <p>作家活動を拡充するため、</p>
+                                                    <p style={{ marginBottom: 12 }}>服飾品メーカー退社</p>
+                                                    <p>とこりりを個人事業開業する</p>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
                                 </div>
                             </div>
                         </div>

@@ -61,11 +61,32 @@
                 margin: 24px 0;
             }
 
+            .creator-name {
+                font-size: 40px;
+                font-weight: 700;
+                text-align: center;
+                margin-bottom: 48px;
+            }
+
             .message {
                 line-height: 32px;
                 display: flex;
                 justify-content: center;
                 align-items: center;
+
+                table {
+                    border-spacing: 16px;
+
+                    tr {
+                        td {
+                            vertical-align: top;
+
+                            &.year {
+                                width: 100px;
+                            }
+                        }
+                    }
+                }
             }
         }
     }
