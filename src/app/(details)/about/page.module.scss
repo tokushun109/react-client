@@ -6,6 +6,34 @@
             display: block;
         }
 
+        &.relation {
+            @include media(md) {
+                display: flex;
+            }
+
+            @include media(sm) {
+                display: block;
+            }
+
+            .column {
+                &:nth-child(2) {
+                    @include media(md) {
+                        margin-top: 0;
+                    }
+                }
+
+                &:nth-child(2) {
+                    @include media(sm) {
+                        margin-top: 48px;
+                    }
+                }
+
+                @include media(sm) {
+                    width: 100%;
+                }
+            }
+        }
+
         .column {
             display: flex;
             justify-content: center;
@@ -99,11 +127,8 @@
                 display: flex;
                 justify-content: center;
                 align-items: center;
-
-                &__wrapper {
-                    display: flex;
-                    gap: 24px;
-                }
+                display: flex;
+                gap: 24px;
             }
         }
     }

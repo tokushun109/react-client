@@ -150,11 +150,11 @@ const About = () => {
                 </div>
             </Section>
             <Section title="Relation" button={false} color={ColorEnum.Secondary}>
-                <div className={styles['content']}>
+                <div className={classNames(styles['content'], styles['relation'])}>
                     <div className={styles['column']}>
                         <div className={styles['column__wrapper']}>
                             <div className={classNames(labelFontFace.className, styles['site'])}>SNS</div>
-                            <div className={styles['button']}>
+                            <div className={styles['button-area']}>
                                 <Icon size={90} color={ColorEnum.Accent}></Icon>
                             </div>
                         </div>
@@ -163,10 +163,8 @@ const About = () => {
                         <div className={styles['column__wrapper']}>
                             <div className={classNames(labelFontFace.className, styles['site'])}>Shop Site</div>
                             <div className={styles['button-area']}>
-                                <div className={styles['button-area__wrapper']}>
-                                    <Icon size={90} color={ColorEnum.Accent}></Icon>
-                                    <Icon size={90} color={ColorEnum.Accent}></Icon>
-                                </div>
+                                <Icon size={90} color={ColorEnum.Accent}></Icon>
+                                <Icon size={90} color={ColorEnum.Accent}></Icon>
                             </div>
                         </div>
                     </div>
