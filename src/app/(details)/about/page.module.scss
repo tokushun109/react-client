@@ -129,6 +129,20 @@
                 align-items: center;
                 display: flex;
                 gap: 24px;
+
+                .sns-icon {
+                    text-align: center;
+                    height: 14px;
+                    margin-bottom: 6px;
+                }
+
+                .sns-name {
+                    font-size: $font-medium;
+                }
+
+                .sales-site-name {
+                    font-size: $font-normal;
+                }
             }
         }
     }

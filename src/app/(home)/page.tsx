@@ -15,7 +15,8 @@ import styles from './page.module.scss'
 export async function generateMetadata(): Promise<Metadata> {
     const title = 'アクセサリーショップ とこりり'
     const creator = await getCreator()
-    const description = creator && creator.introduction ? creator.introduction : ''
+    const description =
+        creator && creator.introduction ? creator.introduction : 'とこりりはハンドメイドのマクラメ編みアクセサリーを制作・販売しているお店です。'
     const image = creator && creator.apiPath ? creator.apiPath : ''
     return {
         metadataBase: new URL(process.env.DOMAIN_URL || ''),

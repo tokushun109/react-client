@@ -1,6 +1,11 @@
+import { Instagram } from '@mui/icons-material'
 import classNames from 'classnames'
+import { Metadata } from 'next'
 import Image from 'next/image'
 
+import { getCreator } from '@/apis/creator'
+import { getSalesSiteList } from '@/apis/salesSite'
+import { getSnsList } from '@/apis/sns'
 import Icon from '@/components/atoms/Icon'
 import Section from '@/components/templates/Section'
 import { ColorEnum } from '@/types'
@@ -8,7 +13,33 @@ import { labelFontFace } from '@/utils/font'
 
 import styles from './page.module.scss'
 
-const About = () => {
+export async function generateMetadata(): Promise<Metadata> {
+    const title = 'とこりりについて | とこりり'
+    const creator = await getCreator()
+    const description =
+        creator && creator.introduction ? creator.introduction : 'とこりりはハンドメイドのマクラメ編みアクセサリーを制作・販売しているお店です。'
+    const image = creator && creator.apiPath ? creator.apiPath : ''
+    return {
+        metadataBase: new URL(process.env.DOMAIN_URL || ''),
+        title,
+        description,
+        openGraph: {
+            title,
+            description,
+            type: 'website',
+            images: [image],
+        },
+        twitter: {
+            title,
+            description,
+            images: [image],
+        },
+    }
+}
+
+const About = async () => {
+    const snsList = await getSnsList()
+    const salesSiteList = await getSalesSiteList()
     return (
         <div className={styles['container']}>
             <Section title="Story" button={false} color={ColorEnum.Secondary}>
@@ -155,7 +186,16 @@ const About = () => {
                         <div className={styles['column__wrapper']}>
                             <div className={classNames(labelFontFace.className, styles['site'])}>SNS</div>
                             <div className={styles['button-area']}>
-                                <Icon size={90} color={ColorEnum.Accent}></Icon>
+                                {snsList.map((v) => (
+                                    <Icon key={v.name} size={90} color={ColorEnum.Accent}>
+                                        <div className={styles['icon-content']}>
+                                            <div className={styles['sns-icon']}>
+                                                <Instagram />
+                                            </div>
+                                            <div className={styles['sns-name']}>{v.name}</div>
+                                        </div>
+                                    </Icon>
+                                ))}
                             </div>
                         </div>
                     </div>
@@ -163,8 +203,11 @@ const About = () => {
                         <div className={styles['column__wrapper']}>
                             <div className={classNames(labelFontFace.className, styles['site'])}>Shop Site</div>
                             <div className={styles['button-area']}>
-                                <Icon size={90} color={ColorEnum.Accent}></Icon>
-                                <Icon size={90} color={ColorEnum.Accent}></Icon>
+                                {salesSiteList.map((v) => (
+                                    <Icon key={v.name} size={90} color={ColorEnum.Accent}>
+                                        <div className={styles['sales-site-name']}>{v.name}</div>
+                                    </Icon>
+                                ))}
                             </div>
                         </div>
                     </div>
