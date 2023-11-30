@@ -40,13 +40,14 @@ const Header = () => {
                 </h1>
             </header>
             {!isVisibleMenu && (
-                <div
-                    className={classNames(styles['menu-icon'], styles['default'])}
-                    onClick={() => {
-                        setIsVisibleMenu(true)
-                    }}
-                >
-                    <Icon size={72} color={ColorEnum.Primary}>
+                <div className={classNames(styles['menu-icon'], styles['default'])}>
+                    <Icon
+                        size={72}
+                        color={ColorEnum.Primary}
+                        onClick={() => {
+                            setIsVisibleMenu(true)
+                        }}
+                    >
                         <Menu fontSize="large" />
                     </Icon>
                 </div>
