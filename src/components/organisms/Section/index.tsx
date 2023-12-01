@@ -23,13 +23,13 @@ type Props =
     | (BaseProps & {
           button: true
           buttonLabel: string
-          onClick: () => void
+          onButtonClick: () => void
       })
 
 const Section = (props: Props) => {
     if (props.button) {
         // ボタンがある時
-        const { title, contrast, children, buttonLabel, color, onClick } = props
+        const { title, contrast, children, buttonLabel, color, onButtonClick } = props
         return (
             <div
                 className={classNames(styles['container'], contrast && styles['contrast'])}
@@ -49,7 +49,7 @@ const Section = (props: Props) => {
                     </div>
                 </Transition>
                 <Transition>
-                    <div className={styles['button']} onClick={onClick}>
+                    <div className={styles['button']} onClick={onButtonClick}>
                         <Button>{buttonLabel}</Button>
                     </div>
                 </Transition>
