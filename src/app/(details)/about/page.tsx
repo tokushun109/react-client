@@ -1,19 +1,38 @@
-import Section from '@/components/templates/Section'
-import { ColorEnum } from '@/types'
+import { Metadata } from 'next'
 
-import styles from './page.module.scss'
+import { getCreator } from '@/apis/creator'
+import { getSalesSiteList } from '@/apis/salesSite'
+import { getSnsList } from '@/apis/sns'
+import AlertTemplate from '@/components/templates/AboutTemplate'
 
-const About = () => {
-    return (
-        <div className={styles['container']}>
-            <Section title="Story" button={false} color={ColorEnum.Secondary}>
-                <div className={styles['content']}>
-                    <div className={styles['content-part']}>画像</div>
-                    <div className={styles['content-part']}>文章</div>
-                </div>
-            </Section>
-        </div>
-    )
+export async function generateMetadata(): Promise<Metadata> {
+    const title = 'とこりりについて | とこりり'
+    const creator = await getCreator()
+    const description =
+        creator && creator.introduction ? creator.introduction : 'とこりりはハンドメイドのマクラメ編みアクセサリーを制作・販売しているお店です。'
+    const image = creator && creator.apiPath ? creator.apiPath : '/image/about/story.jpg'
+    return {
+        metadataBase: new URL(process.env.DOMAIN_URL || ''),
+        title,
+        description,
+        openGraph: {
+            title,
+            description,
+            type: 'website',
+            images: [image],
+        },
+        twitter: {
+            title,
+            description,
+            images: [image],
+        },
+    }
+}
+
+const About = async () => {
+    const snsList = await getSnsList()
+    const salesSiteList = await getSalesSiteList()
+    return <AlertTemplate snsList={snsList} salesSiteList={salesSiteList} />
 }
 
 export default About

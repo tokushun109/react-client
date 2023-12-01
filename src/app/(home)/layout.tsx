@@ -1,7 +1,7 @@
 import 'ress'
 
-import Footer from '@/components/templates/Footer'
-import Header from '@/components/templates/Header'
+import Footer from '@/components/organisms/Footer'
+import Header from '@/components/organisms/Header'
 
 export default function HomeLayout({ children }: { children: React.ReactNode }) {
     return (

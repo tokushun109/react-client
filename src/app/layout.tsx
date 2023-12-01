@@ -1,7 +1,15 @@
 import 'ress'
 
 import '@/styles/globals.scss'
+import { Metadata } from 'next'
+
 import { mainFontFace } from '@/utils/font'
+
+import Favicon from '/public/favicon/favicon.ico'
+
+export const metadata: Metadata = {
+    icons: [{ rel: 'icon', url: Favicon.src }],
+}
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
     return (

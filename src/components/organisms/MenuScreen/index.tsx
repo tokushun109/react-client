@@ -21,8 +21,8 @@ const MenuScreen = ({ onCloseClick }: Props) => {
 
     return (
         <div className={styles['container']}>
-            <div className={styles['close-icon']} onClick={onCloseClick}>
-                <Icon size={72} color={ColorEnum.Primary} contrast>
+            <div className={styles['close-icon']}>
+                <Icon size={72} color={ColorEnum.Primary} onClick={onCloseClick} contrast>
                     <Close fontSize="large" />
                 </Icon>
             </div>
