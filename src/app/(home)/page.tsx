@@ -9,7 +9,7 @@ export async function generateMetadata(): Promise<Metadata> {
     const creator = await getCreator()
     const description =
         creator && creator.introduction ? creator.introduction : 'とこりりはハンドメイドのマクラメ編みアクセサリーを制作・販売しているお店です。'
-    const image = creator && creator.apiPath ? creator.apiPath : ''
+    const image = creator && creator.apiPath ? creator.apiPath : '/logo/tocoriri_logo.png'
     return {
         metadataBase: new URL(process.env.DOMAIN_URL || ''),
         title,

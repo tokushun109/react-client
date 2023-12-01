@@ -3,14 +3,14 @@ import { Metadata } from 'next'
 import { getCreator } from '@/apis/creator'
 import { getSalesSiteList } from '@/apis/salesSite'
 import { getSnsList } from '@/apis/sns'
-import AlertTemplate from '@/components/templates/AlertTemplate'
+import AlertTemplate from '@/components/templates/AboutTemplate'
 
 export async function generateMetadata(): Promise<Metadata> {
     const title = 'とこりりについて | とこりり'
     const creator = await getCreator()
     const description =
         creator && creator.introduction ? creator.introduction : 'とこりりはハンドメイドのマクラメ編みアクセサリーを制作・販売しているお店です。'
-    const image = creator && creator.apiPath ? creator.apiPath : ''
+    const image = creator && creator.apiPath ? creator.apiPath : '/image/about/story.jpg'
     return {
         metadataBase: new URL(process.env.DOMAIN_URL || ''),
         title,

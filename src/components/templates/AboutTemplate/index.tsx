@@ -17,7 +17,7 @@ type Props = {
     salesSiteList: ISite[]
 }
 
-const AlertTemplate = ({ snsList, salesSiteList }: Props) => {
+const AboutTemplate = ({ snsList, salesSiteList }: Props) => {
     const router = useRouter()
 
     return (
@@ -211,4 +211,4 @@ const AlertTemplate = ({ snsList, salesSiteList }: Props) => {
     )
 }
 
-export default AlertTemplate
+export default AboutTemplate
