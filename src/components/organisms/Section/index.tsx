@@ -49,7 +49,7 @@ const Section = (props: Props) => {
                     </div>
                 </Transition>
                 <Transition>
-                    <div className={styles['button']}>
+                    <div className={styles['button']} onClick={onClick}>
                         <Button>{buttonLabel}</Button>
                     </div>
                 </Transition>
