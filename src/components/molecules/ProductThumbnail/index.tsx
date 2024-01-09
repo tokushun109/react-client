@@ -31,7 +31,6 @@ const ProductThumbnail = ({ item, shadow = true }: Props) => {
                 fill
                 sizes="100%"
                 style={{ objectFit: 'cover', zIndex: 0, borderRadius: 12 }}
-                priority={item.apiPath !== '/image/gray-image.png'}
                 onLoad={() => {
                     setIsLoading(false)
                 }}
