@@ -2,15 +2,14 @@
 
 import classNames from 'classnames'
 
-import { ICarouselItem } from '@/types'
-
 import { useSlideShow } from './hooks'
 import styles from './styles.module.scss'
 import { ImageIndexEnum } from './types'
-import ProductImage from '../ProductImage'
+import ProductThumbnail from '../ProductThumbnail'
+import { IProductThumbnail } from '@/types'
 
 type Props = {
-    items: ICarouselItem[]
+    items: IProductThumbnail[]
     size: string
     innerPadding?: number
     autoPlay?: boolean
@@ -38,7 +37,7 @@ const SlideShow = ({ items, size, innerPadding = 16, autoPlay = true }: Props) =
                         className={classNames(styles['content'], styles[v], swipeDirection && styles[`${swipeDirection}-swipe`])}
                         style={{ width: `calc(${size} - ${innerPadding}px)`, height: `calc(${size} - ${innerPadding}px)` }}
                     >
-                        <ProductImage item={items[imageIndex[v]]} shadow={false} />
+                        <ProductThumbnail item={items[imageIndex[v]]} shadow={false} />
                     </div>
                 ))}
             </div>

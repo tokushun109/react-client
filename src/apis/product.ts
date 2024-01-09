@@ -1,7 +1,25 @@
-import { ICarouselItem } from '@/types'
+import { IGetProductsParams, IProduct, IProductThumbnail } from '@/types'
 import { ApiError } from '@/utils/error'
 
-export const getCarouselImages = async (): Promise<ICarouselItem[]> => {
+export const getAllProducts = async (): Promise<IProduct[]> => {
+    const params: IGetProductsParams & { [x: string]: string } = {
+        mode: 'active',
+        category: 'all',
+        target: 'all',
+    }
+
+    const query = new URLSearchParams(params)
+    const res = await fetch(`${process.env.API_URL}/product?${query}`, {
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        method: 'GET',
+    })
+
+    return await res.json()
+}
+
+export const getCarouselImages = async (): Promise<IProductThumbnail[]> => {
     const res = await fetch(`${process.env.API_URL}/carousel_image/`, {
         headers: {
             'Content-Type': 'application/json',
@@ -11,17 +29,5 @@ export const getCarouselImages = async (): Promise<ICarouselItem[]> => {
 
     if (!res.ok) throw new ApiError(res)
 
-    const result: ICarouselItem[] = await res.json()
-
-    await Promise.all(
-        result.map(async (v) => {
-            const imageRes = await fetch(v.apiPath)
-            // 画像が存在しないときはグレイイメージで返す
-            if (!imageRes.ok) {
-                v.apiPath = '/image/gray-image.png'
-            }
-        }),
-    )
-
-    return result
+    return await res.json()
 }

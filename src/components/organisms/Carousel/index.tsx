@@ -1,10 +1,10 @@
-import ProductImage from '@/components/molecules/ProductImage'
-import { ICarouselItem } from '@/types'
+import { IProductThumbnail } from '@/types'
 
 import styles from './styles.module.scss'
+import ProductThumbnail from '@/components/molecules/ProductThumbnail'
 
 type Props = {
-    items: ICarouselItem[]
+    items: IProductThumbnail[]
 }
 
 const Carousel = ({ items }: Props) => {
@@ -13,7 +13,7 @@ const Carousel = ({ items }: Props) => {
             <div className={styles['wrapper']}>
                 {[...items, ...items].map((v, index) => (
                     <div className={styles['product-image']} key={index}>
-                        <ProductImage item={v} />
+                        <ProductThumbnail item={v} />
                     </div>
                 ))}
             </div>

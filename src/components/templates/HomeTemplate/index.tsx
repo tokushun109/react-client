@@ -8,13 +8,13 @@ import Indicator from '@/components/atoms/Indicator'
 import SlideShow from '@/components/molecules/SlideShow'
 import Carousel from '@/components/organisms/Carousel'
 import Section from '@/components/organisms/Section'
-import { ICarouselItem, ColorEnum } from '@/types'
+import { IProductThumbnail, ColorEnum } from '@/types'
 import { NavigationEnum } from '@/types/enum/navigation'
 
 import styles from './styles.module.scss'
 
 type Props = {
-    carouselImages: ICarouselItem[]
+    carouselImages: IProductThumbnail[]
 }
 
 const HomeTemplate = ({ carouselImages }: Props) => {
