@@ -1,7 +1,7 @@
-import { IGetProductsParams, IProduct, IProductThumbnail } from '@/types'
+import { ICategoryProducts, IGetProductsParams, IProductThumbnail } from '@/types'
 import { ApiError } from '@/utils/error'
 
-export const getAllProducts = async (): Promise<IProduct[]> => {
+export const getCategoryProducts = async (): Promise<ICategoryProducts[]> => {
     const params: IGetProductsParams & { [x: string]: string } = {
         mode: 'active',
         category: 'all',
@@ -9,7 +9,7 @@ export const getAllProducts = async (): Promise<IProduct[]> => {
     }
 
     const query = new URLSearchParams(params)
-    const res = await fetch(`${process.env.API_URL}/product?${query}`, {
+    const res = await fetch(`${process.env.API_URL}/category/product?${query}`, {
         headers: {
             'Content-Type': 'application/json',
         },

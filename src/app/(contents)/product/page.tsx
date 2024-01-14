@@ -1,5 +1,6 @@
 import { Metadata } from 'next'
 
+import { getCategoryProducts } from '@/apis/product'
 import ProductTemplate from '@/components/templates/ProductTemplate'
 
 export async function generateMetadata(): Promise<Metadata> {
@@ -24,8 +25,9 @@ export async function generateMetadata(): Promise<Metadata> {
     }
 }
 
-const Product = () => {
-    return <ProductTemplate />
+const Product = async () => {
+    const categoryProducts = await getCategoryProducts()
+    return <ProductTemplate categoryProducts={categoryProducts} />
 }
 
 export default Product
