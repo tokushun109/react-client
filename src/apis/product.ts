@@ -1,7 +1,7 @@
-import { ICategoryProducts, IGetProductsParams, IProductThumbnail } from '@/types'
+import { ICategoryProducts, IGetProductsParams, IThumbnail } from '@/types'
 import { ApiError } from '@/utils/error'
 
-export const getCategoryProducts = async (): Promise<ICategoryProducts[]> => {
+export const getAllCategoryProducts = async (): Promise<ICategoryProducts[]> => {
     const params: IGetProductsParams & { [x: string]: string } = {
         mode: 'active',
         category: 'all',
@@ -19,7 +19,7 @@ export const getCategoryProducts = async (): Promise<ICategoryProducts[]> => {
     return await res.json()
 }
 
-export const getCarouselImages = async (): Promise<IProductThumbnail[]> => {
+export const getCarouselImages = async (): Promise<IThumbnail[]> => {
     const res = await fetch(`${process.env.API_URL}/carousel_image/`, {
         headers: {
             'Content-Type': 'application/json',

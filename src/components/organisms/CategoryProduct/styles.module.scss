@@ -1,0 +1,20 @@
+$product-list-gap: 16px;
+
+.container {
+    .category-name {
+        text-align: left;
+        font-size: 30px;
+        color: $text-color;
+        font-weight: $title-font-weight;
+    }
+
+    .product-list {
+        display: flex;
+        gap: $product-list-gap;
+
+        // TODO widthを画面幅で変更する
+        .product-thumbnail {
+            width: calc((100% - $product-list-gap) / 2);
+        }
+    }
+}

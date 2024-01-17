@@ -1,30 +1,24 @@
 'use client'
 
-import ProductThumbnail from '@/components/molecules/ProductThumbnail'
+import CategoryProduct from '@/components/organisms/CategoryProduct'
 import { ICategoryProducts } from '@/types'
 
 import styles from './styles.module.scss'
 
 type Props = {
-    categoryProducts: ICategoryProducts[]
+    categoryProductsList: ICategoryProducts[]
 }
 
-const ProductTemplate = ({ categoryProducts }: Props) => {
+const ProductTemplate = ({ categoryProductsList }: Props) => {
     return (
         <div className={styles['container']}>
             <div className={styles['search-area']}>検索欄</div>
             <div className={styles['product-area']}>
-                <div>カテゴリー名</div>
-                <div>
-                    <div className={styles['product-thumbnail']}>
-                        <ProductThumbnail
-                            item={{
-                                product: categoryProducts[0].products[0],
-                                apiPath: categoryProducts[0].products[0].productImages[0].apiPath,
-                            }}
-                        />
+                {categoryProductsList.map((v) => (
+                    <div key={v.category.uuid}>
+                        <CategoryProduct categoryProducts={v} />
                     </div>
-                </div>
+                ))}
             </div>
         </div>
     )
