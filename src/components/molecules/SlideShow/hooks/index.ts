@@ -2,11 +2,11 @@ import { setTimeout } from 'timers'
 
 import { useEffect, useRef, useState } from 'react'
 
-import { ICarouselItem } from '@/types'
+import { IThumbnail } from '@/types'
 
 import { ImageIndex, SwipeDirection, SwipePosition } from '../types'
 
-export const useSlideShow = (items: ICarouselItem[], autoPlay: boolean) => {
+export const useSlideShow = (items: IThumbnail[], autoPlay: boolean) => {
     // 商品画像の数
     const maxLength = items.length
 
