@@ -38,7 +38,7 @@ export interface IGetProductsParams {
     target: 'all' | string
 }
 
-export interface ICarouselItem {
+export interface IThumbnail {
     product: IProduct
     apiPath: string
 }

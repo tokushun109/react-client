@@ -1,17 +1,17 @@
 import classNames from 'classnames'
-import Image from 'next/image'
 
 import Chip from '@/components/atoms/Chip'
-import { ColorEnum, ICarouselItem } from '@/types'
+import CustomImage from '@/components/atoms/CustomImage'
+import { ColorEnum, IThumbnail } from '@/types'
 
 import styles from './styles.module.scss'
 
 type Props = {
-    item: ICarouselItem
+    item: IThumbnail
     shadow?: boolean
 }
 
-const ProductImage = ({ item, shadow = true }: Props) => {
+const HomeThumbnail = ({ item, shadow = true }: Props) => {
     return (
         <div className={classNames(styles['container'], shadow && styles['shadow'])}>
             {item.product.category.uuid && (
@@ -21,14 +21,7 @@ const ProductImage = ({ item, shadow = true }: Props) => {
                     </Chip>
                 </div>
             )}
-            <Image
-                src={item.apiPath}
-                alt={item.product.name}
-                fill
-                sizes="100%"
-                style={{ objectFit: 'cover', zIndex: 0, borderRadius: 12 }}
-                priority={item.apiPath !== '/image/gray-image.png'}
-            />
+            <CustomImage src={item.apiPath} alt={item.product.name} />
             <div className={classNames(styles['chip'], styles['name'])}>
                 <Chip color={ColorEnum.Accent} fontSize={12}>
                     {item.product.name}
@@ -38,4 +31,4 @@ const ProductImage = ({ item, shadow = true }: Props) => {
     )
 }
 
-export default ProductImage
+export default HomeThumbnail

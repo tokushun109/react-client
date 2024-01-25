@@ -1,7 +1,12 @@
 .container {
     .main {
         margin: 0 auto;
-        max-width: $lg;
+        max-width: $xl;
+        padding: 0 48px;
+
+        @include media(sm) {
+            padding: 0 16px;
+        }
 
         .title {
             display: flex;

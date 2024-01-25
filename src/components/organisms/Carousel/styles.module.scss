@@ -31,7 +31,7 @@ $image-length: 10; // 画像の数
         .product-image {
             cursor: pointer;
             flex-grow: 1;
-            height: $image-size;
+            aspect-ratio: 1 /1;
             width: $image-size;
             transition: $transition;
 

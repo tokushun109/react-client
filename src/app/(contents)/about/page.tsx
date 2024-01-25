@@ -3,7 +3,7 @@ import { Metadata } from 'next'
 import { getCreator } from '@/apis/creator'
 import { getSalesSiteList } from '@/apis/salesSite'
 import { getSnsList } from '@/apis/sns'
-import AlertTemplate from '@/components/templates/AboutTemplate'
+import AboutTemplate from '@/components/templates/AboutTemplate'
 
 export async function generateMetadata(): Promise<Metadata> {
     const title = 'とこりりについて | とこりり'
@@ -32,7 +32,7 @@ export async function generateMetadata(): Promise<Metadata> {
 const About = async () => {
     const snsList = await getSnsList()
     const salesSiteList = await getSalesSiteList()
-    return <AlertTemplate snsList={snsList} salesSiteList={salesSiteList} />
+    return <AboutTemplate snsList={snsList} salesSiteList={salesSiteList} />
 }
 
 export default About
