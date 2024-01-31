@@ -6,7 +6,7 @@ import { usePathname, useRouter } from 'next/navigation'
 
 import Icon from '@/components/atoms/Icon'
 import IconCard from '@/components/molecules/IconCard'
-import { MenuEnum, MenuList, ColorEnum } from '@/types'
+import { MenuEnum, MenuList, ColorEnum, MenuType } from '@/types'
 import { NavigationType } from '@/types/enum/navigation'
 
 import styles from './styles.module.scss'
@@ -19,6 +19,18 @@ const MenuScreen = ({ onCloseClick }: Props) => {
     const router = useRouter()
     const pathname = usePathname() as NavigationType
 
+    const iconClickHandler = (menu: MenuType | '/') => {
+        onCloseClick()
+
+        setTimeout(() => {
+            if (menu === '/') {
+                router.push(menu)
+            } else {
+                router.push(MenuList[menu].link)
+            }
+        }, 200)
+    }
+
     return (
         <div className={styles['container']}>
             <div className={styles['close-icon']}>
@@ -29,7 +41,7 @@ const MenuScreen = ({ onCloseClick }: Props) => {
             <div
                 className={styles['logo-area']}
                 onClick={() => {
-                    router.push('/')
+                    iconClickHandler('/')
                 }}
             >
                 <h1>
@@ -52,7 +64,7 @@ const MenuScreen = ({ onCloseClick }: Props) => {
                             className={styles['icon-card']}
                             key={MenuList[menu].label}
                             onClick={() => {
-                                router.push(MenuList[menu].link)
+                                iconClickHandler(menu)
                             }}
                         >
                             <IconCard Icon={MenuList[menu].icon} label={MenuList[menu].label} isSelected={pathname === MenuList[menu].link} />
