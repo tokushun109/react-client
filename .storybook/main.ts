@@ -18,20 +18,22 @@ const config: StorybookConfig = {
         autodocs: 'tag',
     },
     webpackFinal: async (config) => {
+        // @を../srcのエイリアスとして設定
         if (config.resolve) {
             config.resolve.alias = {
                 ...config.resolve.alias,
                 '@': path.resolve(__dirname, '../src'),
             }
         }
+        // グローバルなscssファイルの読み込み
         if (config.module && config.module.rules) {
             config.module.rules.push({
-                test: /\.s[ac]ss$/i,
+                test: /\.scss$/i,
                 use: [
                     {
+                        loader: 'sass-loader',
                         options: {
-                            loader: 'sass-loader',
-                            prependData: '@import "@/styles/variables.scss";@import "@/styles/mixins.scss";',
+                            additionalData: `@import "@/styles/variables.scss";@import "@/styles/mixins.scss";`,
                         },
                     },
                 ],
