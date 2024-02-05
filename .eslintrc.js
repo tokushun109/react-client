@@ -1,6 +1,6 @@
 module.exports = {
     plugins: ['import', 'unused-imports'],
-    extends: ['next', 'next/core-web-vitals', 'eslint:recommended'],
+    extends: ['next', 'next/core-web-vitals', 'eslint:recommended', 'plugin:storybook/recommended'],
     globals: {
         React: 'readonly',
         JSX: 'readonly',
@@ -33,5 +33,12 @@ module.exports = {
         ],
         'unused-imports/no-unused-imports': 'error',
     },
-    ignorePatterns: ['dummies'],
+    overrides: [
+        {
+            files: ['**/*.stories.*'],
+            rules: {
+                'no-console': 'off',
+            },
+        },
+    ],
 }
