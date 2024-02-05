@@ -18,6 +18,7 @@ module.exports = {
         'no-console': [
             'error',
             {
+                ignorePatterns: ['**/*.stories.*'],
                 allow: ['error'],
             },
         ],

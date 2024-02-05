@@ -24,7 +24,7 @@ const CategoryProduct = ({ categoryProducts }: Props) => {
             </div>
             {categoryProducts.products.length > 4 && (
                 <div className={styles['more-button']}>
-                    <Button>もっと見る</Button>
+                    <Button onClick={() => {}}>もっと見る</Button>
                 </div>
             )}
         </div>

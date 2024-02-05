@@ -10,5 +10,13 @@ export default meta
 type Story = StoryObj<typeof Button>
 
 export const Primary: Story = {
-    args: { children: <div>children</div> },
+    render: () => (
+        <Button
+            onClick={() => {
+                console.log('clickしました')
+            }}
+        >
+            button
+        </Button>
+    ),
 }

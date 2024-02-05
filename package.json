@@ -10,7 +10,7 @@
         "lint": "next lint",
         "fmt": "prettier --write .",
         "sb": "storybook dev -p 6006",
-        "build-storybook": "storybook build"
+        "sb-build": "storybook build"
     },
     "dependencies": {
         "@emotion/react": "^11.11.3",
