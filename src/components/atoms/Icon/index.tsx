@@ -7,7 +7,7 @@ import { ColorCodeEnum, ColorEnum, ColorType } from '@/types'
 import styles from './styles.module.scss'
 import { ColorObject } from './types'
 
-type Props = {
+export type Props = {
     color: ColorType
     size: number
     children: React.ReactNode
@@ -16,7 +16,6 @@ type Props = {
     shadow?: boolean
 }
 
-// TODO: 中に入っているものに対して自動でサイズを変更するようにした方が良さそう
 const Icon = ({ color, size, children, onClick = () => {}, contrast = false, shadow = true }: Props) => {
     const colorObject = ((): ColorObject => {
         if (!contrast)

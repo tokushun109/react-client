@@ -25,6 +25,7 @@
         "react-dom": "^18.2.0"
     },
     "devDependencies": {
+        "@storybook/addon-controls": "^7.6.12",
         "@storybook/addon-essentials": "^7.6.12",
         "@storybook/addon-interactions": "^7.6.12",
         "@storybook/addon-links": "^7.6.12",
@@ -35,7 +36,7 @@
         "@storybook/react": "^7.6.12",
         "@storybook/test": "^7.6.12",
         "@types/node": "^20.11.16",
-        "@types/react": "^18.2.52",
+        "@types/react": "^18.2.54",
         "@types/react-dom": "^18.2.18",
         "cross-env": "^7.0.3",
         "eslint": "^8.56.0",
