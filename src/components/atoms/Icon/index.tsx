@@ -7,7 +7,7 @@ import { ColorCodeEnum, ColorEnum, ColorType } from '@/types'
 import styles from './styles.module.scss'
 import { ColorObject } from './types'
 
-export type Props = {
+type Props = {
     color: ColorType
     size: number
     children: React.ReactNode

@@ -18,7 +18,6 @@ module.exports = {
         'no-console': [
             'error',
             {
-                ignorePatterns: ['**/*.stories.*'],
                 allow: ['error'],
             },
         ],
@@ -34,5 +33,12 @@ module.exports = {
         ],
         'unused-imports/no-unused-imports': 'error',
     },
-    ignorePatterns: ['dummies'],
+    overrides: [
+        {
+            files: ['**/*.stories.*'],
+            rules: {
+                'no-console': 'off',
+            },
+        },
+    ],
 }

@@ -1,5 +1,6 @@
-import { ColorEnum, ColorType } from '@/types'
-import Icon, { Props } from '.'
+import { ColorEnum } from '@/types'
+
+import Icon from '.'
 
 import type { Meta, StoryObj } from '@storybook/react'
 
