@@ -16,6 +16,7 @@ type Props = {
     shadow?: boolean
 }
 
+// TODO: 中に入っているものに対して自動でサイズを変更するようにした方が良さそう
 const Icon = ({ color, size, children, onClick = () => {}, contrast = false, shadow = true }: Props) => {
     const colorObject = ((): ColorObject => {
         if (!contrast)
