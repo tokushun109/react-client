@@ -10,7 +10,8 @@
         "lint": "next lint",
         "fmt": "prettier --write .",
         "sb": "storybook dev -p 6006",
-        "build-storybook": "storybook build"
+        "build-storybook": "storybook build",
+        "chromatic": "pnpm chromatic --project-token=chpt_6cf586488674b21"
     },
     "dependencies": {
         "@emotion/react": "^11.11.3",
