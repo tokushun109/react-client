@@ -1,13 +1,13 @@
 import classNames from 'classnames'
-import { ComponentType } from 'react'
 
 import Card from '@/components/atoms/Card'
+import { MaterialIconType } from '@/types'
 import { labelFontFace } from '@/utils/font'
 
 import styles from './styles.module.scss'
 
 type Props = {
-    Icon: ComponentType
+    Icon: MaterialIconType
     label: string
     isSelected?: boolean
 }

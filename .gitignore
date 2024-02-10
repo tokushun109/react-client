@@ -37,3 +37,7 @@ next-env.d.ts
 
 # editor
 .vscode
+
+# storybook
+Storybook-static
+build-storybook.log

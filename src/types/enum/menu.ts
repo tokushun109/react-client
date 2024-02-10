@@ -1,7 +1,13 @@
 import { Email, Diamond, Face3 } from '@mui/icons-material'
-import { ComponentType } from 'react'
 
 import { capitalize } from '@/utils/string'
+
+export const MaterialIconEnum = {
+    Face: Face3,
+    Diamond: Diamond,
+    Email: Email,
+} as const
+export type MaterialIconType = (typeof MaterialIconEnum)[keyof typeof MaterialIconEnum]
 
 export const MenuEnum = {
     About: 'about',
@@ -12,24 +18,24 @@ export const MenuEnum = {
 export type MenuType = (typeof MenuEnum)[keyof typeof MenuEnum]
 
 type MenuObject = {
-    icon: ComponentType
+    icon: MaterialIconType
     label: string
     link: string
 }
 
 export const MenuList: { [_ in MenuType]: MenuObject } = {
     [MenuEnum.About]: {
-        icon: Face3,
+        icon: MaterialIconEnum.Face,
         label: capitalize(MenuEnum.About),
         link: '/' + MenuEnum.About,
     },
     [MenuEnum.Product]: {
-        icon: Diamond,
+        icon: MaterialIconEnum.Diamond,
         label: capitalize(MenuEnum.Product),
         link: '/' + MenuEnum.Product,
     },
     [MenuEnum.Contact]: {
-        icon: Email,
+        icon: MaterialIconEnum.Email,
         label: capitalize(MenuEnum.Contact),
         link: '/' + MenuEnum.Contact,
     },
