@@ -1,6 +1,7 @@
 .container {
     position: relative;
     color: $primary;
+    text-align: center;
 
     &.selected {
         color: $accent;
