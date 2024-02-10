@@ -24,9 +24,9 @@ export const Product: Story = {
         label: 'product',
     },
 }
-export const Contact: Story = {
-    args: {
-        Icon: MaterialIconEnum.Email,
-        label: 'contact',
-    },
-}
+// export const Contact: Story = {
+//     args: {
+//         Icon: MaterialIconEnum.Email,
+//         label: 'contact',
+//     },
+// }

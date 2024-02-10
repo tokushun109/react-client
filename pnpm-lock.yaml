@@ -76,6 +76,9 @@ devDependencies:
     '@types/react-dom':
         specifier: ^18.2.19
         version: 18.2.19
+    chromatic:
+        specifier: ^10.9.3
+        version: 10.9.3
     cross-env:
         specifier: ^7.0.3
         version: 7.0.3
@@ -5481,6 +5484,19 @@ packages:
     /chownr@2.0.0:
         resolution: { integrity: sha512-bIomtDF5KGpdogkLd9VspvFzk9KfpyyGlS8YFVZl7TGPBHL5snIOnxeshwVgPteQ9b4Eydl+pVbIyE1DcvCWgQ== }
         engines: { node: '>=10' }
+        dev: true
+
+    /chromatic@10.9.3:
+        resolution: { integrity: sha512-orjiRwXjX1tiEwukb5T/tZsR+mLQ7QQa6nL4XYhhzvlHZSQkBWaZWOPQamC2+7JfgRKB0PEwbzoQajOa/e3PxQ== }
+        hasBin: true
+        peerDependencies:
+            '@chromatic-com/cypress': ^0.5.2 || ^1.0.0
+            '@chromatic-com/playwright': ^0.5.2 || ^1.0.0
+        peerDependenciesMeta:
+            '@chromatic-com/cypress':
+                optional: true
+            '@chromatic-com/playwright':
+                optional: true
         dev: true
 
     /chrome-trace-event@1.0.3:
