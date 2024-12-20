@@ -2,7 +2,7 @@
 
 const nextConfig = {
     sassOptions: {
-        prependData: '@import "@/styles/variables.scss";@import "@/styles/mixins.scss";',
+        prependData: '@use "@/styles/variables.scss" as *; @use "@/styles/mixins.scss" as *;',
     },
     images: {
         remotePatterns: [
