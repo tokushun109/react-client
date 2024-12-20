@@ -33,7 +33,7 @@ const config: StorybookConfig = {
                     {
                         loader: 'sass-loader',
                         options: {
-                            additionalData: `@import "@/styles/variables.scss";@import "@/styles/mixins.scss";`,
+                            additionalData: `@use "@/styles/variables.scss" as *;@use "@/styles/mixins.scss" as *;`,
                         },
                     },
                 ],

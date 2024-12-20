@@ -12,14 +12,14 @@
     }
 
     .close-icon {
-        @include media(sm) {
-            display: none;
-        }
-
         display: inline-block;
         position: fixed;
         top: 32px;
         right: 32px;
+
+        @include media(sm) {
+            display: none;
+        }
     }
 
     .icon-card-area {
@@ -29,7 +29,7 @@
         margin: 0 auto;
         padding: 24px;
 
-        .icon-card-area-wrapper {
+        &-wrapper {
             display: flex;
             gap: 24px;
             width: 100%;
