@@ -1,6 +1,6 @@
 import { IThumbnail } from '@/features/product/type'
 import styles from './styles.module.scss'
-import { CarouselImage } from '@/components/elements/molecules/CarouselImage'
+import { CarouselImage } from '@/components/composites/CarouselImage'
 
 type Props = {
     items: IThumbnail[]

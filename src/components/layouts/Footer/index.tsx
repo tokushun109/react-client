@@ -2,7 +2,7 @@ import classNames from 'classnames'
 
 import styles from './styles.module.scss'
 import MobileMenu from './components/MobileMenu'
-import { ShareButtons } from '@/components/elements/molecules/ShareButtons'
+import { ShareButtons } from '@/components/composites/ShareButtons'
 
 const Footer = () => {
     return (

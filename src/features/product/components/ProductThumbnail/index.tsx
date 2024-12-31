@@ -1,5 +1,5 @@
-import { Chip } from '@/components/elements/atoms/Chip'
-import { Image } from '@/components/elements/atoms/Image'
+import { Chip } from '@/components/bases/Chip'
+import { Image } from '@/components/bases/Image'
 import { ColorEnum } from '@/types'
 import { numToPrice } from '@/utils/convert'
 

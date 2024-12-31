@@ -1,6 +1,6 @@
 import classNames from 'classnames'
 
-import { Button } from '@/components/elements/atoms/Button'
+import { Button } from '@/components/bases/Button'
 import ProductThumbnail from '@/features/product/components/ProductThumbnail'
 
 import { mainFontFace } from '@/utils/font'
