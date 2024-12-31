@@ -2,7 +2,7 @@ import { Metadata } from 'next'
 
 import { getCreator } from '@/apis/creator'
 import { getCarouselImages } from '@/apis/product'
-import HomeTemplate from '@/components/templates/HomeTemplate'
+import HomeTemplate from '@/app/(home)/template'
 
 export async function generateMetadata(): Promise<Metadata> {
     const title = 'アクセサリーショップ とこりり'

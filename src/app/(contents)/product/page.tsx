@@ -1,7 +1,7 @@
 import { Metadata } from 'next'
 
 import { getAllCategoryProducts } from '@/apis/product'
-import ProductTemplate from '@/components/templates/ProductTemplate'
+import ProductTemplate from '@/app/(contents)/product/ template'
 
 export async function generateMetadata(): Promise<Metadata> {
     const title = '商品一覧 | とこりり'
