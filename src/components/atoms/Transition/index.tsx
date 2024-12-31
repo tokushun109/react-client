@@ -7,7 +7,7 @@ import styles from './styles.module.scss'
 
 type Props = { children: React.ReactNode; type?: 'slide' }
 
-const Transition = ({ children, type = 'slide' }: Props) => {
+export const Transition = ({ children, type = 'slide' }: Props) => {
     const { isInit, isVisible, childrenRef } = useTransition()
 
     return (
@@ -16,5 +16,3 @@ const Transition = ({ children, type = 'slide' }: Props) => {
         </div>
     )
 }
-
-export default Transition

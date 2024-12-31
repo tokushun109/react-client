@@ -12,7 +12,7 @@ type Props = {
     children: React.ReactNode
 }
 
-const Card = ({ color = ColorEnum.White, width = 'auto', height = 'auto', shadow = true, children }: Props) => {
+export const Card = ({ color = ColorEnum.White, width = 'auto', height = 'auto', shadow = true, children }: Props) => {
     return (
         <div
             className={classNames(styles['container'], !shadow && styles['no-shadow'])}
@@ -26,5 +26,3 @@ const Card = ({ color = ColorEnum.White, width = 'auto', height = 'auto', shadow
         </div>
     )
 }
-
-export default Card

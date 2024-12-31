@@ -1,7 +1,7 @@
 import { Twitter, Facebook } from '@mui/icons-material'
 import ReplyIcon from '@mui/icons-material/Reply'
 
-import Icon from '@/components/atoms/Icon'
+import { Icon } from '@/components/atoms/Icon'
 import { ColorEnum } from '@/types'
 
 import styles from './styles.module.scss'

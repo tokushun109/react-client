@@ -1,6 +1,6 @@
 import classNames from 'classnames'
 
-import Card from '@/components/atoms/Card'
+import { Card } from '@/components/atoms/Card'
 import { MaterialIconType } from '@/types'
 import { labelFontFace } from '@/utils/font'
 

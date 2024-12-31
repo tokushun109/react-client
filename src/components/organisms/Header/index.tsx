@@ -7,7 +7,7 @@ import Image from 'next/image'
 import { useRouter } from 'next/navigation'
 import { useState } from 'react'
 
-import Icon from '@/components/atoms/Icon'
+import { Icon } from '@/components/atoms/Icon'
 import { ColorEnum } from '@/types'
 
 import { SlideAnimation } from './animations'

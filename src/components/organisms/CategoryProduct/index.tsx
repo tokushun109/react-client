@@ -1,6 +1,6 @@
 import classNames from 'classnames'
 
-import Button from '@/components/atoms/Button'
+import { Button } from '@/components/atoms/Button'
 import ProductThumbnail from '@/components/molecules/ProductThumbnail'
 import { ICategoryProducts } from '@/types'
 import { mainFontFace } from '@/utils/font'

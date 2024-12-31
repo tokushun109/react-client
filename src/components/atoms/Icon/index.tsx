@@ -16,7 +16,7 @@ type Props = {
     shadow?: boolean
 }
 
-const Icon = ({ color, size, children, onClick = () => {}, contrast = false, shadow = true }: Props) => {
+export const Icon = ({ color, size, children, onClick = () => {}, contrast = false, shadow = true }: Props) => {
     const colorObject = ((): ColorObject => {
         if (!contrast)
             return {
@@ -45,5 +45,3 @@ const Icon = ({ color, size, children, onClick = () => {}, contrast = false, sha
         </div>
     )
 }
-
-export default Icon

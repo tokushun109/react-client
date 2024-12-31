@@ -4,7 +4,7 @@ import { Close } from '@mui/icons-material'
 import Image from 'next/image'
 import { usePathname, useRouter } from 'next/navigation'
 
-import Icon from '@/components/atoms/Icon'
+import { Icon } from '@/components/atoms/Icon'
 import IconCard from '@/components/molecules/IconCard'
 import { MenuEnum, MenuList, ColorEnum, MenuType } from '@/types'
 import { NavigationType } from '@/types/enum/navigation'

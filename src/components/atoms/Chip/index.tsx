@@ -11,7 +11,7 @@ type Props = {
     children: React.ReactNode
 }
 
-const Chip = ({ color, fontColor = '#ffffff', fontSize = 16, children }: Props) => {
+export const Chip = ({ color, fontColor = '#ffffff', fontSize = 16, children }: Props) => {
     return (
         <span
             className={styles.container}
@@ -25,5 +25,3 @@ const Chip = ({ color, fontColor = '#ffffff', fontSize = 16, children }: Props) 
         </span>
     )
 }
-
-export default Chip
