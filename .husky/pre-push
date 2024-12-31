@@ -3,13 +3,13 @@
 
 # 古い依存関係があるか確認
 echo "古い依存関係がないか確認しています..."
-OUTDATED=$(pnpm outdated)
+OUTDATED=$(pnpm outdated || true)
 
 # 古い依存関係があればプッシュをキャンセル
 if [ -n "$OUTDATED" ]; then
   echo "以下の依存関係が古くなっています:"
   echo "$OUTDATED"
-  echo "依存関係を 'pnpm update' を使って更新し、変更をコミットしてから再度プッシュしてください。"
+  echo "依存関係を 'pnpm update --latest' を使って更新し、変更をコミットしてから再度プッシュしてください。"
   exit 1
 fi
 
