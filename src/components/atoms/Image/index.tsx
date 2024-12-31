@@ -1,4 +1,4 @@
-import Image from 'next/image'
+import NextImage from 'next/image'
 import { useState } from 'react'
 
 type Props = {
@@ -6,7 +6,7 @@ type Props = {
     alt: string
 }
 
-const CustomImage = ({ src, alt }: Props) => {
+export const Image = ({ src, alt }: Props) => {
     const [isLoading, setIsLoading] = useState<boolean>(true)
     const [displaySrc, setDisplaySrc] = useState<string>(src)
 
@@ -18,7 +18,7 @@ const CustomImage = ({ src, alt }: Props) => {
                 width: '100%',
             }}
         >
-            <Image
+            <NextImage
                 src={isLoading ? '/image/gray-image.png' : displaySrc}
                 alt={alt}
                 fill
@@ -34,5 +34,3 @@ const CustomImage = ({ src, alt }: Props) => {
         </div>
     )
 }
-
-export default CustomImage

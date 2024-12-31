@@ -1,7 +1,7 @@
 import classNames from 'classnames'
 
 import Chip from '@/components/atoms/Chip'
-import CustomImage from '@/components/atoms/CustomImage'
+import { Image } from '@/components/atoms/Image'
 import { ColorEnum, IThumbnail } from '@/types'
 
 import styles from './styles.module.scss'
@@ -21,7 +21,7 @@ const HomeThumbnail = ({ item, shadow = true }: Props) => {
                     </Chip>
                 </div>
             )}
-            <CustomImage src={item.apiPath} alt={item.product.name} />
+            <Image src={item.apiPath} alt={item.product.name} />
             <div className={classNames(styles['chip'], styles['name'])}>
                 <Chip color={ColorEnum.Accent} fontSize={12}>
                     {item.product.name}

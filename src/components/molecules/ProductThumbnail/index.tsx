@@ -1,5 +1,5 @@
 import Chip from '@/components/atoms/Chip'
-import CustomImage from '@/components/atoms/CustomImage'
+import { Image } from '@/components/atoms/Image'
 import { ColorEnum, IThumbnail } from '@/types'
 import { numToPrice } from '@/utils/convert'
 
@@ -13,7 +13,7 @@ const ProductThumbnail = ({ item }: Props) => {
     return (
         <div className={styles['container']}>
             <div className={styles['image-container']}>
-                <CustomImage src={item.apiPath} alt={item.product.name} />
+                <Image src={item.apiPath} alt={item.product.name} />
                 <div className={styles['chip']}>
                     <Chip color={ColorEnum.Secondary} fontSize={12}>
                         {item.product.target.name}
