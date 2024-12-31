@@ -1,9 +1,10 @@
 import { Chip } from '@/components/elements/atoms/Chip'
 import { Image } from '@/components/elements/atoms/Image'
-import { ColorEnum, IThumbnail } from '@/types'
+import { ColorEnum } from '@/types'
 import { numToPrice } from '@/utils/convert'
 
 import styles from './styles.module.scss'
+import { IThumbnail } from '../../type'
 
 type Props = {
     item: IThumbnail

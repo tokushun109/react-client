@@ -1,4 +1,0 @@
-export * from '@/types/enum/classification'
-export * from '@/types/enum/menu'
-export * from '@/types/enum/color'
-export * from '@/types/enum/image'

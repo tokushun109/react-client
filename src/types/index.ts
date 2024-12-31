@@ -1,5 +1,6 @@
-export * from '@/types/enum'
-export * from '@/types/creator'
-export * from '@/types/product'
-export * from '@/types/classification'
-export * from '@/types/site'
+// グローバルなEnumのexport
+export * from '@/types/enum/classification'
+export * from '@/types/enum/color'
+export * from '@/types/enum/image'
+export * from '@/types/enum/menu'
+export * from '@/types/enum/navigation'

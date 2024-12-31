@@ -1,4 +1,4 @@
-import { ICategoryProducts, IGetProductsParams, IThumbnail } from '@/types'
+import { ICategoryProducts, IGetProductsParams, IThumbnail } from '@/features/product/type'
 import { ApiError } from '@/utils/error'
 
 export const getAllCategoryProducts = async (): Promise<ICategoryProducts[]> => {

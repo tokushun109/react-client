@@ -2,10 +2,11 @@ import classNames from 'classnames'
 
 import { Button } from '@/components/elements/atoms/Button'
 import ProductThumbnail from '@/features/product/components/ProductThumbnail'
-import { ICategoryProducts } from '@/types'
+
 import { mainFontFace } from '@/utils/font'
 
 import styles from './styles.module.scss'
+import { ICategoryProducts } from '../../type'
 
 type Props = {
     categoryProducts: ICategoryProducts

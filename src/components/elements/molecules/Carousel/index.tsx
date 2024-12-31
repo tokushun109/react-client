@@ -1,5 +1,4 @@
-import { IThumbnail } from '@/types'
-
+import { IThumbnail } from '@/features/product/type'
 import styles from './styles.module.scss'
 import { CarouselImage } from '@/components/elements/molecules/CarouselImage'
 

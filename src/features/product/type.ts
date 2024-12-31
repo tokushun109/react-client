@@ -1,4 +1,6 @@
-import { IClassification, ISiteDetail, ImageType } from '.'
+import { ImageType } from '@/types'
+import { IClassification } from '../classification/type'
+import { ISiteDetail } from '../site/type'
 
 export interface IProductImage {
     uuid: string

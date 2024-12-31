@@ -2,12 +2,11 @@
 
 import classNames from 'classnames'
 
-import { IThumbnail } from '@/types'
-
 import { useSlideShow } from './hooks'
 import styles from './styles.module.scss'
 import { ImageIndexEnum } from './types'
 import { CarouselImage } from '../CarouselImage'
+import { IThumbnail } from '@/features/product/type'
 
 type Props = {
     items: IThumbnail[]

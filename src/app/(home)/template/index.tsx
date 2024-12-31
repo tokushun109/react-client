@@ -8,10 +8,11 @@ import { Indicator } from '@/components/elements/atoms/Indicator'
 import SlideShow from '@/components/elements/molecules/SlideShow'
 import Carousel from '@/components/elements/molecules/Carousel'
 import Section from '@/app/(home)/components/Section'
-import { IThumbnail, ColorEnum } from '@/types'
+import { ColorEnum } from '@/types'
 import { NavigationEnum } from '@/types/enum/navigation'
 
 import styles from './styles.module.scss'
+import { IThumbnail } from '@/features/product/type'
 
 type Props = {
     carouselImages: IThumbnail[]

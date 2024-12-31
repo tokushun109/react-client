@@ -1,4 +1,4 @@
-import { ICreator } from '@/types'
+import { ICreator } from '@/features/creator/type'
 import { ApiError } from '@/utils/error'
 
 export const getCreator = async (): Promise<ICreator> => {

@@ -7,10 +7,11 @@ import { useRouter } from 'next/navigation'
 
 import { Icon } from '@/components/elements/atoms/Icon'
 import Section from '@/app/(home)/components/Section'
-import { ColorEnum, ISite } from '@/types'
+import { ColorEnum } from '@/types'
 import { labelFontFace } from '@/utils/font'
 
 import styles from './styles.module.scss'
+import { ISite } from '@/features/site/type'
 
 type Props = {
     snsList: ISite[]

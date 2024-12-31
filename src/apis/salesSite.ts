@@ -1,4 +1,4 @@
-import { ISite } from '@/types'
+import { ISite } from '@/features/site/type'
 import { ApiError } from '@/utils/error'
 
 export const getSalesSiteList = async (): Promise<ISite[]> => {

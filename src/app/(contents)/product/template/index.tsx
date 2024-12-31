@@ -1,9 +1,9 @@
 'use client'
 
 import { CategoryProducts } from '@/features/product/components/CategoryProducts'
-import { ICategoryProducts } from '@/types'
 
 import styles from './styles.module.scss'
+import { ICategoryProducts } from '@/features/product/type'
 
 type Props = {
     categoryProductsList: ICategoryProducts[]
