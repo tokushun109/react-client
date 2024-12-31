@@ -7,7 +7,7 @@ import { useRouter } from 'next/navigation'
 import { Indicator } from '@/components/bases/Indicator'
 import SlideShow from '@/components/composites/SlideShow'
 import Carousel from '@/components/composites/Carousel'
-import Section from '@/app/(home)/components/Section'
+import Section from '@/components/layouts/Section'
 import { ColorEnum } from '@/types'
 import { NavigationEnum } from '@/types/enum/navigation'
 

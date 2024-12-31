@@ -6,7 +6,7 @@ import Image from 'next/image'
 import { useRouter } from 'next/navigation'
 
 import { Icon } from '@/components/bases/Icon'
-import Section from '@/app/(home)/components/Section'
+import Section from '@/components/layouts/Section'
 import { ColorEnum } from '@/types'
 import { labelFontFace } from '@/utils/font'
 
