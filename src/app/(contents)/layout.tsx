@@ -3,8 +3,8 @@
 import classNames from 'classnames'
 import { usePathname } from 'next/navigation'
 
-import Footer from '@/components/organisms/Footer'
-import Header from '@/components/organisms/Header'
+import Footer from '@/components/layouts/Footer'
+import Header from '@/components/layouts/Header'
 import { NavigationTitleEnum, NavigationType } from '@/types/enum/navigation'
 import { labelFontFace } from '@/utils/font'
 

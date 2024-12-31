@@ -3,7 +3,7 @@ import { Metadata } from 'next'
 import { getCreator } from '@/apis/creator'
 import { getSalesSiteList } from '@/apis/salesSite'
 import { getSnsList } from '@/apis/sns'
-import AboutTemplate from '@/components/templates/AboutTemplate'
+import AboutTemplate from '@/app/(contents)/about/template'
 
 export async function generateMetadata(): Promise<Metadata> {
     const title = 'とこりりについて | とこりり'

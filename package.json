@@ -12,6 +12,7 @@
         "start": "next start",
         "lint": "next lint",
         "fmt": "prettier --write .",
+        "tsc": "tsc --noEmit",
         "sb": "storybook dev -p 6006",
         "build-storybook": "storybook build",
         "chromatic": "pnpm chromatic --project-token=chpt_6cf586488674b21"
