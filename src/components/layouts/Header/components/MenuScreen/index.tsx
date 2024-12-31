@@ -4,10 +4,10 @@ import { Close } from '@mui/icons-material'
 import Image from 'next/image'
 import { usePathname, useRouter } from 'next/navigation'
 
-import { Icon } from '@/components/atoms/Icon'
-import IconCard from '@/components/molecules/IconCard'
+import { Icon } from '@/components/elements/atoms/Icon'
 import { MenuEnum, MenuList, ColorEnum, MenuType } from '@/types'
 import { NavigationType } from '@/types/enum/navigation'
+import { IconCard } from '@/components/elements/molecules/IconCard'
 
 import styles from './styles.module.scss'
 

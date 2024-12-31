@@ -7,7 +7,7 @@ import { IThumbnail } from '@/types'
 import { useSlideShow } from './hooks'
 import styles from './styles.module.scss'
 import { ImageIndexEnum } from './types'
-import HomeThumbnail from '../HomeThumbnail'
+import { CarouselImage } from '../CarouselImage'
 
 type Props = {
     items: IThumbnail[]
@@ -38,7 +38,7 @@ const SlideShow = ({ items, size, innerPadding = 16, autoPlay = true }: Props) =
                         className={classNames(styles['content'], styles[v], swipeDirection && styles[`${swipeDirection}-swipe`])}
                         style={{ width: `calc(${size} - ${innerPadding}px)`, aspectRatio: '1 / 1' }}
                     >
-                        <HomeThumbnail item={items[imageIndex[v]]} shadow={false} />
+                        <CarouselImage item={items[imageIndex[v]]} shadow={false} />
                     </div>
                 ))}
             </div>

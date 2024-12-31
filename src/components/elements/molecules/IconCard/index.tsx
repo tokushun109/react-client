@@ -1,6 +1,6 @@
 import classNames from 'classnames'
 
-import { Card } from '@/components/atoms/Card'
+import { Card } from '@/components/elements/atoms/Card'
 import { MaterialIconType } from '@/types'
 import { labelFontFace } from '@/utils/font'
 
@@ -12,7 +12,7 @@ type Props = {
     isSelected?: boolean
 }
 
-const IconCard = ({ Icon, label, isSelected = false }: Props) => {
+export const IconCard = ({ Icon, label, isSelected = false }: Props) => {
     return (
         <div className={classNames(styles['container'], isSelected && styles['selected'])}>
             <Card>
@@ -26,5 +26,3 @@ const IconCard = ({ Icon, label, isSelected = false }: Props) => {
         </div>
     )
 }
-
-export default IconCard

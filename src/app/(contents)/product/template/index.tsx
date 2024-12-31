@@ -1,6 +1,6 @@
 'use client'
 
-import CategoryProduct from '@/components/organisms/CategoryProduct'
+import { CategoryProducts } from '@/features/product/components/CategoryProducts'
 import { ICategoryProducts } from '@/types'
 
 import styles from './styles.module.scss'
@@ -16,7 +16,7 @@ const ProductTemplate = ({ categoryProductsList }: Props) => {
             <div className={styles['product-area']}>
                 {categoryProductsList.map((v) => (
                     <div key={v.category.uuid}>
-                        <CategoryProduct categoryProducts={v} />
+                        <CategoryProducts categoryProducts={v} />
                     </div>
                 ))}
             </div>

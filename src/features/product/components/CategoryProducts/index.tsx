@@ -1,7 +1,7 @@
 import classNames from 'classnames'
 
-import { Button } from '@/components/atoms/Button'
-import ProductThumbnail from '@/components/molecules/ProductThumbnail'
+import { Button } from '@/components/elements/atoms/Button'
+import ProductThumbnail from '@/features/product/components/ProductThumbnail'
 import { ICategoryProducts } from '@/types'
 import { mainFontFace } from '@/utils/font'
 
@@ -11,7 +11,7 @@ type Props = {
     categoryProducts: ICategoryProducts
 }
 
-const CategoryProduct = ({ categoryProducts }: Props) => {
+export const CategoryProducts = ({ categoryProducts }: Props) => {
     return (
         <div className={styles['container']}>
             <div className={classNames(styles['category-name'], mainFontFace.className)}>{categoryProducts.category.name}</div>
@@ -30,5 +30,3 @@ const CategoryProduct = ({ categoryProducts }: Props) => {
         </div>
     )
 }
-
-export default CategoryProduct

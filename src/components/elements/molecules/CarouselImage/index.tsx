@@ -1,7 +1,7 @@
 import classNames from 'classnames'
 
-import { Chip } from '@/components/atoms/Chip'
-import { Image } from '@/components/atoms/Image'
+import { Chip } from '@/components/elements/atoms/Chip'
+import { Image } from '@/components/elements/atoms/Image'
 import { ColorEnum, IThumbnail } from '@/types'
 
 import styles from './styles.module.scss'
@@ -11,7 +11,7 @@ type Props = {
     shadow?: boolean
 }
 
-const HomeThumbnail = ({ item, shadow = true }: Props) => {
+export const CarouselImage = ({ item, shadow = true }: Props) => {
     return (
         <div className={classNames(styles['container'], shadow && styles['shadow'])}>
             {item.product.category.uuid && (
@@ -30,5 +30,3 @@ const HomeThumbnail = ({ item, shadow = true }: Props) => {
         </div>
     )
 }
-
-export default HomeThumbnail

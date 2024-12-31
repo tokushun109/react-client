@@ -7,12 +7,12 @@ import Image from 'next/image'
 import { useRouter } from 'next/navigation'
 import { useState } from 'react'
 
-import { Icon } from '@/components/atoms/Icon'
+import { Icon } from '@/components/elements/atoms/Icon'
 import { ColorEnum } from '@/types'
 
 import { SlideAnimation } from './animations'
 import styles from './styles.module.scss'
-import MenuScreen from '../MenuScreen'
+import MenuScreen from './components/MenuScreen'
 
 const Header = () => {
     const [isVisibleMenu, setIsVisibleMenu] = useState<boolean>(false)

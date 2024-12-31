@@ -1,7 +1,7 @@
 import classNames from 'classnames'
 
-import { Button } from '@/components/atoms/Button'
-import { Transition } from '@/components/atoms/Transition'
+import { Button } from '@/components/elements/atoms/Button'
+import { Transition } from '@/components/elements/atoms/Transition'
 import { ColorCodeEnum, ColorEnum, ColorType } from '@/types'
 import { labelFontFace } from '@/utils/font'
 
