@@ -77,8 +77,8 @@ devDependencies:
     specifier: ^8.4.7
     version: 8.4.7(storybook@8.4.7)
   '@types/node':
-    specifier: ^22.10.2
-    version: 22.10.2
+    specifier: ^22.10.3
+    version: 22.10.3
   '@types/react':
     specifier: ^19.0.2
     version: 19.0.2
@@ -2612,7 +2612,7 @@ packages:
         optional: true
     dependencies:
       '@storybook/core-webpack': 8.4.7(storybook@8.4.7)
-      '@types/node': 22.10.2
+      '@types/node': 22.10.3
       '@types/semver': 7.5.8
       browser-assert: 1.2.1
       case-sensitive-paths-webpack-plugin: 2.4.0
@@ -2659,7 +2659,7 @@ packages:
     peerDependencies:
       storybook: ^8.4.7
     dependencies:
-      '@types/node': 22.10.2
+      '@types/node': 22.10.3
       storybook: 8.4.7(prettier@3.4.2)
       ts-dedent: 2.2.0
     dev: true
@@ -2781,7 +2781,7 @@ packages:
       '@storybook/preset-react-webpack': 8.4.7(@storybook/test@8.4.7)(esbuild@0.24.2)(react-dom@19.0.0)(react@19.0.0)(storybook@8.4.7)(typescript@5.7.2)
       '@storybook/react': 8.4.7(@storybook/test@8.4.7)(react-dom@19.0.0)(react@19.0.0)(storybook@8.4.7)(typescript@5.7.2)
       '@storybook/test': 8.4.7(storybook@8.4.7)
-      '@types/node': 22.10.2
+      '@types/node': 22.10.3
       '@types/semver': 7.5.8
       babel-loader: 9.2.1(@babel/core@7.26.0)(webpack@5.97.1)
       css-loader: 6.11.0(webpack@5.97.1)
@@ -2852,7 +2852,7 @@ packages:
       '@storybook/core-webpack': 8.4.7(storybook@8.4.7)
       '@storybook/react': 8.4.7(@storybook/test@8.4.7)(react-dom@19.0.0)(react@19.0.0)(storybook@8.4.7)(typescript@5.7.2)
       '@storybook/react-docgen-typescript-plugin': 1.0.6--canary.9.0c3f3b7.0(typescript@5.7.2)(webpack@5.97.1)
-      '@types/node': 22.10.2
+      '@types/node': 22.10.3
       '@types/semver': 7.5.8
       find-up: 5.0.0
       magic-string: 0.30.17
@@ -3088,8 +3088,8 @@ packages:
     resolution: {integrity: sha512-+OWZQfAYyio6YkJb3HLxDrvnx6SWWDbC0zVPfBRzUk0/nqoDyf6dNxQi3eArPe8rJ473nobTMQ/8Zk+LxJ+Yuw==}
     dev: true
 
-  /@types/node@22.10.2:
-    resolution: {integrity: sha512-Xxr6BBRCAOQixvonOye19wnzyDiUtTeqldOOmj3CkeblonbccA12PFwlufvRdrpjXxqnmUaeiU5EOA+7s5diUQ==}
+  /@types/node@22.10.3:
+    resolution: {integrity: sha512-DifAyw4BkrufCILvD3ucnuN8eydUfc/C1GlyrnI+LK6543w5/L3VeVgf05o3B4fqSXP1dKYLOZsKfutpxPzZrw==}
     dependencies:
       undici-types: 6.20.0
 
@@ -5761,7 +5761,7 @@ packages:
     resolution: {integrity: sha512-7vuh85V5cdDofPyxn58nrPjBktZo0u9x1g8WtjQol+jZDaE+fhN+cIvTj11GndBnMnyfrUOG1sZQxCdjKh+DKg==}
     engines: {node: '>= 10.13.0'}
     dependencies:
-      '@types/node': 22.10.2
+      '@types/node': 22.10.3
       merge-stream: 2.0.0
       supports-color: 8.1.1
 

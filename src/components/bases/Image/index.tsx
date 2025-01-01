@@ -1,6 +1,8 @@
 import NextImage from 'next/image'
 import { useState } from 'react'
 
+import styles from './styles.module.scss'
+
 type Props = {
     src: string
     alt: string
@@ -11,19 +13,14 @@ export const Image = ({ src, alt }: Props) => {
     const [displaySrc, setDisplaySrc] = useState<string>(src)
 
     return (
-        <div
-            style={{
-                position: 'relative',
-                height: '100%',
-                width: '100%',
-            }}
-        >
+        <div className={styles['container']}>
             <NextImage
+                className={styles['image']}
                 src={isLoading ? '/image/gray-image.png' : displaySrc}
                 alt={alt}
                 fill
                 sizes="100%"
-                style={{ objectFit: 'cover', zIndex: 0, borderRadius: 12 }}
+                loading="lazy"
                 onLoad={() => {
                     setIsLoading(false)
                 }}

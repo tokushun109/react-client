@@ -12,7 +12,7 @@
 
         .icon {
             svg {
-                font-size: 260px; // iconのサイズ
+                font-size: 6em; // iconのサイズ
 
                 @include media(md) {
                     font-size: 5em;
