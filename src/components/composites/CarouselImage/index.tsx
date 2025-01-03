@@ -22,7 +22,7 @@ export const CarouselImage = ({ item, shadow = true }: Props) => {
                     </Chip>
                 </div>
             )}
-            <Image src={item.apiPath} alt={item.product.name} />
+            <Image src={item.apiPath} alt={item.product.name} key={item.product.name} />
             <div className={classNames(styles['chip'], styles['name'])}>
                 <Chip color={ColorEnum.Accent} fontSize={12}>
                     {item.product.name}
