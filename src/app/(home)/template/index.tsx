@@ -43,6 +43,7 @@ const HomeTemplate = ({ carouselImages }: Props) => {
             <div className={classNames(styles['slide-show-area'], styles['sm'])}>
                 <SlideShow items={carouselImages} size="90vw" />
             </div>
+            <Select title="title" options={[1, 2, 3].map((i) => ({ value: `value${i}`, label: `label${i}` }))}></Select>
             <Section
                 title="About"
                 button

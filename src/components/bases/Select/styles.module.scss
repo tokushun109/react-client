@@ -1,0 +1,21 @@
+.container {
+    font-size: $font-normal;
+    cursor: pointer;
+
+    &__title,
+    &__option {
+        padding: 12px 16px;
+    }
+
+    &__title {
+        &:hover {
+            background: rgba(0, 0, 0, 0.1);
+        }
+    }
+
+    &__option {
+        &:hover {
+            background: rgba(0, 0, 0, 0.05);
+        }
+    }
+}
