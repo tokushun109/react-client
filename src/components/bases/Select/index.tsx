@@ -34,15 +34,18 @@ export const Select = ({ title, options, initialSelectedIndex, suffix, onSelect 
     return (
         <div className={styles['container']}>
             <div className={styles['container__title']} onClick={onClickTitle}>
-                {suffix && <span className={styles['container__title__suffix']}>{suffix}</span>}
+                {suffix && <span className={classNames(styles['container__title__suffix'], styles['active'])}>{suffix}</span>}
                 {`${title}${selectedIndex !== undefined ? ` - ${options[selectedIndex].label}` : ''}`}
             </div>
             {isOpen && (
                 <ul className={styles['container__options']}>
                     {options.map((v, i) => (
                         <li
-                            className={classNames(styles['container__option'], suffix !== undefined && styles[`suffix-padding`])}
-                            style={{ color: selectedIndex === options.indexOf(v) ? 'red' : '' }}
+                            className={classNames(
+                                styles['container__option'],
+                                suffix !== undefined && styles[`suffix-padding`],
+                                selectedIndex === i && styles['active'],
+                            )}
                             key={v.value}
                             onClick={() => {
                                 onClickOption(i)

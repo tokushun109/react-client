@@ -17,10 +17,15 @@ $side-padding: 16px;
             display: flex;
             justify-content: center;
             align-items: center;
+
+            &.active {
+                color: $title-primary-color;
+            }
         }
 
+
         &:hover {
-            background: rgba(0, 0, 0, 0.1);
+            background: rgba(123, 103, 91, 0.2);
         }
     }
 
@@ -33,6 +38,14 @@ $side-padding: 16px;
 
         &:hover {
             background: rgba(0, 0, 0, 0.05);
+        }
+
+        &.active {
+            background: rgba(255, 183, 77, 0.15);
+
+            &:hover {
+                background: rgba(255, 183, 77, 0.3);
+            }
         }
     }
 }
