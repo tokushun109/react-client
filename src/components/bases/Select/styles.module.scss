@@ -1,19 +1,36 @@
+$suffix-size: 24px;
+$suffix-gap: 8px;
+$side-padding: 16px;
+
 .container {
     font-size: $font-normal;
     cursor: pointer;
 
-    &__title,
-    &__option {
-        padding: 12px 16px;
-    }
-
     &__title {
+        padding: 12px $side-padding;
+        display: flex;
+        gap: $suffix-gap;
+
+        &__suffix {
+            width: $suffix-size;
+            height: $suffix-size;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
         &:hover {
             background: rgba(0, 0, 0, 0.1);
         }
     }
 
     &__option {
+        padding: 12px $side-padding;
+
+        &.suffix-padding {
+            padding-left: calc($suffix-size + $suffix-gap + $side-padding);
+        }
+
         &:hover {
             background: rgba(0, 0, 0, 0.05);
         }
