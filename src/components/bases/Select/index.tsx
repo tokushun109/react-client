@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useRef, useState } from 'react'
 import styles from './styles.module.scss'
 import classNames from 'classnames'
 
@@ -28,7 +28,10 @@ export const Select = ({ title, options, initialSelectedIndex, suffix, onSelect 
     const onClickOption = (index: number) => {
         setSelectedIndex(index)
         onSelect(index)
-        setIsOpen(false)
+        // 2秒後にオプションを閉じる
+        setTimeout(() => {
+            setIsOpen(false)
+        }, 200)
     }
 
     return (
@@ -37,8 +40,8 @@ export const Select = ({ title, options, initialSelectedIndex, suffix, onSelect 
                 {suffix && <span className={classNames(styles['container__title__suffix'], styles['active'])}>{suffix}</span>}
                 {`${title}${selectedIndex !== undefined ? ` - ${options[selectedIndex].label}` : ''}`}
             </div>
-            {isOpen && (
-                <ul className={styles['container__options']}>
+            <div className={classNames(styles['container__options'], isOpen ? styles['visible'] : '')}>
+                <ul className={styles['container__options__inner']}>
                     {options.map((v, i) => (
                         <li
                             className={classNames(
@@ -55,7 +58,7 @@ export const Select = ({ title, options, initialSelectedIndex, suffix, onSelect 
                         </li>
                     ))}
                 </ul>
-            )}
+            </div>
         </div>
     )
 }

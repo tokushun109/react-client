@@ -4,6 +4,7 @@ $side-padding: 16px;
 
 .container {
     font-size: $font-normal;
+    user-select: none;
     cursor: pointer;
 
     &__title {
@@ -23,9 +24,22 @@ $side-padding: 16px;
             }
         }
 
-
         &:hover {
             background: rgba(123, 103, 91, 0.2);
+        }
+    }
+
+    &__options {
+        display: grid;
+        grid-template-rows: 0fr;
+        transition: grid-template-rows 0.2s;
+
+        &.visible {
+            grid-template-rows: 1fr;
+        }
+
+        &__inner {
+            overflow: hidden;
         }
     }
 
