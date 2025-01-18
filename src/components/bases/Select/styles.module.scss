@@ -3,11 +3,14 @@ $suffix-gap: 8px;
 $side-padding: 16px;
 
 .container {
+    background: white;
     font-size: $font-normal;
     user-select: none;
     cursor: pointer;
 
     &__title {
+        position: relative;
+        overflow: hidden;
         padding: 12px $side-padding;
         display: flex;
         gap: $suffix-gap;
@@ -44,6 +47,8 @@ $side-padding: 16px;
     }
 
     &__option {
+        overflow: hidden;
+        position: relative;
         padding: 12px $side-padding;
 
         &.suffix-padding {

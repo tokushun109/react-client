@@ -1,11 +1,13 @@
-import { useRef, useState } from 'react'
+import { useState, MouseEvent } from 'react'
 import styles from './styles.module.scss'
 import classNames from 'classnames'
+import { doRippleAnimation, RippleColorEnum } from '@/utils/animation'
 
 type SelectOption = {
     value: string
     label: string
 }
+
 type Props = {
     title: string
     options: SelectOption[]
@@ -21,11 +23,13 @@ export const Select = ({ title, options, initialSelectedIndex, suffix, onSelect 
     // 選択されているオプションのインデックス
     const [selectedIndex, setSelectedIndex] = useState<number | undefined>(initialSelectedIndex)
 
-    const onClickTitle = () => {
+    const onClickTitle = (e: MouseEvent) => {
+        doRippleAnimation(e, RippleColorEnum.Black)
         setIsOpen(!isOpen)
     }
 
-    const onClickOption = (index: number) => {
+    const onClickOption = (e: MouseEvent, index: number) => {
+        doRippleAnimation(e, RippleColorEnum.Orange)
         setSelectedIndex(index)
         onSelect(index)
         // 2秒後にオプションを閉じる
@@ -50,8 +54,8 @@ export const Select = ({ title, options, initialSelectedIndex, suffix, onSelect 
                                 selectedIndex === i && styles['active'],
                             )}
                             key={v.value}
-                            onClick={() => {
-                                onClickOption(i)
+                            onClick={(e) => {
+                                onClickOption(e, i)
                             }}
                         >
                             {v.label}

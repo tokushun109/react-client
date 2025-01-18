@@ -10,3 +10,19 @@ a {
 li {
     list-style: none;
 }
+
+// グローバルアニメーションスタイル
+.ripple {
+    position: absolute;
+    border-radius: 50%;
+    transform: scale(0);
+    animation: ripple-animation 0.3s ease-out;
+    opacity: 0.6;
+}
+
+@keyframes ripple-animation {
+    to {
+        transform: scale(2);
+        opacity: 0;
+    }
+}
