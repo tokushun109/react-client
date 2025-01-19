@@ -10,7 +10,7 @@ const meta: Meta<typeof Select> = {
         initialSelectedIndex: 0,
         suffix: <KeyboardArrowDown />,
         onSelect: (index: number) => {
-            console.log(`${index}番目をclickしました`)
+            console.log(`${index}番目を選択しました`)
         },
     },
 }
