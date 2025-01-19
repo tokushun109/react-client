@@ -14,7 +14,6 @@ export const MenuEnum = {
     Product: 'product',
     Contact: 'contact',
 } as const
-
 export type MenuType = (typeof MenuEnum)[keyof typeof MenuEnum]
 
 type MenuObject = {
