@@ -34,12 +34,6 @@ export interface ICategoryProducts {
     products: Array<IProduct>
 }
 
-export interface IGetProductsParams {
-    mode: 'all' | 'active'
-    category: 'all' | string
-    target: 'all' | string
-}
-
 export interface IThumbnail {
     product: IProduct
     apiPath: string
