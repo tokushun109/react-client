@@ -3,18 +3,29 @@
 import { CategoryProducts } from '@/features/product/components/CategoryProducts'
 
 import styles from './styles.module.scss'
-import { ICategoryProducts } from '@/features/product/type'
+import { IProductsByCategory } from '@/features/product/type'
+import { IClassification } from '@/features/classification/type'
+import { Select } from '@/components/bases/Select'
+import { KeyboardArrowDown } from '@mui/icons-material'
 
 type Props = {
-    categoryProductsList: ICategoryProducts[]
+    productsByCategory: IProductsByCategory[]
+    categories: IClassification[]
 }
 
-const ProductTemplate = ({ categoryProductsList }: Props) => {
+const ProductTemplate = ({ productsByCategory, categories }: Props) => {
     return (
         <div className={styles['container']}>
-            <div className={styles['search-area']}>検索欄</div>
+            <div className={styles['search-area']}>
+                <Select
+                    title="Category"
+                    options={categories.map((v) => ({ value: v.uuid, label: v.name }))}
+                    suffix={<KeyboardArrowDown />}
+                    onSelect={(index) => console.log(index)}
+                />
+            </div>
             <div className={styles['product-area']}>
-                {categoryProductsList.map((v) => (
+                {productsByCategory.map((v) => (
                     <div key={v.category.uuid}>
                         <CategoryProducts categoryProducts={v} />
                     </div>

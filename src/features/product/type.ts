@@ -29,7 +29,7 @@ export interface IProduct {
     isActive: boolean
 }
 
-export interface ICategoryProducts {
+export interface IProductsByCategory {
     category: IClassification
     products: Array<IProduct>
 }

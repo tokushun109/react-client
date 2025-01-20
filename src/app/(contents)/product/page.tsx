@@ -1,7 +1,8 @@
 import { Metadata } from 'next'
 
-import { getAllCategoryProducts } from '@/apis/product'
+import { getProductsByCategory } from '@/apis/product'
 import ProductTemplate from '@/app/(contents)/product/template'
+import { getCategories } from '@/apis/category'
 
 export async function generateMetadata(): Promise<Metadata> {
     const title = '商品一覧 | とこりり'
@@ -26,8 +27,9 @@ export async function generateMetadata(): Promise<Metadata> {
 }
 
 const Product = async () => {
-    const categoryProductsList = await getAllCategoryProducts()
-    return <ProductTemplate categoryProductsList={categoryProductsList} />
+    const productsByCategory = await getProductsByCategory({ mode: 'active', category: 'all', target: 'all' })
+    const categories = await getCategories({ mode: 'used' })
+    return <ProductTemplate productsByCategory={productsByCategory} categories={categories} />
 }
 
 export default Product

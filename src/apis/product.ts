@@ -1,15 +1,15 @@
-import { ICategoryProducts, IThumbnail } from '@/features/product/type'
+import { IProductsByCategory, IThumbnail } from '@/features/product/type'
 import { ApiError } from '@/utils/error'
 import { convertObjectToURLSearchParams } from '@/utils/request'
 
-export interface IGetAllCategoryProductsParams {
+export interface IGetProductsByCategoryParams {
     mode: 'all' | 'active'
     category: 'all' | string
     target: 'all' | string
 }
 
 /** カテゴリーごとの商品リストを取得 */
-export const getAllCategoryProducts = async (params: IGetAllCategoryProductsParams): Promise<ICategoryProducts[]> => {
+export const getProductsByCategory = async (params: IGetProductsByCategoryParams): Promise<IProductsByCategory[]> => {
     const query = convertObjectToURLSearchParams(params)
     const res = await fetch(`${process.env.API_URL}/category/product?${query}`, {
         headers: {
