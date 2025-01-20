@@ -12,26 +12,37 @@ type Props = {
     title: string
     options: SelectOption[]
     initialSelectedIndex?: number
+    isSelectedAll?: boolean
     suffix?: React.ReactNode
-    onSelect: (index: number) => void
+    onSelect: (index: number | undefined) => void
 }
 
-export const Select = ({ title, options, initialSelectedIndex, suffix, onSelect }: Props) => {
+export const Select = ({ title, options, initialSelectedIndex, isSelectedAll = true, suffix, onSelect }: Props) => {
     // プルダウンが開いているか
     const [isOpen, setIsOpen] = useState<boolean>(false)
 
     // 選択されているオプションのインデックス
     const [selectedIndex, setSelectedIndex] = useState<number | undefined>(initialSelectedIndex)
 
+    // 表示されるタイトル
+    const displayTitle = ((): string => {
+        if (selectedIndex === undefined) {
+            return isSelectedAll ? `${title} - All` : title
+        } else {
+            return `${title} - ${options[selectedIndex].label}`
+        }
+    })()
+
     const onClickTitle = (e: MouseEvent) => {
         doRippleAnimation(e, RippleColorEnum.Black)
         setIsOpen(!isOpen)
     }
 
-    const onClickOption = (e: MouseEvent, index: number) => {
+    const onClickOption = (e: MouseEvent, index: number | undefined) => {
         doRippleAnimation(e, RippleColorEnum.Orange)
         setSelectedIndex(index)
         onSelect(index)
+
         // 2秒後にオプションを閉じる
         setTimeout(() => {
             setIsOpen(false)
@@ -42,10 +53,24 @@ export const Select = ({ title, options, initialSelectedIndex, suffix, onSelect 
         <div className={styles['container']}>
             <div className={styles['container__title']} onClick={onClickTitle}>
                 {suffix && <span className={classNames(styles['container__title__suffix'], styles['active'])}>{suffix}</span>}
-                {`${title}${selectedIndex !== undefined ? ` - ${options[selectedIndex].label}` : ''}`}
+                {displayTitle}
             </div>
             <div className={classNames(styles['container__options'], isOpen ? styles['visible'] : '')}>
                 <ul className={styles['container__options__inner']}>
+                    {isSelectedAll && (
+                        <li
+                            className={classNames(
+                                styles['container__option'],
+                                suffix !== undefined && styles[`suffix-padding`],
+                                isSelectedAll && selectedIndex === undefined && styles['active'],
+                            )}
+                            onClick={(e) => {
+                                onClickOption(e, undefined)
+                            }}
+                        >
+                            All
+                        </li>
+                    )}
                     {options.map((v, i) => (
                         <li
                             className={classNames(
