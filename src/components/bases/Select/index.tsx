@@ -3,33 +3,33 @@ import styles from './styles.module.scss'
 import classNames from 'classnames'
 import { doRippleAnimation, RippleColorEnum } from '@/utils/animation'
 
-type SelectOption = {
+type SelectOption<T = string> = {
     value: string
     label: string
 }
 
-type Props = {
+type Props<T = string> = {
     title: string
     options: SelectOption[]
-    initialSelectedIndex?: number
+    initialSelectedOption?: SelectOption<T>
     isSelectedAll?: boolean
     suffix?: React.ReactNode
-    onSelect: (index: number | undefined) => void
+    onSelect: (option: SelectOption<T> | undefined) => void
 }
 
-export const Select = ({ title, options, initialSelectedIndex, isSelectedAll = true, suffix, onSelect }: Props) => {
+export const Select = <T,>({ title, options, initialSelectedOption, isSelectedAll = true, suffix, onSelect }: Props<T>) => {
     // プルダウンが開いているか
     const [isOpen, setIsOpen] = useState<boolean>(false)
 
     // 選択されているオプションのインデックス
-    const [selectedIndex, setSelectedIndex] = useState<number | undefined>(initialSelectedIndex)
+    const [selectedOption, setSelectedOption] = useState<SelectOption<T> | undefined>(initialSelectedOption)
 
     // 表示されるタイトル
     const displayTitle = ((): string => {
-        if (selectedIndex === undefined) {
+        if (selectedOption === undefined) {
             return isSelectedAll ? `${title} - All` : title
         } else {
-            return `${title} - ${options[selectedIndex].label}`
+            return `${title} - ${selectedOption.label}`
         }
     })()
 
@@ -38,10 +38,10 @@ export const Select = ({ title, options, initialSelectedIndex, isSelectedAll = t
         setIsOpen(!isOpen)
     }
 
-    const onClickOption = (e: MouseEvent, index: number | undefined) => {
+    const onClickOption = (e: MouseEvent, selectedOption: SelectOption<T> | undefined) => {
         doRippleAnimation(e, RippleColorEnum.Orange)
-        setSelectedIndex(index)
-        onSelect(index)
+        setSelectedOption(selectedOption)
+        onSelect(selectedOption)
 
         // 2秒後にオプションを閉じる
         setTimeout(() => {
@@ -62,7 +62,7 @@ export const Select = ({ title, options, initialSelectedIndex, isSelectedAll = t
                             className={classNames(
                                 styles['container__option'],
                                 suffix !== undefined && styles[`suffix-padding`],
-                                isSelectedAll && selectedIndex === undefined && styles['active'],
+                                isSelectedAll && selectedOption === undefined && styles['active'],
                             )}
                             onClick={(e) => {
                                 onClickOption(e, undefined)
@@ -71,16 +71,16 @@ export const Select = ({ title, options, initialSelectedIndex, isSelectedAll = t
                             All
                         </li>
                     )}
-                    {options.map((v, i) => (
+                    {options.map((v) => (
                         <li
                             className={classNames(
                                 styles['container__option'],
                                 suffix !== undefined && styles[`suffix-padding`],
-                                selectedIndex === i && styles['active'],
+                                selectedOption === v && styles['active'],
                             )}
                             key={v.value}
                             onClick={(e) => {
-                                onClickOption(e, i)
+                                onClickOption(e, v)
                             }}
                         >
                             {v.label}
