@@ -1,5 +1,19 @@
 .container {
     .search-area {
+        display: flex;
         margin-bottom: 40px;
+
+        @include media(sm) {
+            display: block;
+            margin: 12px 0;
+        }
+
+        &__select {
+            width: 350px;
+
+            @include media(sm) {
+                width: auto;
+            }
+        }
     }
 }

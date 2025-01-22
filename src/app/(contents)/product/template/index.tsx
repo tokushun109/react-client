@@ -11,18 +11,29 @@ import { KeyboardArrowDown } from '@mui/icons-material'
 type Props = {
     productsByCategory: IProductsByCategory[]
     categories: IClassification[]
+    targets: IClassification[]
 }
 
-const ProductTemplate = ({ productsByCategory, categories }: Props) => {
+const ProductTemplate = ({ productsByCategory, categories, targets }: Props) => {
     return (
         <div className={styles['container']}>
             <div className={styles['search-area']}>
-                <Select
-                    title="Category"
-                    options={categories.map((v) => ({ value: v.uuid, label: v.name }))}
-                    suffix={<KeyboardArrowDown />}
-                    onSelect={(index) => console.log(index)}
-                />
+                <div className={styles['search-area__select']}>
+                    <Select
+                        title="Category"
+                        options={categories.map((v) => ({ value: v.uuid, label: v.name }))}
+                        suffix={<KeyboardArrowDown />}
+                        onSelect={(index) => console.log(index)}
+                    />
+                </div>
+                <div className={styles['search-area__select']}>
+                    <Select
+                        title="Target"
+                        options={targets.map((v) => ({ value: v.uuid, label: v.name }))}
+                        suffix={<KeyboardArrowDown />}
+                        onSelect={(index) => console.log(index)}
+                    />
+                </div>
             </div>
             <div className={styles['product-area']}>
                 {productsByCategory.map((v) => (
