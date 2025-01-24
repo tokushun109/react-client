@@ -1,9 +1,9 @@
 import { Metadata } from 'next'
 
-import { getProductsByCategory } from '@/apis/product'
-import ProductTemplate from '@/app/(contents)/product/template'
 import { getCategories } from '@/apis/category'
+import { getProductsByCategory } from '@/apis/product'
 import { getTargets } from '@/apis/target'
+import ProductTemplate from '@/app/(contents)/product/template'
 
 export async function generateMetadata(): Promise<Metadata> {
     const title = '商品一覧 | とこりり'

@@ -1,7 +1,9 @@
-import { useState, MouseEvent } from 'react'
-import styles from './styles.module.scss'
 import classNames from 'classnames'
+import { useState, MouseEvent } from 'react'
+
 import { doRippleAnimation, RippleColorEnum } from '@/utils/animation'
+
+import styles from './styles.module.scss'
 
 export type SelectOption<T = string> = {
     value: T
@@ -14,7 +16,7 @@ type Props<T = string> = {
     initialSelectedOption?: SelectOption<T>
     isSelectedAll?: boolean
     suffix?: React.ReactNode
-    onSelect: (option: SelectOption<T> | undefined) => void
+    onSelect: (_option: SelectOption<T> | undefined) => void
 }
 
 export const Select = <T,>({ title, options, initialSelectedOption, isSelectedAll = true, suffix, onSelect }: Props<T>) => {

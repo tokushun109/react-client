@@ -2,8 +2,9 @@ import { setTimeout } from 'timers'
 
 import { useEffect, useRef, useState } from 'react'
 
-import { ImageIndex, SwipeDirection, SwipePosition } from '../types'
 import { IThumbnail } from '@/features/product/type'
+
+import { ImageIndex, SwipeDirection, SwipePosition } from '../types'
 
 export const useSlideShow = (items: IThumbnail[], autoPlay: boolean) => {
     // 商品画像の数

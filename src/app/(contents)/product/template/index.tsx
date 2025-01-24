@@ -1,13 +1,14 @@
 'use client'
 
-import { ProductsByCategoryDisplay } from '@/features/product/components/CategoryProducts'
-
-import styles from './styles.module.scss'
-import { IProductsByCategory } from '@/features/product/type'
-import { IClassification } from '@/features/classification/type'
-import { Select, SelectOption } from '@/components/bases/Select'
 import { KeyboardArrowDown } from '@mui/icons-material'
 import { useState } from 'react'
+
+import { Select, SelectOption } from '@/components/bases/Select'
+import { IClassification } from '@/features/classification/type'
+import { ProductsByCategoryDisplay } from '@/features/product/components/CategoryProducts'
+import { IProductsByCategory } from '@/features/product/type'
+
+import styles from './styles.module.scss'
 
 type Props = {
     productsByCategory: IProductsByCategory[]

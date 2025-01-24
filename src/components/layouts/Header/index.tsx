@@ -11,8 +11,8 @@ import { Icon } from '@/components/bases/Icon'
 import { ColorEnum } from '@/types'
 
 import { SlideAnimation } from './animations'
-import styles from './styles.module.scss'
 import MenuScreen from './components/MenuScreen'
+import styles from './styles.module.scss'
 
 const Header = () => {
     const [isVisibleMenu, setIsVisibleMenu] = useState<boolean>(false)

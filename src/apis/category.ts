@@ -1,5 +1,4 @@
 import { IClassification } from '@/features/classification/type'
-import { ICreator } from '@/features/creator/type'
 import { ApiError } from '@/utils/error'
 import { convertObjectToURLSearchParams } from '@/utils/request'
 

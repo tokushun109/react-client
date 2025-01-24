@@ -2,10 +2,10 @@ import classNames from 'classnames'
 
 import { Chip } from '@/components/bases/Chip'
 import { Image } from '@/components/bases/Image'
+import { IThumbnail } from '@/features/product/type'
 import { ColorEnum } from '@/types'
 
 import styles from './styles.module.scss'
-import { IThumbnail } from '@/features/product/type'
 
 type Props = {
     item: IThumbnail

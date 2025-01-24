@@ -5,9 +5,9 @@ import Image from 'next/image'
 import { usePathname, useRouter } from 'next/navigation'
 
 import { Icon } from '@/components/bases/Icon'
+import { IconCard } from '@/components/composites/IconCard'
 import { MenuEnum, MenuList, ColorEnum, MenuType } from '@/types'
 import { NavigationType } from '@/types/enum/navigation'
-import { IconCard } from '@/components/composites/IconCard'
 
 import styles from './styles.module.scss'
 

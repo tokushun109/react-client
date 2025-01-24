@@ -1,8 +1,9 @@
 import classNames from 'classnames'
 
-import styles from './styles.module.scss'
-import MobileMenu from './components/MobileMenu'
 import { ShareButtons } from '@/components/composites/ShareButtons'
+
+import MobileMenu from './components/MobileMenu'
+import styles from './styles.module.scss'
 
 const Footer = () => {
     return (

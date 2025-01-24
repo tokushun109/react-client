@@ -5,14 +5,14 @@ import Image from 'next/image'
 import { useRouter } from 'next/navigation'
 
 import { Indicator } from '@/components/bases/Indicator'
-import SlideShow from '@/components/composites/SlideShow'
 import Carousel from '@/components/composites/Carousel'
+import SlideShow from '@/components/composites/SlideShow'
 import Section from '@/components/layouts/Section'
+import { IThumbnail } from '@/features/product/type'
 import { ColorEnum } from '@/types'
 import { NavigationEnum } from '@/types/enum/navigation'
 
 import styles from './styles.module.scss'
-import { IThumbnail } from '@/features/product/type'
 
 type Props = {
     carouselImages: IThumbnail[]
