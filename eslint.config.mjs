@@ -60,14 +60,24 @@ const configs = [
             'unused-imports/no-unused-imports': 'error',
             // Props などの分割代入を強制
             'react/destructuring-assignment': 'error',
+            // コンポーネントの定義方法をアロー関数に統一
             'react/function-component-definition': [
-                // コンポーネントの定義方法をアロー関数に統一
                 'error',
                 {
                     namedComponents: 'arrow-function',
                     unnamedComponents: 'arrow-function',
                 },
             ],
+            // useState の返り値の命名を [value, setValue] に統一
+            'react/hook-use-state': 'error',
+            // boolean 型の Props の渡し方を統一
+            'react/jsx-boolean-value': 'error',
+            // React Fragment の書き方を統一
+            'react/jsx-fragments': 'error',
+            // Props と children で不要な中括弧を削除
+            'react/jsx-curly-brace-presence': 'error',
+            // 不要な React Fragment を削除
+            'react/jsx-no-useless-fragment': 'error',
         },
     },
 

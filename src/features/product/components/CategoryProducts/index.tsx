@@ -14,7 +14,7 @@ type Props = {
 export const ProductsByCategoryDisplay = ({ productsByCategory }: Props) => {
     // 商品がなければ表示しない
     if (productsByCategory.products.length === 0) {
-        return <></>
+        return undefined
     }
 
     return (
