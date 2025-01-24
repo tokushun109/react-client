@@ -27,7 +27,8 @@ type Props =
       })
 
 const Section = (props: Props) => {
-    if (props.button) {
+    const { button } = props
+    if (button) {
         // ボタンがある時
         const { title, contrast, children, buttonLabel, color, onButtonClick } = props
         return (

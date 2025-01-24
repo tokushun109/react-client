@@ -58,6 +58,7 @@ const configs = [
             ],
 
             'unused-imports/no-unused-imports': 'error',
+            'react/destructuring-assignment': 'error', // Props などの分割代入を強制
         },
     },
 
