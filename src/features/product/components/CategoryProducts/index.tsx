@@ -6,24 +6,29 @@ import ProductThumbnail from '@/features/product/components/ProductThumbnail'
 import { mainFontFace } from '@/utils/font'
 
 import styles from './styles.module.scss'
-import { ICategoryProducts } from '../../type'
+import { IProductsByCategory } from '../../type'
 
 type Props = {
-    categoryProducts: ICategoryProducts
+    productsByCategory: IProductsByCategory
 }
 
-export const CategoryProducts = ({ categoryProducts }: Props) => {
+export const ProductsByCategoryDisplay = ({ productsByCategory }: Props) => {
+    // 商品がなければ表示しない
+    if (productsByCategory.products.length === 0) {
+        return <></>
+    }
+
     return (
         <div className={styles['container']}>
-            <div className={classNames(styles['category-name'], mainFontFace.className)}>{categoryProducts.category.name}</div>
+            <div className={classNames(styles['category-name'], mainFontFace.className)}>{productsByCategory.category.name}</div>
             <div className={styles['product-list']}>
-                {categoryProducts.products.slice(0, 4).map((v) => (
+                {productsByCategory.products.slice(0, 4).map((v) => (
                     <div className={styles['product-thumbnail']} key={v.uuid}>
                         <ProductThumbnail item={{ product: v, apiPath: v.productImages[0].apiPath }} />
                     </div>
                 ))}
             </div>
-            {categoryProducts.products.length > 4 && (
+            {productsByCategory.products.length > 4 && (
                 <div className={styles['more-button']}>
                     <Button onClick={() => {}}>もっと見る</Button>
                 </div>

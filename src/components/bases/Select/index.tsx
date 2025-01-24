@@ -3,14 +3,14 @@ import styles from './styles.module.scss'
 import classNames from 'classnames'
 import { doRippleAnimation, RippleColorEnum } from '@/utils/animation'
 
-type SelectOption<T = string> = {
-    value: string
+export type SelectOption<T = string> = {
+    value: T
     label: string
 }
 
 type Props<T = string> = {
     title: string
-    options: SelectOption[]
+    options: SelectOption<T>[]
     initialSelectedOption?: SelectOption<T>
     isSelectedAll?: boolean
     suffix?: React.ReactNode
@@ -71,14 +71,14 @@ export const Select = <T,>({ title, options, initialSelectedOption, isSelectedAl
                             All
                         </li>
                     )}
-                    {options.map((v) => (
+                    {options.map((v, i) => (
                         <li
                             className={classNames(
                                 styles['container__option'],
                                 suffix !== undefined && styles[`suffix-padding`],
                                 selectedOption === v && styles['active'],
                             )}
-                            key={v.value}
+                            key={`${i}-${v.label}`}
                             onClick={(e) => {
                                 onClickOption(e, v)
                             }}

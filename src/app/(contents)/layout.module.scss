@@ -2,10 +2,12 @@
     .main {
         margin: 0 auto;
         max-width: $xl;
+        min-height: calc(100svh - 120px);
         padding: 0 48px;
 
         @include media(sm) {
             padding: 0 16px;
+            min-height: calc(100svh - 186px);
         }
 
         .title {

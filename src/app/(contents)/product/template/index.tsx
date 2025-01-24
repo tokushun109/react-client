@@ -1,12 +1,13 @@
 'use client'
 
-import { CategoryProducts } from '@/features/product/components/CategoryProducts'
+import { ProductsByCategoryDisplay } from '@/features/product/components/CategoryProducts'
 
 import styles from './styles.module.scss'
 import { IProductsByCategory } from '@/features/product/type'
 import { IClassification } from '@/features/classification/type'
-import { Select } from '@/components/bases/Select'
+import { Select, SelectOption } from '@/components/bases/Select'
 import { KeyboardArrowDown } from '@mui/icons-material'
+import { useState } from 'react'
 
 type Props = {
     productsByCategory: IProductsByCategory[]
@@ -14,7 +15,37 @@ type Props = {
     targets: IClassification[]
 }
 
+interface IFilteredCondition {
+    category: SelectOption | undefined
+    target: SelectOption | undefined
+}
+
 const ProductTemplate = ({ productsByCategory, categories, targets }: Props) => {
+    // 絞りこみ条件
+    const [filteredCondition, setFilteredCondition] = useState<IFilteredCondition>({ category: undefined, target: undefined })
+
+    // 絞り込んだ後の商品リスト
+    const filteredProductsByCategory = ((): IProductsByCategory[] => {
+        let result: IProductsByCategory[] = productsByCategory
+        // categoryによる絞り込み
+        result = filteredCondition.category
+            ? productsByCategory.filter((v) => v.category.uuid === filteredCondition.category!.value)
+            : productsByCategory
+
+        // targetによる絞り込み
+        result = result.map((v) => ({
+            ...v,
+            products: v.products.filter((product) => {
+                return filteredCondition.target ? product.target.uuid === filteredCondition.target!.value : true
+            }),
+        }))
+        return result
+    })()
+
+    const onSelect = (option: SelectOption | undefined, key: keyof IFilteredCondition) => {
+        setFilteredCondition({ ...filteredCondition, [key]: option })
+    }
+
     return (
         <div className={styles['container']}>
             <div className={styles['search-area']}>
@@ -23,7 +54,9 @@ const ProductTemplate = ({ productsByCategory, categories, targets }: Props) => 
                         title="Category"
                         options={categories.map((v) => ({ value: v.uuid, label: v.name }))}
                         suffix={<KeyboardArrowDown />}
-                        onSelect={(index) => console.log(index)}
+                        onSelect={(option) => {
+                            onSelect(option, 'category')
+                        }}
                     />
                 </div>
                 <div className={styles['search-area__select']}>
@@ -31,14 +64,16 @@ const ProductTemplate = ({ productsByCategory, categories, targets }: Props) => 
                         title="Target"
                         options={targets.map((v) => ({ value: v.uuid, label: v.name }))}
                         suffix={<KeyboardArrowDown />}
-                        onSelect={(index) => console.log(index)}
+                        onSelect={(option) => {
+                            onSelect(option, 'target')
+                        }}
                     />
                 </div>
             </div>
             <div className={styles['product-area']}>
-                {productsByCategory.map((v) => (
+                {filteredProductsByCategory.map((v) => (
                     <div key={v.category.uuid}>
-                        <CategoryProducts categoryProducts={v} />
+                        <ProductsByCategoryDisplay productsByCategory={v} />
                     </div>
                 ))}
             </div>

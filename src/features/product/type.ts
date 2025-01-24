@@ -22,16 +22,16 @@ export interface IProduct {
     price: number
     category: IClassification
     target: IClassification
-    tags: Array<IClassification>
-    productImages: Array<IProductImage>
-    siteDetails: Array<ISiteDetail>
+    tags: IClassification[]
+    productImages: IProductImage[]
+    siteDetails: ISiteDetail[]
     isRecommend: boolean
     isActive: boolean
 }
 
 export interface IProductsByCategory {
     category: IClassification
-    products: Array<IProduct>
+    products: IProduct[]
 }
 
 export interface IThumbnail {
