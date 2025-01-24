@@ -5,11 +5,11 @@ import { ColorCodeEnum, ColorEnum, ColorType } from '@/types'
 import styles from './styles.module.scss'
 
 type Props = {
+    children: React.ReactNode
     color?: ColorType
-    width?: string
     height?: string
     shadow?: boolean
-    children: React.ReactNode
+    width?: string
 }
 
 export const Card = ({ color = ColorEnum.White, width = 'auto', height = 'auto', shadow = true, children }: Props) => {

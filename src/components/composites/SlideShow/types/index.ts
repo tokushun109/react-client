@@ -1,6 +1,6 @@
 export type SwipePosition = {
-    start: number | undefined
     end: number | undefined
+    start: number | undefined
 }
 
 export const ImageIndexEnum = {

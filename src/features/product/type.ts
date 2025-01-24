@@ -4,30 +4,30 @@ import { IClassification } from '../classification/type'
 import { ISiteDetail } from '../site/type'
 
 export interface IProductImage {
-    uuid: string
-    name: string
     apiPath: string
+    name: string
     order: number
+    uuid: string
 }
 
 export interface IImagePathOrder {
-    path: string
     order: number | null
+    path: string
     type: ImageType
 }
 
 export interface IProduct {
-    uuid: string
-    name: string
-    description: string
-    price: number
     category: IClassification
-    target: IClassification
-    tags: IClassification[]
+    description: string
+    isActive: boolean
+    isRecommend: boolean
+    name: string
+    price: number
     productImages: IProductImage[]
     siteDetails: ISiteDetail[]
-    isRecommend: boolean
-    isActive: boolean
+    tags: IClassification[]
+    target: IClassification
+    uuid: string
 }
 
 export interface IProductsByCategory {
@@ -36,6 +36,6 @@ export interface IProductsByCategory {
 }
 
 export interface IThumbnail {
-    product: IProduct
     apiPath: string
+    product: IProduct
 }

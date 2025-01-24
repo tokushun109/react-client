@@ -1,12 +1,12 @@
 export interface ISite {
+    icon: string
     name: string
     url: string
-    icon: string
     uuid?: string
 }
 
 export interface ISiteDetail {
-    uuid: string
     detailUrl: string
     salesSite: ISite
+    uuid: string
 }

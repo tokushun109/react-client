@@ -14,8 +14,8 @@ import { labelFontFace } from '@/utils/font'
 import styles from './styles.module.scss'
 
 type Props = {
-    snsList: ISite[]
     salesSiteList: ISite[]
+    snsList: ISite[]
 }
 
 const AboutTemplate = ({ snsList, salesSiteList }: Props) => {

@@ -3,8 +3,8 @@ import { ApiError } from '@/utils/error'
 import { convertObjectToURLSearchParams } from '@/utils/request'
 
 export interface IGetProductsByCategoryParams {
-    mode: 'all' | 'active'
     category: 'all' | string
+    mode: 'all' | 'active'
     target: 'all' | string
 }
 

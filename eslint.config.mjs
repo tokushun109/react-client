@@ -3,7 +3,10 @@ import { fileURLToPath } from 'node:url'
 
 import { FlatCompat } from '@eslint/eslintrc'
 import js from '@eslint/js'
+import perfectionistPlugin from 'eslint-plugin-perfectionist'
 import unusedImports from 'eslint-plugin-unused-imports'
+import prettierConfig from 'eslint-config-prettier'
+import jsxA11y from 'eslint-plugin-jsx-a11y'
 
 const __filename = fileURLToPath(import.meta.url)
 const __dirname = path.dirname(__filename)
@@ -18,6 +21,8 @@ const configs = [
     {
         plugins: {
             'unused-imports': unusedImports,
+            'jsx-a11y': jsxA11y,
+            perfectionist: perfectionistPlugin,
         },
 
         languageOptions: {
@@ -29,7 +34,7 @@ const configs = [
 
         rules: {
             'no-unused-vars': [
-                1,
+                'error',
                 {
                     args: 'after-used',
                     argsIgnorePattern: '^_',
@@ -57,6 +62,11 @@ const configs = [
                 },
             ],
 
+            // interface のプロパティの並び順をアルファベット順に統一
+            'perfectionist/sort-interfaces': 'warn',
+            // Object 型のプロパティの並び順をアルファベット順に統一
+            'perfectionist/sort-object-types': 'warn',
+
             'unused-imports/no-unused-imports': 'error',
             // Props などの分割代入を強制
             'react/destructuring-assignment': 'error',
@@ -80,6 +90,14 @@ const configs = [
             'react/jsx-no-useless-fragment': 'error',
             // Props の並び順をアルファベット順に統一
             'react/jsx-sort-props': 'error',
+            // 子要素がない場合は自己終了タグを使う
+            'react/self-closing-comp': 'error',
+            // コンポーネント名をパスカルケースに統一
+            'react/jsx-pascal-case': 'error',
+            // Props の型チェックは TS で行う
+            'react/prop-types': 'off',
+            // exhaustive-depsに関してもエラーを出力する
+            'react-hooks/exhaustive-deps': 'error',
         },
     },
 
@@ -89,6 +107,7 @@ const configs = [
             'no-console': 'off',
         },
     },
+    prettierConfig, // フォーマット は Prettier で行うため、フォーマット関連のルールを無効化
 ]
 
 export default configs

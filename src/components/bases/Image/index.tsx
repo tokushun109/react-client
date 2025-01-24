@@ -4,8 +4,8 @@ import { useState } from 'react'
 import styles from './styles.module.scss'
 
 type Props = {
-    src: string
     alt: string
+    src: string
 }
 
 export const Image = ({ src, alt }: Props) => {

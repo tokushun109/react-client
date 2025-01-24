@@ -8,12 +8,12 @@ import styles from './styles.module.scss'
 import { ColorObject } from './types'
 
 type Props = {
-    color: ColorType
-    size: number
     children: React.ReactNode
-    onClick?: () => void
+    color: ColorType
     contrast?: boolean
+    onClick?: () => void
     shadow?: boolean
+    size: number
 }
 
 export const Icon = ({ color, size, children, onClick = () => {}, contrast = false, shadow = true }: Props) => {

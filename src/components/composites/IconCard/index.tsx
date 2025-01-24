@@ -8,8 +8,8 @@ import styles from './styles.module.scss'
 
 type Props = {
     Icon: MaterialIconType
-    label: string
     isSelected?: boolean
+    label: string
 }
 
 export const IconCard = ({ Icon, label, isSelected = false }: Props) => {

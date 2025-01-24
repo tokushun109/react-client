@@ -5,10 +5,10 @@ import { ColorCodeEnum, ColorType } from '@/types'
 import styles from './styles.module.scss'
 
 type Props = {
+    children: React.ReactNode
     color: ColorType
     fontColor?: string
     fontSize?: number
-    children: React.ReactNode
 }
 
 export const Chip = ({ color, fontColor = '#ffffff', fontSize = 16, children }: Props) => {

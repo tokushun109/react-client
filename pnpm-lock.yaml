@@ -97,9 +97,18 @@ devDependencies:
   eslint-config-next:
     specifier: 15.1.5
     version: 15.1.5(eslint@9.18.0)(typescript@5.7.3)
+  eslint-config-prettier:
+    specifier: ^10.0.1
+    version: 10.0.1(eslint@9.18.0)
   eslint-plugin-import:
     specifier: ^2.31.0
     version: 2.31.0(@typescript-eslint/parser@8.21.0)(eslint-import-resolver-typescript@3.7.0)(eslint@9.18.0)
+  eslint-plugin-jsx-a11y:
+    specifier: ^6.10.2
+    version: 6.10.2(eslint@9.18.0)
+  eslint-plugin-perfectionist:
+    specifier: ^4.7.0
+    version: 4.7.0(eslint@9.18.0)(typescript@5.7.3)
   eslint-plugin-storybook:
     specifier: ^0.11.2
     version: 0.11.2(eslint@9.18.0)(typescript@5.7.3)
@@ -4698,6 +4707,15 @@ packages:
       - supports-color
     dev: true
 
+  /eslint-config-prettier@10.0.1(eslint@9.18.0):
+    resolution: {integrity: sha512-lZBts941cyJyeaooiKxAtzoPHTN+GbQTJFAIdQbRhA4/8whaAraEh47Whw/ZFfrjNSnlAxqfm9i0XVAEkULjCw==}
+    hasBin: true
+    peerDependencies:
+      eslint: '>=7.0.0'
+    dependencies:
+      eslint: 9.18.0
+    dev: true
+
   /eslint-import-resolver-node@0.3.9:
     resolution: {integrity: sha512-WFj2isz22JahUv+B788TlO3N6zL3nNJGU8CcZbPZvVEkBPaJdCV4vy5wyghty5ROFbCRnm132v8BScu5/1BQ8g==}
     dependencies:
@@ -4824,6 +4842,21 @@ packages:
       object.fromentries: 2.0.8
       safe-regex-test: 1.1.0
       string.prototype.includes: 2.0.1
+    dev: true
+
+  /eslint-plugin-perfectionist@4.7.0(eslint@9.18.0)(typescript@5.7.3):
+    resolution: {integrity: sha512-e2ODzm2SsAztFWY3ZRJd1K702vyl8Sapacjc3JluOW294CfA3+jfjin+UxjcrK48EvlNIMOp+JJB9N54YR2LRw==}
+    engines: {node: ^18.0.0 || >=20.0.0}
+    peerDependencies:
+      eslint: '>=8.0.0'
+    dependencies:
+      '@typescript-eslint/types': 8.21.0
+      '@typescript-eslint/utils': 8.21.0(eslint@9.18.0)(typescript@5.7.3)
+      eslint: 9.18.0
+      natural-orderby: 5.0.0
+    transitivePeerDependencies:
+      - supports-color
+      - typescript
     dev: true
 
   /eslint-plugin-react-hooks@5.1.0(eslint@9.18.0):
@@ -6098,6 +6131,11 @@ packages:
 
   /natural-compare@1.4.0:
     resolution: {integrity: sha512-OWND8ei3VtNC9h7V60qff3SVobHr996CTwgxubgyQYEpg290h9J0buyECNNJexkFm5sOajh5G116RYA1c8ZMSw==}
+    dev: true
+
+  /natural-orderby@5.0.0:
+    resolution: {integrity: sha512-kKHJhxwpR/Okycz4HhQKKlhWe4ASEfPgkSWNmKFHd7+ezuQlxkA5cM3+XkBPvm1gmHen3w53qsYAv+8GwRrBlg==}
+    engines: {node: '>=18'}
     dev: true
 
   /neo-async@2.6.2:

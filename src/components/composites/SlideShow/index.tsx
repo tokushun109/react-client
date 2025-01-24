@@ -10,10 +10,10 @@ import { ImageIndexEnum } from './types'
 import { CarouselImage } from '../CarouselImage'
 
 type Props = {
+    autoPlay?: boolean
+    innerPadding?: number
     items: IThumbnail[]
     size: string
-    innerPadding?: number
-    autoPlay?: boolean
 }
 
 const SlideShow = ({ items, size, innerPadding = 16, autoPlay = true }: Props) => {

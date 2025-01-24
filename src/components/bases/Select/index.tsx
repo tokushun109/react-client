@@ -6,17 +6,17 @@ import { doRippleAnimation, RippleColorEnum } from '@/utils/animation'
 import styles from './styles.module.scss'
 
 export type SelectOption<T = string> = {
-    value: T
     label: string
+    value: T
 }
 
 type Props<T = string> = {
-    title: string
-    options: SelectOption<T>[]
     initialSelectedOption?: SelectOption<T>
     isSelectedAll?: boolean
-    suffix?: React.ReactNode
     onSelect: (_option: SelectOption<T> | undefined) => void
+    options: SelectOption<T>[]
+    suffix?: React.ReactNode
+    title: string
 }
 
 export const Select = <T,>({ title, options, initialSelectedOption, isSelectedAll = true, suffix, onSelect }: Props<T>) => {

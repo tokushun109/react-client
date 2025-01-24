@@ -11,8 +11,8 @@ import { IProductsByCategory } from '@/features/product/type'
 import styles from './styles.module.scss'
 
 type Props = {
-    productsByCategory: IProductsByCategory[]
     categories: IClassification[]
+    productsByCategory: IProductsByCategory[]
     targets: IClassification[]
 }
 

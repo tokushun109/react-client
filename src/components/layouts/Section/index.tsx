@@ -10,10 +10,10 @@ import styles from './styles.module.scss'
 // 色も指定する
 
 type BaseProps = {
-    title: string
-    contrast?: boolean
     children: React.ReactNode
     color: ColorType
+    contrast?: boolean
+    title: string
 }
 
 type Props =
