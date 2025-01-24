@@ -14,6 +14,7 @@ $side-padding: 16px;
         padding: 12px $side-padding;
         display: flex;
         gap: $suffix-gap;
+        transition: background 0.2s;
 
         &__suffix {
             width: $suffix-size;
@@ -35,7 +36,9 @@ $side-padding: 16px;
     &__options {
         display: grid;
         grid-template-rows: 0fr;
-        transition: grid-template-rows 0.2s;
+        transition:
+            grid-template-rows 0.2s,
+            background 0.2s;
 
         &.visible {
             grid-template-rows: 1fr;
@@ -50,6 +53,7 @@ $side-padding: 16px;
         overflow: hidden;
         position: relative;
         padding: 12px $side-padding;
+        transition: background 0.2s;
 
         &.suffix-padding {
             padding-left: calc($suffix-size + $suffix-gap + $side-padding);
