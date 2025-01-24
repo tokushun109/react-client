@@ -3,10 +3,10 @@ import { fileURLToPath } from 'node:url'
 
 import { FlatCompat } from '@eslint/eslintrc'
 import js from '@eslint/js'
-import perfectionistPlugin from 'eslint-plugin-perfectionist'
-import unusedImports from 'eslint-plugin-unused-imports'
 import prettierConfig from 'eslint-config-prettier'
 import jsxA11y from 'eslint-plugin-jsx-a11y'
+import perfectionistPlugin from 'eslint-plugin-perfectionist'
+import unusedImports from 'eslint-plugin-unused-imports'
 
 const __filename = fileURLToPath(import.meta.url)
 const __dirname = path.dirname(__filename)

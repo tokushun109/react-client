@@ -10,7 +10,7 @@
         "dev:3001": "cross-env PORT=3001 next dev -p 3001 ",
         "build": "next build",
         "start": "next start",
-        "lint": "next lint",
+        "lint": "next lint --max-warnings=0",
         "fmt": "prettier --write .",
         "tsc": "tsc --noEmit",
         "sb": "storybook dev -p 6006",
