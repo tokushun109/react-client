@@ -17,12 +17,12 @@ export const ShareButtons = () => {
             </div>
             <div className={styles['icon-area']}>
                 <div>
-                    <Icon size={40} shadow={false} color={ColorEnum.Primary} contrast>
+                    <Icon color={ColorEnum.Primary} contrast shadow={false} size={40}>
                         <Twitter />
                     </Icon>
                 </div>
                 <div>
-                    <Icon size={40} shadow={false} color={ColorEnum.Primary} contrast>
+                    <Icon color={ColorEnum.Primary} contrast shadow={false} size={40}>
                         <Facebook />
                     </Icon>
                 </div>

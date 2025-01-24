@@ -78,6 +78,8 @@ const configs = [
             'react/jsx-curly-brace-presence': 'error',
             // 不要な React Fragment を削除
             'react/jsx-no-useless-fragment': 'error',
+            // Props の並び順をアルファベット順に統一
+            'react/jsx-sort-props': 'error',
         },
     },
 

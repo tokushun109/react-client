@@ -15,18 +15,18 @@ export const Image = ({ src, alt }: Props) => {
     return (
         <div className={styles['container']}>
             <NextImage
-                className={styles['image']}
-                src={isLoading ? '/image/gray-image.png' : displaySrc}
                 alt={alt}
+                className={styles['image']}
                 fill
-                sizes="100%"
                 loading="lazy"
-                onLoad={() => {
-                    setIsLoading(false)
-                }}
                 onError={() => {
                     setDisplaySrc('/image/gray-image.png')
                 }}
+                onLoad={() => {
+                    setIsLoading(false)
+                }}
+                sizes="100%"
+                src={isLoading ? '/image/gray-image.png' : displaySrc}
             />
         </div>
     )

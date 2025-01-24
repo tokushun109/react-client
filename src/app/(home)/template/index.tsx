@@ -26,14 +26,14 @@ const HomeTemplate = ({ carouselImages }: Props) => {
             <div className={classNames(styles['logo-area'], styles['default'])}>
                 <h1>
                     <Image
-                        src="/logo/tocoriri_logo.png"
                         alt="とこりり"
-                        width={400}
                         height={200}
+                        priority
+                        src="/logo/tocoriri_logo.png"
                         style={{
                             objectFit: 'cover',
                         }}
-                        priority
+                        width={400}
                     />
                 </h1>
             </div>
@@ -44,13 +44,13 @@ const HomeTemplate = ({ carouselImages }: Props) => {
                 <SlideShow items={carouselImages} size="90vw" />
             </div>
             <Section
-                title="About"
                 button
                 buttonLabel="詳しくはこちら"
                 color={ColorEnum.Primary}
                 onButtonClick={() => {
                     router.push(NavigationEnum.About)
                 }}
+                title="About"
             >
                 <p>仕事や出産、育児、家事...</p>
                 <p>頑張る女性の味方になりたい、</p>
@@ -61,7 +61,6 @@ const HomeTemplate = ({ carouselImages }: Props) => {
                 </p>
             </Section>
             <Section
-                title="Contact"
                 button
                 buttonLabel="お問い合わせフォーム"
                 color={ColorEnum.Primary}
@@ -69,6 +68,7 @@ const HomeTemplate = ({ carouselImages }: Props) => {
                 onButtonClick={() => {
                     router.push(NavigationEnum.Contact)
                 }}
+                title="Contact"
             >
                 <p>お問い合わせ・ご意見・ご相談はこちらから</p>
             </Section>

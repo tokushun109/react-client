@@ -33,13 +33,13 @@ export const Icon = ({ color, size, children, onClick = () => {}, contrast = fal
     return (
         <div
             className={classNames(styles['container'], !shadow && styles['no-shadow'])}
+            onClick={onClick}
             style={{
                 width: `${size}px`,
                 height: `${size}px`,
                 background: ColorCodeEnum[colorObject.backGround],
                 color: ColorCodeEnum[colorObject.text],
             }}
-            onClick={onClick}
         >
             <div className={styles['content']}>{children}</div>
         </div>

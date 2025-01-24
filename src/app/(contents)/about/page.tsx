@@ -32,7 +32,7 @@ export async function generateMetadata(): Promise<Metadata> {
 const About = async () => {
     const snsList = await getSnsList()
     const salesSiteList = await getSalesSiteList()
-    return <AboutTemplate snsList={snsList} salesSiteList={salesSiteList} />
+    return <AboutTemplate salesSiteList={salesSiteList} snsList={snsList} />
 }
 
 export default About

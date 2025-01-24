@@ -34,7 +34,7 @@ const MenuScreen = ({ onCloseClick }: Props) => {
     return (
         <div className={styles['container']}>
             <div className={styles['close-icon']}>
-                <Icon size={72} color={ColorEnum.Primary} onClick={onCloseClick} contrast>
+                <Icon color={ColorEnum.Primary} contrast onClick={onCloseClick} size={72}>
                     <Close fontSize="large" />
                 </Icon>
             </div>
@@ -46,14 +46,14 @@ const MenuScreen = ({ onCloseClick }: Props) => {
             >
                 <h1>
                     <Image
-                        src="/logo/tocoriri_logo_white.png"
                         alt="とこりり"
-                        width={400}
                         height={200}
+                        priority
+                        src="/logo/tocoriri_logo_white.png"
                         style={{
                             objectFit: 'cover',
                         }}
-                        priority
+                        width={400}
                     />
                 </h1>
             </div>
@@ -67,7 +67,7 @@ const MenuScreen = ({ onCloseClick }: Props) => {
                                 iconClickHandler(menu)
                             }}
                         >
-                            <IconCard Icon={MenuList[menu].icon} label={MenuList[menu].label} isSelected={pathname === MenuList[menu].link} />
+                            <IconCard Icon={MenuList[menu].icon} isSelected={pathname === MenuList[menu].link} label={MenuList[menu].label} />
                         </div>
                     ))}
                 </div>

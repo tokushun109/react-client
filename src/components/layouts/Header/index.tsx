@@ -28,25 +28,25 @@ const Header = () => {
                     }}
                 >
                     <Image
-                        src="/logo/tocoriri_logo_white.png"
                         alt="とこりり"
-                        width={96}
                         height={48}
+                        priority
+                        src="/logo/tocoriri_logo_white.png"
                         style={{
                             objectFit: 'cover',
                         }}
-                        priority
+                        width={96}
                     />
                 </h1>
             </header>
             {!isVisibleMenu && (
                 <div className={classNames(styles['menu-icon'], styles['default'])}>
                     <Icon
-                        size={72}
                         color={ColorEnum.Primary}
                         onClick={() => {
                             setIsVisibleMenu(true)
                         }}
+                        size={72}
                     >
                         <Menu fontSize="large" />
                     </Icon>

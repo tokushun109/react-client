@@ -31,7 +31,7 @@ const Product = async () => {
     const productsByCategory = await getProductsByCategory({ mode: 'active', category: 'all', target: 'all' })
     const categories = await getCategories({ mode: 'used' })
     const targets = await getTargets({ mode: 'used' })
-    return <ProductTemplate productsByCategory={productsByCategory} categories={categories} targets={targets} />
+    return <ProductTemplate categories={categories} productsByCategory={productsByCategory} targets={targets} />
 }
 
 export default Product

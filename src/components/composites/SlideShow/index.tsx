@@ -22,20 +22,20 @@ const SlideShow = ({ items, size, innerPadding = 16, autoPlay = true }: Props) =
         <div
             className={styles['container']}
             onClick={clickHandler}
-            onTouchStart={(e) => {
-                setSwipePosition({ ...swipePosition, start: e.touches[0].pageX })
-            }}
+            onTouchEnd={swipeHandler}
             onTouchMove={(e) => {
                 setSwipePosition({ ...swipePosition, end: e.touches[0].pageX })
             }}
-            onTouchEnd={swipeHandler}
+            onTouchStart={(e) => {
+                setSwipePosition({ ...swipePosition, start: e.touches[0].pageX })
+            }}
             style={{ width: `calc(${size})`, height: `calc(${size})` }}
         >
             <div className={styles['wrapper']}>
                 {Object.values(ImageIndexEnum).map((v) => (
                     <div
-                        key={v}
                         className={classNames(styles['content'], styles[v], swipeDirection && styles[`${swipeDirection}-swipe`])}
+                        key={v}
                         style={{ width: `calc(${size} - ${innerPadding}px)`, aspectRatio: '1 / 1' }}
                     >
                         <CarouselImage item={items[imageIndex[v]]} shadow={false} />

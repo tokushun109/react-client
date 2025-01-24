@@ -14,7 +14,7 @@ const ProductThumbnail = ({ item }: Props) => {
     return (
         <div className={styles['container']}>
             <div className={styles['image-container']}>
-                <Image src={item.apiPath} alt={item.product.name} />
+                <Image alt={item.product.name} src={item.apiPath} />
                 <div className={styles['chip']}>
                     <Chip color={ColorEnum.Secondary} fontSize={12}>
                         {item.product.target.name}

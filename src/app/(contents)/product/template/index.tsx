@@ -52,22 +52,22 @@ const ProductTemplate = ({ productsByCategory, categories, targets }: Props) => 
             <div className={styles['search-area']}>
                 <div className={styles['search-area__select']}>
                     <Select
-                        title="Category"
-                        options={categories.map((v) => ({ value: v.uuid, label: v.name }))}
-                        suffix={<KeyboardArrowDown />}
                         onSelect={(option) => {
                             onSelect(option, 'category')
                         }}
+                        options={categories.map((v) => ({ value: v.uuid, label: v.name }))}
+                        suffix={<KeyboardArrowDown />}
+                        title="Category"
                     />
                 </div>
                 <div className={styles['search-area__select']}>
                     <Select
-                        title="Target"
-                        options={targets.map((v) => ({ value: v.uuid, label: v.name }))}
-                        suffix={<KeyboardArrowDown />}
                         onSelect={(option) => {
                             onSelect(option, 'target')
                         }}
+                        options={targets.map((v) => ({ value: v.uuid, label: v.name }))}
+                        suffix={<KeyboardArrowDown />}
+                        title="Target"
                     />
                 </div>
             </div>
