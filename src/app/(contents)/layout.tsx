@@ -10,7 +10,7 @@ import { labelFontFace } from '@/utils/font'
 
 import styles from './layout.module.scss'
 
-export default function DetailsLayout({ children }: { children: React.ReactNode }) {
+const DetailsLayout = ({ children }: { children: React.ReactNode }) => {
     const pathname = usePathname() as NavigationType
 
     return (
@@ -24,3 +24,5 @@ export default function DetailsLayout({ children }: { children: React.ReactNode 
         </div>
     )
 }
+
+export default DetailsLayout

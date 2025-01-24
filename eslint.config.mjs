@@ -58,7 +58,16 @@ const configs = [
             ],
 
             'unused-imports/no-unused-imports': 'error',
-            'react/destructuring-assignment': 'error', // Props などの分割代入を強制
+            // Props などの分割代入を強制
+            'react/destructuring-assignment': 'error',
+            'react/function-component-definition': [
+                // コンポーネントの定義方法をアロー関数に統一
+                'error',
+                {
+                    namedComponents: 'arrow-function',
+                    unnamedComponents: 'arrow-function',
+                },
+            ],
         },
     },
 
