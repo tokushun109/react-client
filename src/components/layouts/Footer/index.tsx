@@ -5,7 +5,7 @@ import { ShareButtons } from '@/components/composites/ShareButtons'
 import MobileMenu from './components/MobileMenu'
 import styles from './styles.module.scss'
 
-const Footer = () => {
+export const Footer = () => {
     return (
         <footer className={styles['container']}>
             <ShareButtons />
@@ -16,5 +16,3 @@ const Footer = () => {
         </footer>
     )
 }
-
-export default Footer

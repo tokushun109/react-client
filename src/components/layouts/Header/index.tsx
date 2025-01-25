@@ -14,7 +14,7 @@ import { SlideAnimation } from './animations'
 import { MenuScreen } from './components/MenuScreen'
 import styles from './styles.module.scss'
 
-const Header = () => {
+export const Header = () => {
     const [isVisibleMenu, setIsVisibleMenu] = useState<boolean>(false)
     const router = useRouter()
 
@@ -66,5 +66,3 @@ const Header = () => {
         </div>
     )
 }
-
-export default Header
