@@ -1,0 +1,35 @@
+$breadcrumb-gap: 12px;
+
+.container {
+    display: flex;
+    align-items: center;
+    gap: $breadcrumb-gap;
+
+    .breadcrumb {
+        display: flex;
+        align-items: center;
+        gap: $breadcrumb-gap;
+
+        &__label {
+            cursor: pointer;
+            color: $primary;
+        }
+
+        &__indicator {
+            color: $light-dark-color;
+            display: flex;
+            align-items: center;
+        }
+
+        &.current-page {
+            .breadcrumb__label {
+                cursor: auto;
+                color: $light-dark-color;
+            }
+
+            .breadcrumb__indicator {
+                display: none;
+            }
+        }
+    }
+}
