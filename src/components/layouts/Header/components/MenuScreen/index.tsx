@@ -15,11 +15,11 @@ type Props = {
     onCloseClick: () => void
 }
 
-const MenuScreen = ({ onCloseClick }: Props) => {
+export const MenuScreen = ({ onCloseClick }: Props) => {
     const router = useRouter()
     const pathname = usePathname() as NavigationType
 
-    const iconClickHandler = (menu: MenuType | '/') => {
+    const onClickIcon = (menu: MenuType | '/') => {
         onCloseClick()
 
         setTimeout(() => {
@@ -41,7 +41,7 @@ const MenuScreen = ({ onCloseClick }: Props) => {
             <div
                 className={styles['logo-area']}
                 onClick={() => {
-                    iconClickHandler('/')
+                    onClickIcon('/')
                 }}
             >
                 <h1>
@@ -64,7 +64,7 @@ const MenuScreen = ({ onCloseClick }: Props) => {
                             className={styles['icon-card']}
                             key={MenuList[menu].label}
                             onClick={() => {
-                                iconClickHandler(menu)
+                                onClickIcon(menu)
                             }}
                         >
                             <IconCard Icon={MenuList[menu].icon} isSelected={pathname === MenuList[menu].link} label={MenuList[menu].label} />
@@ -75,5 +75,3 @@ const MenuScreen = ({ onCloseClick }: Props) => {
         </div>
     )
 }
-
-export default MenuScreen
