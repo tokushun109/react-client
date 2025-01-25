@@ -10,10 +10,10 @@ import styles from './styles.module.scss'
 // 色も指定する
 
 type BaseProps = {
-    title: string
-    contrast?: boolean
     children: React.ReactNode
     color: ColorType
+    contrast?: boolean
+    title: string
 }
 
 type Props =
@@ -27,7 +27,8 @@ type Props =
       })
 
 const Section = (props: Props) => {
-    if (props.button) {
+    const { button } = props
+    if (button) {
         // ボタンがある時
         const { title, contrast, children, buttonLabel, color, onButtonClick } = props
         return (

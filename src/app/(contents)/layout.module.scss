@@ -1,11 +1,17 @@
+$pc-footer-height: 120px;
+$sp-footer-height: 186px;
+$sp-menu-height: 55px;
+
 .container {
     .main {
         margin: 0 auto;
         max-width: $xl;
+        min-height: calc(100svh - $pc-footer-height);
         padding: 0 48px;
 
         @include media(sm) {
             padding: 0 16px;
+            min-height: calc(100svh - $sp-footer-height - $sp-menu-height);
         }
 
         .title {

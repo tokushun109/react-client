@@ -2,10 +2,10 @@ import classNames from 'classnames'
 
 import { Chip } from '@/components/bases/Chip'
 import { Image } from '@/components/bases/Image'
+import { IThumbnail } from '@/features/product/type'
 import { ColorEnum } from '@/types'
 
 import styles from './styles.module.scss'
-import { IThumbnail } from '@/features/product/type'
 
 type Props = {
     item: IThumbnail
@@ -22,7 +22,7 @@ export const CarouselImage = ({ item, shadow = true }: Props) => {
                     </Chip>
                 </div>
             )}
-            <Image src={item.apiPath} alt={item.product.name} key={item.product.name} />
+            <Image alt={item.product.name} key={item.product.name} src={item.apiPath} />
             <div className={classNames(styles['chip'], styles['name'])}>
                 <Chip color={ColorEnum.Accent} fontSize={12}>
                     {item.product.name}

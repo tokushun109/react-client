@@ -1,7 +1,8 @@
 import { MaterialIconEnum } from '@/types'
 
-import type { Meta, StoryObj } from '@storybook/react'
 import { IconCard } from '.'
+
+import type { Meta, StoryObj } from '@storybook/react'
 
 const meta: Meta<typeof IconCard> = {
     component: IconCard,

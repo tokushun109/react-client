@@ -1,22 +1,80 @@
 'use client'
 
-import { CategoryProducts } from '@/features/product/components/CategoryProducts'
+import { KeyboardArrowDown } from '@mui/icons-material'
+import { useState } from 'react'
+
+import { Select, SelectOption } from '@/components/bases/Select'
+import { IClassification } from '@/features/classification/type'
+import { ProductsByCategoryDisplay } from '@/features/product/components/CategoryProducts'
+import { IProductsByCategory } from '@/features/product/type'
 
 import styles from './styles.module.scss'
-import { ICategoryProducts } from '@/features/product/type'
 
 type Props = {
-    categoryProductsList: ICategoryProducts[]
+    categories: IClassification[]
+    productsByCategory: IProductsByCategory[]
+    targets: IClassification[]
 }
 
-const ProductTemplate = ({ categoryProductsList }: Props) => {
+interface IFilteredCondition {
+    category: SelectOption | undefined
+    target: SelectOption | undefined
+}
+
+const ProductTemplate = ({ productsByCategory, categories, targets }: Props) => {
+    // 絞りこみ条件
+    const [filteredCondition, setFilteredCondition] = useState<IFilteredCondition>({ category: undefined, target: undefined })
+
+    // 絞り込んだ後の商品リスト
+    const filteredProductsByCategory = ((): IProductsByCategory[] => {
+        let result: IProductsByCategory[] = productsByCategory
+        // categoryによる絞り込み
+        result = filteredCondition.category
+            ? productsByCategory.filter((v) => v.category.uuid === filteredCondition.category!.value)
+            : productsByCategory
+
+        // targetによる絞り込み
+        result = result.map((v) => ({
+            ...v,
+            products: v.products.filter((product) => {
+                return filteredCondition.target ? product.target.uuid === filteredCondition.target!.value : true
+            }),
+        }))
+        return result
+    })()
+
+    const onSelect = (option: SelectOption | undefined, key: keyof IFilteredCondition) => {
+        setFilteredCondition({ ...filteredCondition, [key]: option })
+    }
+
     return (
         <div className={styles['container']}>
-            <div className={styles['search-area']}>検索欄</div>
+            <div className={styles['search-area']}>
+                <div className={styles['search-area__select']}>
+                    <Select
+                        onSelect={(option) => {
+                            onSelect(option, 'category')
+                        }}
+                        options={categories.map((v) => ({ value: v.uuid, label: v.name }))}
+                        suffix={<KeyboardArrowDown />}
+                        title="Category"
+                    />
+                </div>
+                <div className={styles['search-area__select']}>
+                    <Select
+                        onSelect={(option) => {
+                            onSelect(option, 'target')
+                        }}
+                        options={targets.map((v) => ({ value: v.uuid, label: v.name }))}
+                        suffix={<KeyboardArrowDown />}
+                        title="Target"
+                    />
+                </div>
+            </div>
             <div className={styles['product-area']}>
-                {categoryProductsList.map((v) => (
+                {filteredProductsByCategory.map((v) => (
                     <div key={v.category.uuid}>
-                        <CategoryProducts categoryProducts={v} />
+                        <ProductsByCategoryDisplay productsByCategory={v} />
                     </div>
                 ))}
             </div>

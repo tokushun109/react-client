@@ -8,12 +8,12 @@ import styles from './styles.module.scss'
 import { ColorObject } from './types'
 
 type Props = {
-    color: ColorType
-    size: number
     children: React.ReactNode
-    onClick?: () => void
+    color: ColorType
     contrast?: boolean
+    onClick?: () => void
     shadow?: boolean
+    size: number
 }
 
 export const Icon = ({ color, size, children, onClick = () => {}, contrast = false, shadow = true }: Props) => {
@@ -33,13 +33,13 @@ export const Icon = ({ color, size, children, onClick = () => {}, contrast = fal
     return (
         <div
             className={classNames(styles['container'], !shadow && styles['no-shadow'])}
+            onClick={onClick}
             style={{
                 width: `${size}px`,
                 height: `${size}px`,
                 background: ColorCodeEnum[colorObject.backGround],
                 color: ColorCodeEnum[colorObject.text],
             }}
-            onClick={onClick}
         >
             <div className={styles['content']}>{children}</div>
         </div>

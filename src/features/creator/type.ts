@@ -1,6 +1,6 @@
 export interface ICreator {
-    name: string
+    apiPath: string
     introduction: string
     logo: string
-    apiPath: string
+    name: string
 }

@@ -1,4 +1,9 @@
 #!/usr/bin/env sh
 . "$(dirname -- "$0")/_/husky.sh"
 
-pnpm fmt
+# コードの整形
+npx lint-staged
+
+# lintとコンパイルエラーのがないか確認
+pnpm lint
+pnpm tsc

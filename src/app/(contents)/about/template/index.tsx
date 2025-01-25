@@ -7,15 +7,15 @@ import { useRouter } from 'next/navigation'
 
 import { Icon } from '@/components/bases/Icon'
 import Section from '@/components/layouts/Section'
+import { ISite } from '@/features/site/type'
 import { ColorEnum } from '@/types'
 import { labelFontFace } from '@/utils/font'
 
 import styles from './styles.module.scss'
-import { ISite } from '@/features/site/type'
 
 type Props = {
-    snsList: ISite[]
     salesSiteList: ISite[]
+    snsList: ISite[]
 }
 
 const AboutTemplate = ({ snsList, salesSiteList }: Props) => {
@@ -23,11 +23,11 @@ const AboutTemplate = ({ snsList, salesSiteList }: Props) => {
 
     return (
         <div className={styles['container']}>
-            <Section title="Story" button={false} color={ColorEnum.Secondary}>
+            <Section button={false} color={ColorEnum.Secondary} title="Story">
                 <div className={styles['content']}>
                     <div className={styles['column']}>
                         <div className={styles['image']}>
-                            <Image src="/image/about/story.jpg" fill alt="story" sizes="100%" style={{ objectFit: 'cover', borderRadius: 24 }} />
+                            <Image alt="story" fill sizes="100%" src="/image/about/story.jpg" style={{ objectFit: 'cover', borderRadius: 24 }} />
                         </div>
                     </div>
                     <div className={styles['column']}>
@@ -49,16 +49,16 @@ const AboutTemplate = ({ snsList, salesSiteList }: Props) => {
                     </div>
                 </div>
             </Section>
-            <Section title="Concept" button={false} color={ColorEnum.Secondary}>
+            <Section button={false} color={ColorEnum.Secondary} title="Concept">
                 <div className={styles['content']}>
                     <div className={styles['column']}>
                         <div className={styles['column__wrapper']}>
                             <div className={classNames(styles['image'], styles['small'])}>
                                 <Image
-                                    src="/image/about/concept1.jpg"
-                                    fill
                                     alt="concept1"
+                                    fill
                                     sizes="100%"
+                                    src="/image/about/concept1.jpg"
                                     style={{ objectFit: 'cover', borderRadius: 24 }}
                                 />
                             </div>
@@ -82,10 +82,10 @@ const AboutTemplate = ({ snsList, salesSiteList }: Props) => {
                         <div className={styles['column__wrapper']}>
                             <div className={classNames(styles['image'], styles['small'])}>
                                 <Image
-                                    src="/image/about/concept2.jpg"
-                                    fill
                                     alt="concept2"
+                                    fill
                                     sizes="100%"
+                                    src="/image/about/concept2.jpg"
                                     style={{ objectFit: 'cover', borderRadius: 24 }}
                                 />
                             </div>
@@ -107,11 +107,11 @@ const AboutTemplate = ({ snsList, salesSiteList }: Props) => {
                     </div>
                 </div>
             </Section>
-            <Section title="Story" button={false} color={ColorEnum.Secondary}>
+            <Section button={false} color={ColorEnum.Secondary} title="Story">
                 <div className={styles['content']}>
                     <div className={styles['column']}>
                         <div className={styles['image']}>
-                            <Image src="/image/about/creator.jpg" fill alt="creator" sizes="100%" style={{ objectFit: 'cover', borderRadius: 24 }} />
+                            <Image alt="creator" fill sizes="100%" src="/image/about/creator.jpg" style={{ objectFit: 'cover', borderRadius: 24 }} />
                         </div>
                     </div>
                     <div className={styles['column']}>
@@ -161,7 +161,7 @@ const AboutTemplate = ({ snsList, salesSiteList }: Props) => {
                     </div>
                 </div>
             </Section>
-            <Section title="Relation" button={false} color={ColorEnum.Secondary}>
+            <Section button={false} color={ColorEnum.Secondary} title="Relation">
                 <div className={classNames(styles['content'], styles['relation'])}>
                     <div className={styles['column']}>
                         <div className={styles['column__wrapper']}>
@@ -169,12 +169,12 @@ const AboutTemplate = ({ snsList, salesSiteList }: Props) => {
                             <div className={styles['button-area']}>
                                 {snsList.map((v) => (
                                     <Icon
-                                        key={v.name}
-                                        size={90}
                                         color={ColorEnum.Accent}
+                                        key={v.name}
                                         onClick={() => {
                                             router.push(v.url)
                                         }}
+                                        size={90}
                                     >
                                         <div className={styles['icon-content']}>
                                             <div className={styles['sns-icon']}>
@@ -193,12 +193,12 @@ const AboutTemplate = ({ snsList, salesSiteList }: Props) => {
                             <div className={styles['button-area']}>
                                 {salesSiteList.map((v) => (
                                     <Icon
-                                        key={v.name}
-                                        size={90}
                                         color={ColorEnum.Accent}
+                                        key={v.name}
                                         onClick={() => {
                                             router.push(v.url)
                                         }}
+                                        size={90}
                                     >
                                         <div className={styles['sales-site-name']}>{v.name}</div>
                                     </Icon>

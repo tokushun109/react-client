@@ -11,8 +11,8 @@ import { Icon } from '@/components/bases/Icon'
 import { ColorEnum } from '@/types'
 
 import { SlideAnimation } from './animations'
-import styles from './styles.module.scss'
 import MenuScreen from './components/MenuScreen'
+import styles from './styles.module.scss'
 
 const Header = () => {
     const [isVisibleMenu, setIsVisibleMenu] = useState<boolean>(false)
@@ -28,25 +28,25 @@ const Header = () => {
                     }}
                 >
                     <Image
-                        src="/logo/tocoriri_logo_white.png"
                         alt="とこりり"
-                        width={96}
                         height={48}
+                        priority
+                        src="/logo/tocoriri_logo_white.png"
                         style={{
                             objectFit: 'cover',
                         }}
-                        priority
+                        width={96}
                     />
                 </h1>
             </header>
             {!isVisibleMenu && (
                 <div className={classNames(styles['menu-icon'], styles['default'])}>
                     <Icon
-                        size={72}
                         color={ColorEnum.Primary}
                         onClick={() => {
                             setIsVisibleMenu(true)
                         }}
+                        size={72}
                     >
                         <Menu fontSize="large" />
                     </Icon>

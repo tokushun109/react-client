@@ -1,46 +1,41 @@
 import { ImageType } from '@/types'
+
 import { IClassification } from '../classification/type'
 import { ISiteDetail } from '../site/type'
 
 export interface IProductImage {
-    uuid: string
-    name: string
     apiPath: string
+    name: string
     order: number
+    uuid: string
 }
 
 export interface IImagePathOrder {
-    path: string
     order: number | null
+    path: string
     type: ImageType
 }
 
 export interface IProduct {
-    uuid: string
-    name: string
+    category: IClassification
     description: string
-    price: number
-    category: IClassification
-    target: IClassification
-    tags: Array<IClassification>
-    productImages: Array<IProductImage>
-    siteDetails: Array<ISiteDetail>
-    isRecommend: boolean
     isActive: boolean
+    isRecommend: boolean
+    name: string
+    price: number
+    productImages: IProductImage[]
+    siteDetails: ISiteDetail[]
+    tags: IClassification[]
+    target: IClassification
+    uuid: string
 }
 
-export interface ICategoryProducts {
+export interface IProductsByCategory {
     category: IClassification
-    products: Array<IProduct>
-}
-
-export interface IGetProductsParams {
-    mode: 'all' | 'active'
-    category: 'all' | string
-    target: 'all' | string
+    products: IProduct[]
 }
 
 export interface IThumbnail {
-    product: IProduct
     apiPath: string
+    product: IProduct
 }

@@ -1,7 +1,8 @@
 import { ColorEnum } from '@/types'
 
-import type { Meta, StoryObj } from '@storybook/react'
 import { Icon } from '.'
+
+import type { Meta, StoryObj } from '@storybook/react'
 
 const meta: Meta<typeof Icon> = {
     component: Icon,
