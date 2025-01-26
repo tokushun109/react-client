@@ -9,7 +9,7 @@ export const Footer = () => {
     return (
         <footer className={styles['container']}>
             <ShareButtons />
-            <span>©︎ 2023 とこりり</span>
+            <span>©︎ 2022 とこりり</span>
             <div className={classNames(styles['mobile-menu'], styles['sm'])}>
                 <MobileMenu />
             </div>

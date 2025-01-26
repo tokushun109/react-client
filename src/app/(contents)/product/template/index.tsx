@@ -3,6 +3,7 @@
 import { KeyboardArrowDown } from '@mui/icons-material'
 import { useState } from 'react'
 
+import { Breadcrumbs } from '@/components/bases/Breadcrumbs'
 import { Select, SelectOption } from '@/components/bases/Select'
 import { IClassification } from '@/features/classification/type'
 import { ProductsByCategoryDisplay } from '@/features/product/components/CategoryProducts'
@@ -78,6 +79,18 @@ const ProductTemplate = ({ productsByCategory, categories, targets }: Props) => 
                     </div>
                 ))}
             </div>
+            <Breadcrumbs
+                breadcrumbs={[
+                    {
+                        label: 'トップページ',
+                        link: '/',
+                    },
+                    {
+                        label: '商品一覧',
+                        link: '/product',
+                    },
+                ]}
+            />
         </div>
     )
 }

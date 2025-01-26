@@ -1,21 +1,21 @@
 import classNames from 'classnames'
-import { useRouter } from 'next/router'
+import { useRouter } from 'next/navigation'
 
 import styles from './styles.module.scss'
 
-export interface Breadcrumb {
+export interface IBreadcrumb {
     label: string
     link?: string
 }
 
 type Props = {
-    breadcrumbs: Breadcrumb[]
+    breadcrumbs: IBreadcrumb[]
 }
 
 export const Breadcrumbs = ({ breadcrumbs }: Props) => {
     const router = useRouter()
 
-    const onClickLabel = (breadcrumb: Breadcrumb) => {
+    const onClickLabel = (breadcrumb: IBreadcrumb) => {
         if (breadcrumb.link === undefined) return
 
         router.push(breadcrumb.link)

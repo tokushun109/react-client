@@ -1,6 +1,7 @@
 $breadcrumb-gap: 12px;
 
 .container {
+    padding: 20px 0;
     display: flex;
     align-items: center;
     gap: $breadcrumb-gap;
@@ -11,6 +12,7 @@ $breadcrumb-gap: 12px;
         gap: $breadcrumb-gap;
 
         &__label {
+            font-size: $font-medium;
             cursor: pointer;
             color: $primary;
         }
