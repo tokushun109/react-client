@@ -25,7 +25,10 @@ export const Breadcrumbs = ({ breadcrumbs }: Props) => {
         <div className={styles['container']}>
             {breadcrumbs.map((v, index) => (
                 <div className={classNames(styles['breadcrumb'], styles[breadcrumbs.length - 1 === index ? 'current-page' : ''])} key={index}>
-                    <span className={styles['breadcrumb__label']} onClick={() => onClickLabel(v)}>
+                    <span
+                        className={classNames(styles['breadcrumb__label'], styles[v.link !== undefined ? 'link' : ''])}
+                        onClick={() => onClickLabel(v)}
+                    >
                         {v.label}
                     </span>
                     <small className={styles['breadcrumb__indicator']}>&gt;</small>

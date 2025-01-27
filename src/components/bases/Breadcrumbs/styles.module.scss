@@ -5,6 +5,7 @@ $breadcrumb-gap: 12px;
     display: flex;
     align-items: center;
     gap: $breadcrumb-gap;
+    user-select: none;
 
     .breadcrumb {
         display: flex;
@@ -13,8 +14,16 @@ $breadcrumb-gap: 12px;
 
         &__label {
             font-size: $font-medium;
-            cursor: pointer;
             color: $primary;
+            cursor: auto;
+
+            &.link {
+                cursor: pointer;
+
+                &:hover {
+                    opacity: 0.8;
+                }
+            }
         }
 
         &__indicator {
@@ -25,7 +34,6 @@ $breadcrumb-gap: 12px;
 
         &.current-page {
             .breadcrumb__label {
-                cursor: auto;
                 color: $light-dark-color;
             }
 

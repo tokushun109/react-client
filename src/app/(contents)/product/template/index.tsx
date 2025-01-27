@@ -87,7 +87,6 @@ const ProductTemplate = ({ productsByCategory, categories, targets }: Props) => 
                     },
                     {
                         label: '商品一覧',
-                        link: '/product',
                     },
                 ]}
             />

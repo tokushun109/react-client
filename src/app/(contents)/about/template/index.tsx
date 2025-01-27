@@ -217,7 +217,6 @@ const AboutTemplate = ({ snsList, salesSiteList }: Props) => {
                     },
                     {
                         label: 'とこりりについて',
-                        link: '/about',
                     },
                 ]}
             />
