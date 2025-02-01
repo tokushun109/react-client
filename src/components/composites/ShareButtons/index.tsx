@@ -1,4 +1,4 @@
-import { Twitter, Facebook } from '@mui/icons-material'
+import { X, Facebook } from '@mui/icons-material'
 import ReplyIcon from '@mui/icons-material/Reply'
 
 import { Icon } from '@/components/bases/Icon'
@@ -18,7 +18,7 @@ export const ShareButtons = () => {
             <div className={styles['icon-area']}>
                 <div>
                     <Icon color={ColorEnum.Primary} contrast shadow={false} size={40}>
-                        <Twitter />
+                        <X />
                     </Icon>
                 </div>
                 <div>

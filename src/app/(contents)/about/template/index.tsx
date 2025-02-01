@@ -5,6 +5,7 @@ import classNames from 'classnames'
 import Image from 'next/image'
 import { useRouter } from 'next/navigation'
 
+import { Breadcrumbs } from '@/components/bases/Breadcrumbs'
 import { Icon } from '@/components/bases/Icon'
 import Section from '@/components/layouts/Section'
 import { ISite } from '@/features/site/type'
@@ -208,6 +209,17 @@ const AboutTemplate = ({ snsList, salesSiteList }: Props) => {
                     </div>
                 </div>
             </Section>
+            <Breadcrumbs
+                breadcrumbs={[
+                    {
+                        label: 'トップページ',
+                        link: '/',
+                    },
+                    {
+                        label: 'とこりりについて',
+                    },
+                ]}
+            />
         </div>
     )
 }

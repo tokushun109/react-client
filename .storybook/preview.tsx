@@ -1,8 +1,10 @@
 import 'ress'
 
 import React from 'react'
-import type { Preview } from '@storybook/react'
+
 import { mainFontFace } from '@/utils/font'
+
+import type { Preview } from '@storybook/react'
 import '@/styles/globals.scss'
 
 const preview: Preview = {
