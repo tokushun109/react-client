@@ -1,5 +1,6 @@
-import type { StorybookConfig } from '@storybook/nextjs'
 import path from 'path'
+
+import type { StorybookConfig } from '@storybook/nextjs'
 
 const config: StorybookConfig = {
     stories: ['./Configure.mdx', '../src/**/*.stories.@(js|jsx|mjs|ts|tsx)'],
@@ -34,7 +35,8 @@ const config: StorybookConfig = {
                     {
                         loader: 'sass-loader',
                         options: {
-                            additionalData: `@use "@/styles/variables.scss" as *;@use "@/styles/mixins.scss" as *;`,
+                            additionalData:
+                                '@use "@/styles/variables.scss" as *; @use "@/styles/mixins.scss" as *; @use "@/styles/layouts.scss" as *;',
                         },
                     },
                 ],

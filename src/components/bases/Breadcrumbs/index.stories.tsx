@@ -7,6 +7,11 @@ const meta: Meta<typeof Breadcrumbs> = {
     args: {
         breadcrumbs: [{ label: 'label1', link: '/link1' }, { label: 'label2', link: '/link2' }, { label: 'label3' }],
     },
+    parameters: {
+        nextjs: {
+            appDirectory: true,
+        },
+    },
 }
 
 export default meta
