@@ -6,7 +6,7 @@ import { useState } from 'react'
 import { Breadcrumbs } from '@/components/bases/Breadcrumbs'
 import { Select, SelectOption } from '@/components/bases/Select'
 import { IClassification } from '@/features/classification/type'
-import { ProductsByCategoryDisplay } from '@/features/product/components/CategoryProducts'
+import { ProductsByCategoryDisplay } from '@/features/product/components/ProductsByCategoryDisplay'
 import { IProductsByCategory } from '@/features/product/type'
 
 import styles from './styles.module.scss'
