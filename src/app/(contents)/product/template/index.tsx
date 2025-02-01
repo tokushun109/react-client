@@ -73,11 +73,23 @@ const ProductTemplate = ({ productsByCategory, categories, targets }: Props) => 
                 </div>
             </div>
             <div className={styles['product-area']}>
-                {filteredProductsByCategory.map((v) => (
-                    <div key={v.category.uuid}>
-                        <ProductsByCategoryDisplay productsByCategory={v} />
-                    </div>
-                ))}
+                {(() => {
+                    if (filteredProductsByCategory.length === 0) {
+                        return (
+                            <div className={styles['product-area__no-product-message']}>
+                                該当する商品が
+                                <br className={styles['sm']} />
+                                見つかりませんでした
+                            </div>
+                        )
+                    } else {
+                        return filteredProductsByCategory.map((v) => (
+                            <div key={v.category.uuid}>
+                                <ProductsByCategoryDisplay productsByCategory={v} />
+                            </div>
+                        ))
+                    }
+                })()}
             </div>
             <Breadcrumbs
                 breadcrumbs={[
