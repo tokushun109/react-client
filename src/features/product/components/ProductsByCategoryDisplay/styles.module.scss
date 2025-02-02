@@ -7,6 +7,10 @@ $product-list-gap: 16px;
         margin-bottom: 24px;
         color: $text-color;
         font-weight: $title-font-weight;
+
+        @include media(sm) {
+            font-size: 20px;
+        }
     }
 
     .product-list {

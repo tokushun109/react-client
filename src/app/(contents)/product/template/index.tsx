@@ -6,7 +6,7 @@ import { useState } from 'react'
 import { Breadcrumbs } from '@/components/bases/Breadcrumbs'
 import { Select, SelectOption } from '@/components/bases/Select'
 import { IClassification } from '@/features/classification/type'
-import { ProductsByCategoryDisplay } from '@/features/product/components/CategoryProducts'
+import { ProductsByCategoryDisplay } from '@/features/product/components/ProductsByCategoryDisplay'
 import { IProductsByCategory } from '@/features/product/type'
 
 import styles from './styles.module.scss'
@@ -84,7 +84,7 @@ const ProductTemplate = ({ productsByCategory, categories, targets }: Props) => 
                         )
                     } else {
                         return filteredProductsByCategory.map((v) => (
-                            <div key={v.category.uuid}>
+                            <div className={styles['product-area__products-by-category']} key={v.category.uuid}>
                                 <ProductsByCategoryDisplay productsByCategory={v} />
                             </div>
                         ))
