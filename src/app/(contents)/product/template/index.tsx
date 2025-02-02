@@ -84,7 +84,7 @@ const ProductTemplate = ({ productsByCategory, categories, targets }: Props) => 
                         )
                     } else {
                         return filteredProductsByCategory.map((v) => (
-                            <div key={v.category.uuid}>
+                            <div className={styles['product-area__products-by-category']} key={v.category.uuid}>
                                 <ProductsByCategoryDisplay productsByCategory={v} />
                             </div>
                         ))
