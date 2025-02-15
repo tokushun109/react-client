@@ -1,6 +1,6 @@
 import { useCallback, useEffect, useRef, useState } from 'react'
 
-export const useTransition = () => {
+export const useSlide = () => {
     const [isInit, setIsInit] = useState<boolean>(true)
     const [isVisible, setIsVisible] = useState<boolean>(false)
     const childrenRef = useRef<HTMLDivElement>(null)
