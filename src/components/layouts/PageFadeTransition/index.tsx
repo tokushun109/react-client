@@ -5,17 +5,21 @@ import { usePathname } from 'next/navigation'
 
 import { NavigationType } from '@/types'
 
+import { fadeAnimation } from './animations'
+import { FrozenRouter } from './components'
+
 interface Props {
     children: React.ReactNode
 }
+
 export const PageFadeTransition = ({ children }: Props) => {
     const pathname = usePathname() as NavigationType
 
     return (
-        <div key={pathname}>
+        <div>
             <AnimatePresence mode="wait">
-                <motion.div animate={{ opacity: 1 }} exit={{ opacity: 0 }} initial={{ opacity: 0 }} key={pathname} transition={{ duration: 0.5 }}>
-                    {children}
+                <motion.div key={pathname} {...fadeAnimation}>
+                    <FrozenRouter>{children}</FrozenRouter>
                 </motion.div>
             </AnimatePresence>
         </div>
