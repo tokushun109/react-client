@@ -5,6 +5,7 @@ import { usePathname } from 'next/navigation'
 
 import { Footer } from '@/components/layouts/Footer'
 import { Header } from '@/components/layouts/Header'
+import { PageFadeTransition } from '@/components/layouts/PageFadeTransition'
 import { NavigationTitleEnum, NavigationType } from '@/types/enum/navigation'
 import { labelFontFace } from '@/utils/font'
 
@@ -17,8 +18,10 @@ const DetailsLayout = ({ children }: { children: React.ReactNode }) => {
         <div className={styles['container']}>
             <Header />
             <main className={styles['main']}>
-                <div className={classNames(styles['title'], styles['default'], labelFontFace.className)}>{NavigationTitleEnum[pathname]}</div>
-                {children}
+                <PageFadeTransition>
+                    <div className={classNames(styles['title'], styles['default'], labelFontFace.className)}>{NavigationTitleEnum[pathname]}</div>
+                    {children}
+                </PageFadeTransition>
             </main>
             <Footer />
         </div>
