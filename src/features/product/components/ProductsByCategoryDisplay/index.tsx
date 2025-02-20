@@ -1,6 +1,7 @@
 import classNames from 'classnames'
 import { useState } from 'react'
 
+import { Slide } from '@/components/animations/Slide'
 import { Button } from '@/components/bases/Button'
 import ProductThumbnail from '@/features/product/components/ProductThumbnail'
 import { mainFontFace } from '@/utils/font'
@@ -36,7 +37,9 @@ export const ProductsByCategoryDisplay = ({ productsByCategory }: Props) => {
             <div className={styles['product-list']}>
                 {displayProducts.map((v) => (
                     <div className={styles['product-thumbnail']} key={v.uuid}>
-                        <ProductThumbnail item={{ product: v, apiPath: v.productImages[0].apiPath }} />
+                        <Slide>
+                            <ProductThumbnail item={{ product: v, apiPath: v.productImages[0].apiPath }} />
+                        </Slide>
                     </div>
                 ))}
             </div>

@@ -4,6 +4,7 @@ import classNames from 'classnames'
 import Image from 'next/image'
 import { useRouter } from 'next/navigation'
 
+import { Slide } from '@/components/animations/Slide'
 import { Indicator } from '@/components/bases/Indicator'
 import Carousel from '@/components/composites/Carousel'
 import SlideShow from '@/components/composites/SlideShow'
@@ -37,12 +38,16 @@ const HomeTemplate = ({ carouselImages }: Props) => {
                     />
                 </h1>
             </div>
-            <div className={classNames(styles['carousel-area'], styles['default'])}>
-                <Carousel items={carouselImages} />
-            </div>
-            <div className={classNames(styles['slide-show-area'], styles['sm'])}>
-                <SlideShow items={carouselImages} size="90vw" />
-            </div>
+            <Slide>
+                <div className={classNames(styles['carousel-area'], styles['default'])}>
+                    <Carousel items={carouselImages} />
+                </div>
+            </Slide>
+            <Slide>
+                <div className={classNames(styles['slide-show-area'], styles['sm'])}>
+                    <SlideShow items={carouselImages} size="90vw" />
+                </div>
+            </Slide>
             <Section
                 button
                 buttonLabel="詳しくはこちら"

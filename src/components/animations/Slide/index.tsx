@@ -1,18 +1,30 @@
 'use client'
 
-import classNames from 'classnames'
+import { motion, useInView } from 'framer-motion'
+import { useRef } from 'react'
 
-import { useSlide } from './hooks'
-import styles from './styles.module.scss'
+export const SlideDirectionEnum = {
+    Down: 'down',
+    Up: 'up',
+} as const
+export type SlideDirectionType = (typeof SlideDirectionEnum)[keyof typeof SlideDirectionEnum]
 
-type Props = { children: React.ReactNode }
+type Props = {
+    children: React.ReactNode
+}
 
 export const Slide = ({ children }: Props) => {
-    const { isInit, isVisible, childrenRef } = useSlide()
+    const ref = useRef<HTMLDivElement>(null)
+    const isInView = useInView(ref, { once: false })
 
     return (
-        <div className={classNames(styles['container'], !isInit && styles[isVisible ? 'visible' : 'invisible'])} ref={childrenRef}>
+        <motion.div
+            animate={{ opacity: isInView ? 1 : 0, y: isInView ? 0 : 30 }}
+            initial={{ opacity: 0, y: 20 }}
+            ref={ref}
+            transition={{ duration: 0.6, ease: 'easeOut' }}
+        >
             {children}
-        </div>
+        </motion.div>
     )
 }
