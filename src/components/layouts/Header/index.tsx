@@ -10,7 +10,7 @@ import { useState } from 'react'
 import { Icon } from '@/components/bases/Icon'
 import { ColorEnum } from '@/types'
 
-import { SlideAnimation } from './animations'
+import { slideAnimation } from './animations'
 import { MenuScreen } from './components/MenuScreen'
 import styles from './styles.module.scss'
 
@@ -54,7 +54,7 @@ export const Header = () => {
             )}
             <AnimatePresence>
                 {isVisibleMenu && (
-                    <motion.div className={classNames(styles['menu-screen'], styles['default'])} {...SlideAnimation}>
+                    <motion.div className={classNames(styles['menu-screen'], styles['default'])} {...slideAnimation}>
                         <MenuScreen
                             onCloseClick={() => {
                                 setIsVisibleMenu(false)

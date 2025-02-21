@@ -1,4 +1,4 @@
-export const SlideAnimation = {
+export const slideAnimation = {
     initial: { translateY: '-100vh' },
     animate: { translateY: 0 },
     exit: { translateY: '-100vh' },
